@@ -1,0 +1,437 @@
+
+R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # R < iraceRun.R --no-save --args 10 ./ak scenario.txt TRUE trainInstancesHARD.txt 0.3 0.2
+> # se necesita estar parado en la carpeta  tunners/irace/tunning
+> library('irace')
+> library('devtools')
+> load_all()
+* installing *source* package ‘irace’ ...
+files ‘R/generation.R’, ‘R/irace-options.R’, ‘R/irace.R’, ‘R/main.R’, ‘R/model.R’, ‘vignettes/irace-acotsp-stdout.txt’ have the wrong MD5 checksums
+** using staged installation
+** libs
+installing via 'install.libs.R' to /tmp/Rtmp54BVyf/devtools_install_3897042dfb002/00LOCK-irace/00new/irace
+* DONE (irace)
+> 
+> args <- commandArgs()
+> 
+> cat("Los commands Args son", args, "\n")
+Los commands Args son /usr/lib/R/bin/exec/R --no-save --args 1 ./acotsp scenario.txt TRUE instances-list.txt 0.3 0.1 
+> setwd(args[5])
+> #
+> seed <- args[4]
+> 
+> scenario <- readScenario(filename = args[6])
+> scenario$seed <- seed
+> scenario$OL <- as.logical(args[7])
+> scenario$trainInstancesFile <- args[8]
+> scenario$generationPercentage <- as.double(args[9])
+> scenario$filterThresh <- as.double(args[10])
+> irace.main(scenario = scenario)
+# 2022-02-04 08:02:24 UTC: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 5
+# minNbSurvival: 5
+# nbParameters: 8
+# seed: 1
+# confidence level: 0.95
+# budget: 5000
+# mu: 5
+# deterministic: FALSE
+
+# 2022-02-04 08:02:24 UTC: Iteration 1 of 5
+# experimentsUsedSoFar: 0
+# remainingBudget: 5000
+# currentBudget: 1000
+# nbConfigurations: 166
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          1|        166|          1|    0.000000000|        166|00:18:08|   NA|  NA|    NA|
+|x|          2|        166|        109|  0.02863278454|        332|00:28:03|+0.33|0.66|0.7699|
+|x|          3|        166|        109|  0.01908852303|        498|00:16:07|+0.37|0.58|0.6594|
+|x|          4|        166|        109|   0.1403805449|        664|00:52:22|+0.32|0.49|0.6713|
+|-|          5|         62|        109|   0.1361431992|        830|00:27:53|-0.02|0.18|0.9974|
+|=|          6|         62|         33|   0.1871163745|        892|00:24:05|-0.04|0.13|1.0080|
+|=|          7|         62|         33|   0.1603854638|        954|00:00:03|-0.03|0.11|0.8605|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          33    mean value:    0.1603854638
+Description of the best-so-far configuration:
+   .ID. algorithm localsearch alpha beta rho ants elitistants nnls dlb .PARENT.
+33   33       eas           1  1.18 2.09 0.3   65         538   22   0       NA
+
+# 2022-02-04 10:49:09 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   algorithm localsearch alpha beta  rho ants elitistants nnls dlb
+33       eas           1  1.18 2.09 0.30   65         538   22   0
+77       eas           1  1.82 9.13 0.77   40         324   21   1
+41       eas           1  3.61 5.99 0.34   95          96   25   0
+9        eas           1  3.56 4.98 0.78   94          54   22   0
+15       eas           1  7.56 8.56 0.55   97          58   34   0
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 62
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 9
+# 2022-02-04 10:49:09 UTC: Iteration 2 of 5
+# experimentsUsedSoFar: 954
+# remainingBudget: 4046
+# currentBudget: 1011
+# nbConfigurations: 130
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          8|        130|         33|    0.000000000|        130|00:09:44|   NA|  NA|    NA|
+|x|          1|        130|         33|    0.000000000|        255|00:10:06|+0.11|0.56|0.8103|
+|x|          7|        130|         33|    0.000000000|        380|00:00:47|+0.05|0.36|0.7929|
+|x|          2|        130|        264|  0.01491290861|        505|00:21:19|+0.05|0.29|0.8178|
+|-|          4|         85|        261|  0.09321089962|        630|00:44:38|-0.09|0.12|1.0471|
+|=|          6|         85|        261|   0.1373233380|        710|00:30:03|-0.06|0.12|1.0139|
+|=|          3|         85|        261|   0.1177057183|        790|00:03:44|-0.02|0.12|0.9989|
+|=|          5|         85|        261|   0.1115708464|        870|00:13:36|+0.00|0.13|0.9697|
+|-|          9|         49|        261|   0.1849037293|        955|00:24:40|-0.05|0.07|0.8812|
+|=|         10|         49|         33|   0.1422782772|       1004|00:08:13|-0.03|0.07|0.8716|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          33    mean value:    0.1422782772
+Description of the best-so-far configuration:
+   .ID. algorithm localsearch alpha beta rho ants elitistants nnls dlb .PARENT.
+33   33       eas           1  1.18 2.09 0.3   65         538   22   0       NA
+
+# 2022-02-04 13:36:04 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    algorithm localsearch alpha beta  rho ants elitistants nnls dlb
+33        eas           1  1.18 2.09 0.30   65         538   22   0
+261       eas           1  2.25 6.28 0.76   97         279   20   0
+200       eas           3  2.17 7.56 0.67   92         214   36   0
+277       eas           1  3.06 3.11 0.11   76         296   20   0
+265       eas           2  1.91 2.11 0.13   63         562   13   0
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 49
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 17
+# 2022-02-04 13:36:04 UTC: Iteration 3 of 5
+# experimentsUsedSoFar: 1958
+# remainingBudget: 3042
+# currentBudget: 1014
+# nbConfigurations: 96
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         11|         96|         33|    0.000000000|         96|00:00:06|   NA|  NA|    NA|
+|x|          7|         96|         33|    0.000000000|        187|00:00:25|+0.00|0.50|0.4948|
+|x|          9|         96|         33|  0.08886848641|        278|00:28:31|+0.02|0.35|0.6527|
+|x|          4|         96|         33|   0.1304616149|        369|00:48:46|+0.08|0.31|0.7005|
+|-|          3|         50|         33|   0.1043692919|        460|00:04:25|-0.03|0.17|0.6195|
+|=|          8|         50|         33|  0.08697440994|        505|00:03:56|-0.02|0.15|0.6731|
+|=|          1|         50|         33|  0.07454949424|        550|00:03:02|-0.01|0.13|0.6994|
+|=|          2|         50|        318|  0.09328038294|        595|00:07:39|+0.02|0.15|0.7160|
+|-|          5|         23|        318|  0.08291589595|        640|00:07:38|-0.05|0.06|0.6727|
+|=|         10|         23|        318|  0.07797221293|        658|00:02:51|-0.02|0.09|0.6817|
+|=|          6|         23|        318|   0.1146154783|        676|00:09:17|-0.02|0.07|0.7149|
+|=|         12|         23|        318|   0.1114433668|        699|00:00:13|-0.01|0.07|0.7311|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         318    mean value:    0.1114433668
+Description of the best-so-far configuration:
+    .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT.
+318  318       eas           1  1.04 1.66 0.26   58         482   27   0       33
+
+# 2022-02-04 15:32:59 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    algorithm localsearch alpha beta  rho ants elitistants nnls  dlb
+318       eas           1  1.04 1.66 0.26   58         482   27    0
+338       eas           0  1.21 2.23 0.28   59         424   NA <NA>
+33        eas           1  1.18 2.09 0.30   65         538   22    0
+343       eas           3  1.37 4.59 0.44   70         412   27    0
+298       eas           2  1.04 1.47 0.34   67         485   24    1
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 23
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 14
+# 2022-02-04 15:32:59 UTC: Iteration 4 of 5
+# experimentsUsedSoFar: 2657
+# remainingBudget: 2343
+# currentBudget: 1171
+# nbConfigurations: 94
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         13|         94|        417| 0.001253672215|         94|00:35:12|   NA|  NA|    NA|
+|x|          6|         94|        417|  0.08898261538|        183|00:50:40|-0.12|0.44|0.7535|
+|x|          3|         94|        417|  0.05932174359|        272|00:02:54|-0.09|0.27|0.9652|
+|x|          4|         94|        417|   0.1475993338|        361|00:52:53|+0.00|0.25|0.8621|
+|=|         10|         94|        417|   0.1566788605|        450|00:14:55|+0.01|0.21|0.8907|
+|=|          1|         94|         33|   0.1181714876|        539|00:04:44|+0.03|0.19|0.9004|
+|=|         12|         94|         33|   0.1012898465|        628|00:02:43|+0.03|0.17|0.9131|
+|=|         11|         94|         33|  0.08862861570|        717|00:00:05|+0.03|0.15|0.8085|
+|-|          8|         53|         33|  0.07878099173|        806|00:05:02|-0.06|0.06|0.9066|
+|=|          9|         53|         33|  0.09756343848|        854|00:20:52|-0.04|0.07|0.8979|
+|=|          7|         53|         33|  0.08869403498|        902|00:00:12|-0.04|0.06|0.9106|
+|=|          2|         53|         33|   0.1097368112|        950|00:08:20|-0.01|0.07|0.9004|
+|=|          5|         53|        338|   0.1204963733|        998|00:08:18|-0.00|0.07|0.9036|
+|=|         14|         53|         33|   0.1286114880|       1051|00:18:55|+0.01|0.08|0.8990|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:          33    mean value:    0.1286114880
+Description of the best-so-far configuration:
+   .ID. algorithm localsearch alpha beta rho ants elitistants nnls dlb .PARENT.
+33   33       eas           1  1.18 2.09 0.3   65         538   22   0       NA
+
+# 2022-02-04 19:18:50 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    algorithm localsearch alpha beta  rho ants elitistants nnls  dlb
+33        eas           1  1.18 2.09 0.30   65         538   22    0
+392       eas           2  1.10 1.25 0.32   73         528   18    0
+418       eas           1  1.58 3.79 0.21   69         533   28    0
+453       eas           1  1.31 2.93 0.24   70         517   27    0
+338       eas           0  1.21 2.23 0.28   59         424   NA <NA>
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 53
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 6
+# 2022-02-04 19:18:50 UTC: Iteration 5 of 5
+# experimentsUsedSoFar: 3708
+# remainingBudget: 1292
+# currentBudget: 1292
+# nbConfigurations: 90
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+[1] "Se utilizo una descartada como padre"
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         15|         90|         33|    0.000000000|         90|00:00:07|   NA|  NA|    NA|
+|x|          7|         90|         33|    0.000000000|        175|00:00:15|+0.00|0.50|0.4944|
+|x|         10|         90|        515|    0.000000000|        260|00:14:06|+0.01|0.34|0.6507|
+|x|          3|         90|        515|    0.000000000|        345|00:00:54|+0.04|0.28|0.7168|
+|=|          4|         90|        543|  0.02579104347|        430|00:59:15|-0.00|0.20|0.7945|
+|=|         12|         90|         33|  0.04812001103|        515|00:01:32|-0.02|0.15|0.8333|
+|=|          9|         90|         33|  0.07933221791|        600|00:38:08|+0.01|0.15|0.8459|
+|=|          2|         90|        453|  0.08825673413|        685|00:14:48|+0.03|0.15|0.8370|
+|-|          5|         60|        453|  0.09049020977|        770|00:14:44|-0.05|0.07|0.7907|
+|=|         14|         60|        453|   0.1066699983|        825|00:22:57|-0.01|0.09|0.7921|
+|=|          8|         60|        453|  0.09697272573|        880|00:03:18|-0.01|0.09|0.8097|
+|=|          1|         60|        453|  0.08889166525|        935|00:02:42|+0.01|0.09|0.8132|
+|=|          6|         60|        418|   0.1269766705|        990|00:33:44|+0.00|0.08|0.8295|
+|=|         11|         60|        418|   0.1179069083|       1045|00:00:03|+0.00|0.07|0.7705|
+|=|         13|         60|        418|   0.1199922473|       1100|00:25:37|+0.00|0.07|0.7821|
+|=|         16|         60|        522|   0.1169358438|       1160|00:07:14|+0.01|0.07|0.7866|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         522    mean value:    0.1169358438
+Description of the best-so-far configuration:
+    .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT.
+522  522       eas           1  1.32 2.93 0.23   75         549   27   0      453
+
+# 2022-02-04 23:18:22 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    algorithm localsearch alpha beta  rho ants elitistants nnls  dlb
+522       eas           1  1.32 2.93 0.23   75         549   27    0
+418       eas           1  1.58 3.79 0.21   69         533   28    0
+453       eas           1  1.31 2.93 0.24   70         517   27    0
+521       eas           2  1.12 1.62 0.39   74         584   17    0
+338       eas           0  1.21 2.23 0.28   59         424   NA <NA>
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 60
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 11
+# 2022-02-04 23:18:22 UTC: Iteration 6 of 6
+# experimentsUsedSoFar: 4868
+# remainingBudget: 132
+# currentBudget: 132
+# nbConfigurations: 12
+[1] "Se utilizo una descartada como padre"
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         17|         12|        522|    0.000000000|         12|00:01:00|   NA|  NA|    NA|
+|x|          8|         12|        522|    0.000000000|         19|00:00:06|+0.00|0.50|0.4583|
+|x|          5|         12|        561| 0.008427845602|         26|00:01:10|-0.04|0.31|0.5603|
+|x|         12|         12|        338|  0.06013061300|         33|00:00:00|+0.03|0.27|0.6034|
+|=|          6|         12|        561|  0.06472312159|         40|00:04:16|+0.09|0.27|0.6453|
+|=|          4|         12|        563|   0.1283962039|         47|00:04:51|+0.03|0.19|0.6934|
+|=|          7|         12|        563|   0.1100538891|         54|00:00:00|+0.03|0.17|0.6044|
+|=|          9|         12|        559|   0.1515332670|         61|00:03:03|+0.05|0.17|0.6037|
+|=|         13|         12|        522|   0.1396010110|         68|00:02:53|+0.02|0.13|0.6430|
+|=|         14|         12|        522|   0.1620967531|         75|00:02:58|+0.04|0.14|0.6680|
+|=|         11|         12|        522|   0.1473606846|         82|00:00:00|+0.04|0.12|0.6132|
+|=|         16|         12|        522|   0.1350806276|         89|00:00:51|+0.05|0.13|0.6238|
+|=|          1|         12|        522|   0.1246898101|         96|00:00:20|+0.03|0.11|0.6673|
+|=|         10|         12|        522|   0.1167680735|        103|00:01:10|+0.06|0.12|0.6767|
+|=|         15|         12|        522|   0.1089835352|        110|00:00:00|+0.05|0.12|0.6345|
+|-|          2|          8|        522|   0.1169358438|        117|00:01:10|-0.02|0.05|0.6656|
+|=|          3|          8|        522|   0.1100572648|        120|00:00:00|-0.02|0.04|0.6259|
+|=|         18|          8|        522|   0.1039429723|        128|00:00:00|-0.01|0.04|0.5907|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         522    mean value:    0.1039429723
+Description of the best-so-far configuration:
+    .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT.
+522  522       eas           1  1.32 2.93 0.23   75         549   27   0      453
+
+# 2022-02-04 23:42:19 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    algorithm localsearch alpha beta  rho ants elitistants nnls dlb
+522       eas           1  1.32 2.93 0.23   75         549   27   0
+453       eas           1  1.31 2.93 0.24   70         517   27   0
+521       eas           2  1.12 1.62 0.39   74         584   17   0
+418       eas           1  1.58 3.79 0.21   69         533   28   0
+559       eas           1  1.74 4.11 0.19   71         506   28   0
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 8
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 6
+# 2022-02-04 23:42:19 UTC: Stopped because there is not enough budget left to race more than the minimum (5)
+# You may either increase the budget or set 'minNbSurvival' to a lower value
+# Iteration: 7
+# nbIterations: 7
+# experimentsUsedSoFar: 4996
+# timeUsed: 0
+# remainingBudget: 4
+# currentBudget: 4
+# number of elites: 5
+# nbConfigurations: 4
+# Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+    algorithm localsearch alpha beta  rho ants elitistants nnls dlb
+522       eas           1  1.32 2.93 0.23   75         549   27   0
+453       eas           1  1.31 2.93 0.24   70         517   27   0
+521       eas           2  1.12 1.62 0.39   74         584   17   0
+418       eas           1  1.58 3.79 0.21   69         533   28   0
+559       eas           1  1.74 4.11 0.19   71         506   28   0
+# Best configurations as commandlines (first number is the configuration ID; same order as above):
+522  --algorithm eas --localsearch 1 --alpha 1.32 --beta 2.93 --rho  0.23 --ants 75 --elitistants 549 --nnls 27 --dlb 0
+453  --algorithm eas --localsearch 1 --alpha 1.31 --beta 2.93 --rho  0.24 --ants 70 --elitistants 517 --nnls 27 --dlb 0
+521  --algorithm eas --localsearch 2 --alpha 1.12 --beta 1.62 --rho  0.39 --ants 74 --elitistants 584 --nnls 17 --dlb 0
+418  --algorithm eas --localsearch 1 --alpha 1.58 --beta 3.79 --rho  0.21 --ants 69 --elitistants 533 --nnls 28 --dlb 0
+559  --algorithm eas --localsearch 1 --alpha 1.74 --beta 4.11 --rho  0.19 --ants 71 --elitistants 506 --nnls 28 --dlb 0
+> 

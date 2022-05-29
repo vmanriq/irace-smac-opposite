@@ -1,0 +1,6 @@
+"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
+0.000000, 2147483648.000000, 0.000210, 1, 0.000210, algorithm=''eas'', alpha=''1.0'', ants='50', beta=''2.0'', localsearch='2', rho=''0.1'', dlb=''0'', elitistants='375', nnls='25'
+-1.000000, 0.000000, 0.114811, 1, 1.114811, algorithm=''eas'', alpha=''1.0'', ants='50', beta=''2.0'', localsearch='2', rho=''0.1'', dlb=''0'', elitistants='375', nnls='25'
+-7.000000, 0.223930, 139.495216, 2, 146.495216, algorithm=''eas'', alpha=''8.5'', ants='23', beta=''1.2'', localsearch='3', rho=''0.2'', dlb=''0'', elitistants='34', nnls='40'
+-116.000000, 0.258313, 2661.129374, 3, 2777.129374, algorithm=''eas'', alpha=''2.9'', ants='57', beta=''5.7'', localsearch='2', rho=''0.1'', dlb=''0'', elitistants='173', nnls='25'
+-556.000000, 0.202083, 9698.338677, 4, 10254.338677, algorithm=''eas'', alpha=''1.2'', ants='64', beta=''3.2'', localsearch='1', rho=''0.8'', dlb=''0'', elitistants='434', nnls='19'

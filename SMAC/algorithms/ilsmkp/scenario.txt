@@ -1,0 +1,8 @@
+algo = python ./target_algorithm/ILSWrapper.py
+paramfile = ./target_algorithm/ilsmkp.pcs
+execdir = ./../algorithms/ilsmkp
+deterministic = 0
+run_obj = quality
+instance_file = ./../../algorithms/instances/instance500.txt
+runcount_limit = 1000
+abort_on_first_run_crash = 0

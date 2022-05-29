@@ -1,0 +1,45 @@
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 1 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.2
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-01_14:58:20_893929
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 2 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.2
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-02_19:55:14_186177
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 3 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.2
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-03_18:23:53_599083
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 4 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.2
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-04_16:42:55_744992
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 5 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.2
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-05_18:07:36_595432
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 1 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.3
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-06_19:17:31_973261
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 1 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.4
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-06_19:17:32_028596
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 2 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.4
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-07_18:54:31_505826
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 2 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.3
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-07_19:03:52_163614
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 3 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.4
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-09_01:36:24_828336
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 3 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.3
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-09_03:28:58_127415
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 4 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.4
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-10_03:48:25_425518
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 4 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.3
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-10_04:15:01_075441
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 5 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.4
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-11_03:59:58_012564
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
+INFO:smac.smac_cli.SMACCLI:SMAC call: ../../scripts/smac.py --scenario ./scenario.txt --verbose DEBUG --seed 5 --OL True --budget_prob_0 100 --prob_decay 0.9 --filter 0.3
+INFO:smac.utils.io.cmd_reader.CMDReader:Output to smac3-output_2022-02-11_08:01:59_956895
+WARNING:smac.utils.io.cmd_reader.CMDReader:Adding unsupported scenario options: {'abort_on_first_run_crash': '0'}
