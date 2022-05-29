@@ -1,0 +1,713 @@
+2021-11-25 16:39:18:INFO:smac.utils.io.cmd_reader.CMDReader:	Output to smac3-output_2021-11-25_16:39:18_487203
+2021-11-25 16:39:18:WARNING:smac.utils.io.cmd_reader.CMDReader:	Adding unsupported scenario options: {'save_results_instantly': False}
+2021-11-25 16:39:18:DEBUG:smac.scenario.scenario.Scenario:	SMAC and Scenario Options:
+2021-11-25 16:39:18:DEBUG:smac.scenario.scenario.Scenario:	Output directory does not exist! Will be created.
+2021-11-25 16:39:18:DEBUG:smac.scenario.scenario.Scenario:	Writing scenario-file to smac3-output_2021-11-25_16:39:18_487203/run_21/scenario.txt.
+2021-11-25 16:39:18:DEBUG:smac.scenario.scenario.Scenario:	Setting the pcs_fn-attr of written scenario from ./target_algorithm/ilsmkp.pcs to smac3-output_2021-11-25_16:39:18_487203/run_21/ilsmkp.json
+2021-11-25 16:39:18:INFO:smac.initial_design.default_configuration_design.DefaultConfiguration:	Running initial design for 1 configurations
+2021-11-25 16:39:18:INFO:smac.optimizer.smbo.SMBO:	Running initial design
+2021-11-25 16:39:18:INFO:smac.intensification.intensification.Intensifier:	First run, no incumbent provided; challenger is assumed to be the incumbent
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Using challengers provided
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	No run for incumbent found
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Add run of incumbent for instance=../instances/training/OR30x500-0.50_4.dat
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.0015, time spent on choosing next configurations: 0.0007 (0.50), time left for intensification: 0.0007 (0.50)
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	New intensification time bound: 0.000729
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.50_4.dat 0 99999999999999.0 0 949043248 -param1 3
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 2.29682, 949043248
+
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 2.296820, time: -1.000000, additional: {}
+2021-11-25 16:39:18:INFO:smac.intensification.intensification.Intensifier:	First run, no incumbent provided; challenger is assumed to be the incumbent
+2021-11-25 16:39:18:INFO:smac.intensification.intensification.Intensifier:	Updated estimated cost of incumbent on 1 runs: 2.2968
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (2.2968) is at least as good as the challenger (2.2968) on 1 runs.
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 999.000000 (target runs)
+2021-11-25 16:39:18:DEBUG:smac.stats.stats.Stats:	##########################################################
+2021-11-25 16:39:18:DEBUG:smac.stats.stats.Stats:	Statistics:
+2021-11-25 16:39:18:DEBUG:smac.stats.stats.Stats:	#Incumbent changed: 0
+2021-11-25 16:39:18:DEBUG:smac.stats.stats.Stats:	#Submitted target algorithm runs: 1 / 1000.0
+2021-11-25 16:39:18:DEBUG:smac.stats.stats.Stats:	#Finished target algorithm runs: 1 / 1000.0
+2021-11-25 16:39:18:DEBUG:smac.stats.stats.Stats:	#Configurations: 1
+2021-11-25 16:39:18:DEBUG:smac.stats.stats.Stats:	Used wallclock time: 0.09 / inf sec 
+2021-11-25 16:39:18:DEBUG:smac.stats.stats.Stats:	Used target algorithm runtime: -1.00 / inf sec
+2021-11-25 16:39:18:DEBUG:smac.stats.stats.Stats:	Debug Statistics:
+2021-11-25 16:39:18:DEBUG:smac.stats.stats.Stats:	Average Configurations per Intensify: 0.00
+2021-11-25 16:39:18:DEBUG:smac.stats.stats.Stats:	Exponential Moving Average of Configurations per Intensify: 0.00
+2021-11-25 16:39:18:DEBUG:smac.stats.stats.Stats:	##########################################################
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Add run of incumbent for instance=../instances/training/OR10x500-0.25_5.dat
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.0005, time spent on choosing next configurations: 0.0003 (0.50), time left for intensification: 0.0003 (0.50)
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	New intensification time bound: 0.000256
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR10x500-0.25_5.dat 0 99999999999999.0 0 92841080 -param1 3
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 3.42058, 92841080
+
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 3.420580, time: -1.000000, additional: {}
+2021-11-25 16:39:18:INFO:smac.intensification.intensification.Intensifier:	Updated estimated cost of incumbent on 2 runs: 2.8587
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (2.8587) is at least as good as the challenger (2.8587) on 2 runs.
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 998.000000 (target runs)
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Generating new challenger from optimizer
+2021-11-25 16:39:18:DEBUG:smac.optimizer.epm_configuration_chooser.EPMChooser:	Search for next configuration
+2021-11-25 16:39:18:DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:	Transform runhistory into X,y format
+2021-11-25 16:39:18:DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:	Converted 2 observations
+2021-11-25 16:39:18:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local searches took [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] steps and looked at [80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80] configurations. Computing the acquisition function in vectorized for took 0.000349 seconds on average.
+2021-11-25 16:39:18:DEBUG:smac.optimizer.ei_optimization.LocalAndSortedRandomSearch:	First 5 acq func (origin) values of selected configurations: [[0.15673237806447288, 'Random Search (sorted)'], [0.15673237806447288, 'Random Search (sorted)'], [0.15673237806447288, 'Random Search (sorted)'], [0.15673237806447288, 'Random Search (sorted)'], [0.15673237806447288, 'Random Search (sorted)']]
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 236
+
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1580, time spent on choosing next configurations: 0.0790 (0.50), time left for intensification: 0.0790 (0.50)
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.000256 to 0.078997
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.50_4.dat 0 99999999999999.0 0 949043248 -param1 236
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 1.61351, 949043248
+
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 1.613510, time: -1.000000, additional: {}
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 1 runs: 1.6135, adding 1 runs to the queue
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 997.000000 (target runs)
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 236
+
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1589, time spent on choosing next configurations: 0.0794 (0.50), time left for intensification: 0.0794 (0.50)
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.078997 to 0.079435
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR10x500-0.25_5.dat 0 99999999999999.0 0 92841080 -param1 236
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 2.48348, 92841080
+
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 2.483480, time: -1.000000, additional: {}
+2021-11-25 16:39:18:INFO:smac.intensification.intensification.Intensifier:	Challenger (2.0485) is better than incumbent (2.8587) on 2 runs.
+2021-11-25 16:39:18:INFO:smac.intensification.intensification.Intensifier:	Changes in incumbent:
+2021-11-25 16:39:18:INFO:smac.intensification.intensification.Intensifier:	  param1 : 3 -> 236
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 2 runs: 2.0485, becomes new incumbent
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 996.000000 (target runs)
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Race against basis configuration after incumbent change.
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 3
+
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: None
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	No further runs for challenger possible
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (2.0485) is better than challenger (2.8587) on 2 runs.
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 2 runs: 2.8587, but worse than incumbent
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1605, time spent on choosing next configurations: 0.0802 (0.50), time left for intensification: 0.0802 (0.50)
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.079435 to 0.080240
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 996.000000 (target runs)
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Add run of incumbent for instance=../instances/training/OR30x500-0.50_3.dat
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1608, time spent on choosing next configurations: 0.0804 (0.50), time left for intensification: 0.0804 (0.50)
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.080240 to 0.080405
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.50_3.dat 0 99999999999999.0 0 928968641 -param1 236
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 2.07984, 928968641
+
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 2.079840, time: -1.000000, additional: {}
+2021-11-25 16:39:18:INFO:smac.intensification.intensification.Intensifier:	Updated estimated cost of incumbent on 3 runs: 2.0589
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (2.0589) is at least as good as the challenger (2.0589) on 3 runs.
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 995.000000 (target runs)
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 278
+
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:18:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1616, time spent on choosing next configurations: 0.0808 (0.50), time left for intensification: 0.0808 (0.50)
+2021-11-25 16:39:18:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.080405 to 0.080809
+2021-11-25 16:39:18:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.50_3.dat 0 99999999999999.0 0 928968641 -param1 278
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 1.53534, 928968641
+
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 1.535340, time: -1.000000, additional: {}
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 1 runs: 1.5353, adding 1 runs to the queue
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 994.000000 (target runs)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 278
+
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1622, time spent on choosing next configurations: 0.0811 (0.50), time left for intensification: 0.0811 (0.50)
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.080809 to 0.081087
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.50_4.dat 0 99999999999999.0 0 949043248 -param1 278
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 2.60016, 949043248
+
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 2.600160, time: -1.000000, additional: {}
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 2 runs: 2.0677, still 1 runs to go (continue racing)
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 993.000000 (target runs)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 278
+
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1626, time spent on choosing next configurations: 0.0813 (0.50), time left for intensification: 0.0813 (0.50)
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.081087 to 0.081301
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR10x500-0.25_5.dat 0 99999999999999.0 0 92841080 -param1 278
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 2.48348, 92841080
+
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 2.483480, time: -1.000000, additional: {}
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (2.0589) is better than challenger (2.2063) on 3 runs.
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 3 runs: 2.2063, but worse than incumbent
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Wallclock time limit for intensification reached (used: 0.640871 sec, available: 0.081301 sec)
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 992.000000 (target runs)
+2021-11-25 16:39:19:DEBUG:smac.stats.stats.Stats:	##########################################################
+2021-11-25 16:39:19:DEBUG:smac.stats.stats.Stats:	Statistics:
+2021-11-25 16:39:19:DEBUG:smac.stats.stats.Stats:	#Incumbent changed: 1
+2021-11-25 16:39:19:DEBUG:smac.stats.stats.Stats:	#Submitted target algorithm runs: 8 / 1000.0
+2021-11-25 16:39:19:DEBUG:smac.stats.stats.Stats:	#Finished target algorithm runs: 8 / 1000.0
+2021-11-25 16:39:19:DEBUG:smac.stats.stats.Stats:	#Configurations: 3
+2021-11-25 16:39:19:DEBUG:smac.stats.stats.Stats:	Used wallclock time: 0.74 / inf sec 
+2021-11-25 16:39:19:DEBUG:smac.stats.stats.Stats:	Used target algorithm runtime: -8.00 / inf sec
+2021-11-25 16:39:19:DEBUG:smac.stats.stats.Stats:	Debug Statistics:
+2021-11-25 16:39:19:DEBUG:smac.stats.stats.Stats:	Average Configurations per Intensify: 0.00
+2021-11-25 16:39:19:DEBUG:smac.stats.stats.Stats:	Exponential Moving Average of Configurations per Intensify: 0.00
+2021-11-25 16:39:19:DEBUG:smac.stats.stats.Stats:	##########################################################
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Add run of incumbent for instance=../instances/training/OR5x500-0.25_9.dat
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.0006, time spent on choosing next configurations: 0.0003 (0.50), time left for intensification: 0.0003 (0.50)
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	New intensification time bound: 0.000287
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.25_9.dat 0 99999999999999.0 0 1397259499 -param1 236
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 4.11725, 1397259499
+
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 4.117250, time: -1.000000, additional: {}
+2021-11-25 16:39:19:INFO:smac.intensification.intensification.Intensifier:	Updated estimated cost of incumbent on 4 runs: 2.5735
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (2.5735) is at least as good as the challenger (2.5735) on 4 runs.
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 991.000000 (target runs)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Generating new challenger from optimizer
+2021-11-25 16:39:19:DEBUG:smac.optimizer.epm_configuration_chooser.EPMChooser:	Search for next configuration
+2021-11-25 16:39:19:DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:	Transform runhistory into X,y format
+2021-11-25 16:39:19:DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:	Converted 9 observations
+2021-11-25 16:39:19:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 1: Switch to one of the neighbors (after 11 configurations).
+2021-11-25 16:39:19:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 1: Switch to one of the neighbors (after 12 configurations).
+2021-11-25 16:39:19:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local searches took [1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1] steps and looked at [80, 84, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80, 80] configurations. Computing the acquisition function in vectorized for took 0.000347 seconds on average.
+2021-11-25 16:39:19:DEBUG:smac.optimizer.ei_optimization.LocalAndSortedRandomSearch:	First 5 acq func (origin) values of selected configurations: [[0.0974494438291239, 'Random Search (sorted)'], [0.0974494438291239, 'Random Search (sorted)'], [0.0974494438291239, 'Random Search (sorted)'], [0.0974494438291239, 'Random Search (sorted)'], [0.0974494438291239, 'Random Search (sorted)']]
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 372
+
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1689, time spent on choosing next configurations: 0.0844 (0.50), time left for intensification: 0.0844 (0.50)
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.000287 to 0.084438
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR10x500-0.25_5.dat 0 99999999999999.0 0 92841080 -param1 372
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 2.48348, 92841080
+
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 2.483480, time: -1.000000, additional: {}
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 1 runs: 2.4835, adding 1 runs to the queue
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 990.000000 (target runs)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 372
+
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1695, time spent on choosing next configurations: 0.0847 (0.50), time left for intensification: 0.0847 (0.50)
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.084438 to 0.084735
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.25_9.dat 0 99999999999999.0 0 1397259499 -param1 372
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 4.11725, 1397259499
+
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 4.117250, time: -1.000000, additional: {}
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 2 runs: 3.3004, still 1 runs to go (continue racing)
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 989.000000 (target runs)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 372
+
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1699, time spent on choosing next configurations: 0.0849 (0.50), time left for intensification: 0.0849 (0.50)
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.084735 to 0.084938
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.50_3.dat 0 99999999999999.0 0 928968641 -param1 372
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 1.53534, 928968641
+
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 1.535340, time: -1.000000, additional: {}
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 3 runs: 2.7120, adding 2 runs to the queue
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 988.000000 (target runs)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 372
+
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1705, time spent on choosing next configurations: 0.0853 (0.50), time left for intensification: 0.0853 (0.50)
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.084938 to 0.085269
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.50_4.dat 0 99999999999999.0 0 949043248 -param1 372
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 2.60016, 949043248
+
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 2.600160, time: -1.000000, additional: {}
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (2.5735) is better than challenger (2.6841) on 4 runs.
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 4 runs: 2.6841, but worse than incumbent
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 987.000000 (target runs)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Add run of incumbent for instance=../instances/training/OR5x500-0.25_2.dat
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1710, time spent on choosing next configurations: 0.0855 (0.50), time left for intensification: 0.0855 (0.50)
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.085269 to 0.085500
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.25_2.dat 0 99999999999999.0 0 901169687 -param1 236
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 4.75148, 901169687
+
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 4.751480, time: -1.000000, additional: {}
+2021-11-25 16:39:19:INFO:smac.intensification.intensification.Intensifier:	Updated estimated cost of incumbent on 5 runs: 3.0091
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (3.0091) is at least as good as the challenger (3.0091) on 5 runs.
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 986.000000 (target runs)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 368
+
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1719, time spent on choosing next configurations: 0.0859 (0.50), time left for intensification: 0.0859 (0.50)
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.085500 to 0.085942
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.50_3.dat 0 99999999999999.0 0 928968641 -param1 368
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 1.53534, 928968641
+
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 1.535340, time: -1.000000, additional: {}
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 1 runs: 1.5353, adding 1 runs to the queue
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 985.000000 (target runs)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 368
+
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:19:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1724, time spent on choosing next configurations: 0.0862 (0.50), time left for intensification: 0.0862 (0.50)
+2021-11-25 16:39:19:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.085942 to 0.086199
+2021-11-25 16:39:19:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.25_2.dat 0 99999999999999.0 0 901169687 -param1 368
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 4.75148, 901169687
+
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 4.751480, time: -1.000000, additional: {}
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 2 runs: 3.1434, still 1 runs to go (continue racing)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 984.000000 (target runs)
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 368
+
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1729, time spent on choosing next configurations: 0.0864 (0.50), time left for intensification: 0.0864 (0.50)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.086199 to 0.086443
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.50_4.dat 0 99999999999999.0 0 949043248 -param1 368
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 2.60016, 949043248
+
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 2.600160, time: -1.000000, additional: {}
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (2.8149) is better than challenger (2.9623) on 3 runs.
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 3 runs: 2.9623, but worse than incumbent
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Wallclock time limit for intensification reached (used: 0.764044 sec, available: 0.086443 sec)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 983.000000 (target runs)
+2021-11-25 16:39:20:DEBUG:smac.stats.stats.Stats:	##########################################################
+2021-11-25 16:39:20:DEBUG:smac.stats.stats.Stats:	Statistics:
+2021-11-25 16:39:20:DEBUG:smac.stats.stats.Stats:	#Incumbent changed: 1
+2021-11-25 16:39:20:DEBUG:smac.stats.stats.Stats:	#Submitted target algorithm runs: 17 / 1000.0
+2021-11-25 16:39:20:DEBUG:smac.stats.stats.Stats:	#Finished target algorithm runs: 17 / 1000.0
+2021-11-25 16:39:20:DEBUG:smac.stats.stats.Stats:	#Configurations: 5
+2021-11-25 16:39:20:DEBUG:smac.stats.stats.Stats:	Used wallclock time: 1.60 / inf sec 
+2021-11-25 16:39:20:DEBUG:smac.stats.stats.Stats:	Used target algorithm runtime: -17.00 / inf sec
+2021-11-25 16:39:20:DEBUG:smac.stats.stats.Stats:	Debug Statistics:
+2021-11-25 16:39:20:DEBUG:smac.stats.stats.Stats:	Average Configurations per Intensify: 0.00
+2021-11-25 16:39:20:DEBUG:smac.stats.stats.Stats:	Exponential Moving Average of Configurations per Intensify: 0.00
+2021-11-25 16:39:20:DEBUG:smac.stats.stats.Stats:	##########################################################
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Add run of incumbent for instance=../instances/training/OR5x500-0.25_8.dat
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.0007, time spent on choosing next configurations: 0.0003 (0.50), time left for intensification: 0.0003 (0.50)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	New intensification time bound: 0.000329
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.25_8.dat 0 99999999999999.0 0 327765244 -param1 236
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 6.03311, 327765244
+
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 6.033110, time: -1.000000, additional: {}
+2021-11-25 16:39:20:INFO:smac.intensification.intensification.Intensifier:	Updated estimated cost of incumbent on 6 runs: 3.5131
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (3.5131) is at least as good as the challenger (3.5131) on 6 runs.
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 982.000000 (target runs)
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Generating new challenger from optimizer
+2021-11-25 16:39:20:DEBUG:smac.optimizer.epm_configuration_chooser.EPMChooser:	Search for next configuration
+2021-11-25 16:39:20:DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:	Transform runhistory into X,y format
+2021-11-25 16:39:20:DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:	Converted 18 observations
+Se eligio una Random
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 308
+
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.0047, time spent on choosing next configurations: 0.0024 (0.50), time left for intensification: 0.0024 (0.50)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.000329 to 0.002362
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.25_8.dat 0 99999999999999.0 0 327765244 -param1 308
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 6.03311, 327765244
+
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 6.033110, time: -1.000000, additional: {}
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 1 runs: 6.0331, adding 1 runs to the queue
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 981.000000 (target runs)
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 308
+
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.0054, time spent on choosing next configurations: 0.0027 (0.50), time left for intensification: 0.0027 (0.50)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.002362 to 0.002691
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.25_2.dat 0 99999999999999.0 0 901169687 -param1 308
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 4.75148, 901169687
+
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 4.751480, time: -1.000000, additional: {}
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 2 runs: 5.3923, still 1 runs to go (continue racing)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 980.000000 (target runs)
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 308
+
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.0058, time spent on choosing next configurations: 0.0029 (0.50), time left for intensification: 0.0029 (0.50)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.002691 to 0.002896
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.50_3.dat 0 99999999999999.0 0 928968641 -param1 308
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 1.53534, 928968641
+
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 1.535340, time: -1.000000, additional: {}
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 3 runs: 4.1066, adding 2 runs to the queue
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 979.000000 (target runs)
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 308
+
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.0065, time spent on choosing next configurations: 0.0032 (0.50), time left for intensification: 0.0032 (0.50)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.002896 to 0.003247
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR10x500-0.25_5.dat 0 99999999999999.0 0 92841080 -param1 308
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 2.48348, 92841080
+
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 2.483480, time: -1.000000, additional: {}
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 4 runs: 3.7009, still 2 runs to go (continue racing)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 978.000000 (target runs)
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 308
+
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.0071, time spent on choosing next configurations: 0.0036 (0.50), time left for intensification: 0.0036 (0.50)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.003247 to 0.003573
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.50_4.dat 0 99999999999999.0 0 949043248 -param1 308
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 2.60016, 949043248
+
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 2.600160, time: -1.000000, additional: {}
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 5 runs: 3.4807, still 1 runs to go (continue racing)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 977.000000 (target runs)
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 308
+
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.0076, time spent on choosing next configurations: 0.0038 (0.50), time left for intensification: 0.0038 (0.50)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.003573 to 0.003794
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.25_9.dat 0 99999999999999.0 0 1397259499 -param1 308
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 4.11725, 1397259499
+
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 4.117250, time: -1.000000, additional: {}
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (3.5131) is better than challenger (3.5868) on 6 runs.
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 6 runs: 3.5868, but worse than incumbent
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 976.000000 (target runs)
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Add run of incumbent for instance=../instances/training/OR30x500-0.75_7.dat
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.0081, time spent on choosing next configurations: 0.0040 (0.50), time left for intensification: 0.0040 (0.50)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.003794 to 0.004036
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.75_7.dat 0 99999999999999.0 0 1188061818 -param1 236
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 0.825081, 1188061818
+
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 0.825081, time: -1.000000, additional: {}
+2021-11-25 16:39:20:INFO:smac.intensification.intensification.Intensifier:	Updated estimated cost of incumbent on 7 runs: 3.1291
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (3.1291) is at least as good as the challenger (3.1291) on 7 runs.
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 975.000000 (target runs)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 1: Switch to one of the neighbors (after 2 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 3: Switch to one of the neighbors (after 1 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 0: Switch to one of the neighbors (after 4 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 5: Switch to one of the neighbors (after 4 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 1: Switch to one of the neighbors (after 7 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 2: Switch to one of the neighbors (after 8 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 5: Switch to one of the neighbors (after 5 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 0: Switch to one of the neighbors (after 10 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 2: Switch to one of the neighbors (after 9 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 1: Switch to one of the neighbors (after 10 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 3: Switch to one of the neighbors (after 10 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 2: Switch to one of the neighbors (after 13 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 3: Switch to one of the neighbors (after 11 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 3: Switch to one of the neighbors (after 12 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 2: Switch to one of the neighbors (after 23 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 2: Switch to one of the neighbors (after 27 configurations).
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local searches took [3, 4, 6, 5, 1, 3, 1, 1, 1, 1] steps and looked at [90, 90, 99, 84, 80, 85, 80, 80, 80, 80] configurations. Computing the acquisition function in vectorized for took 0.000424 seconds on average.
+2021-11-25 16:39:20:DEBUG:smac.optimizer.ei_optimization.LocalAndSortedRandomSearch:	First 5 acq func (origin) values of selected configurations: [[0.1370563157610126, 'Random Search (sorted)'], [0.1370563157610126, 'Random Search (sorted)'], [0.1370563157610126, 'Random Search (sorted)'], [0.1370563157610126, 'Random Search (sorted)'], [0.1370563157610126, 'Random Search (sorted)']]
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 275
+
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.2030, time spent on choosing next configurations: 0.1015 (0.50), time left for intensification: 0.1015 (0.50)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.004036 to 0.101504
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR10x500-0.25_5.dat 0 99999999999999.0 0 92841080 -param1 275
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 2.48348, 92841080
+
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 2.483480, time: -1.000000, additional: {}
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 1 runs: 2.4835, adding 1 runs to the queue
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 974.000000 (target runs)
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 275
+
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:20:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.2039, time spent on choosing next configurations: 0.1020 (0.50), time left for intensification: 0.1020 (0.50)
+2021-11-25 16:39:20:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.101504 to 0.101971
+2021-11-25 16:39:20:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.50_4.dat 0 99999999999999.0 0 949043248 -param1 275
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 2.60016, 949043248
+
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 2.600160, time: -1.000000, additional: {}
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 2 runs: 2.5418, still 1 runs to go (continue racing)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 973.000000 (target runs)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 275
+
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.2047, time spent on choosing next configurations: 0.1023 (0.50), time left for intensification: 0.1023 (0.50)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.101971 to 0.102340
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.25_9.dat 0 99999999999999.0 0 1397259499 -param1 275
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 4.11725, 1397259499
+
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 4.117250, time: -1.000000, additional: {}
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (2.7381) is better than challenger (3.0670) on 3 runs.
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 3 runs: 3.0670, but worse than incumbent
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Wallclock time limit for intensification reached (used: 0.910505 sec, available: 0.102340 sec)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 972.000000 (target runs)
+2021-11-25 16:39:21:DEBUG:smac.stats.stats.Stats:	##########################################################
+2021-11-25 16:39:21:DEBUG:smac.stats.stats.Stats:	Statistics:
+2021-11-25 16:39:21:DEBUG:smac.stats.stats.Stats:	#Incumbent changed: 1
+2021-11-25 16:39:21:DEBUG:smac.stats.stats.Stats:	#Submitted target algorithm runs: 28 / 1000.0
+2021-11-25 16:39:21:DEBUG:smac.stats.stats.Stats:	#Finished target algorithm runs: 28 / 1000.0
+2021-11-25 16:39:21:DEBUG:smac.stats.stats.Stats:	#Configurations: 7
+2021-11-25 16:39:21:DEBUG:smac.stats.stats.Stats:	Used wallclock time: 2.63 / inf sec 
+2021-11-25 16:39:21:DEBUG:smac.stats.stats.Stats:	Used target algorithm runtime: -28.00 / inf sec
+2021-11-25 16:39:21:DEBUG:smac.stats.stats.Stats:	Debug Statistics:
+2021-11-25 16:39:21:DEBUG:smac.stats.stats.Stats:	Average Configurations per Intensify: 0.00
+2021-11-25 16:39:21:DEBUG:smac.stats.stats.Stats:	Exponential Moving Average of Configurations per Intensify: 0.00
+2021-11-25 16:39:21:DEBUG:smac.stats.stats.Stats:	##########################################################
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Add run of incumbent for instance=../instances/training/OR5x500-0.50_8.dat
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.0009, time spent on choosing next configurations: 0.0005 (0.50), time left for intensification: 0.0005 (0.50)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	New intensification time bound: 0.000452
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.50_8.dat 0 99999999999999.0 0 675178351 -param1 236
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 1.7744, 675178351
+
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 1.774400, time: -1.000000, additional: {}
+2021-11-25 16:39:21:INFO:smac.intensification.intensification.Intensifier:	Updated estimated cost of incumbent on 8 runs: 2.9598
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (2.9598) is at least as good as the challenger (2.9598) on 8 runs.
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 971.000000 (target runs)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Generating new challenger from optimizer
+2021-11-25 16:39:21:DEBUG:smac.optimizer.epm_configuration_chooser.EPMChooser:	Search for next configuration
+2021-11-25 16:39:21:DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:	Transform runhistory into X,y format
+2021-11-25 16:39:21:DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:	Converted 29 observations
+2021-11-25 16:39:21:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 3: Switch to one of the neighbors (after 1 configurations).
+2021-11-25 16:39:21:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 6: Switch to one of the neighbors (after 1 configurations).
+2021-11-25 16:39:21:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 1: Switch to one of the neighbors (after 3 configurations).
+2021-11-25 16:39:21:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 4: Switch to one of the neighbors (after 4 configurations).
+2021-11-25 16:39:21:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 4: Switch to one of the neighbors (after 6 configurations).
+2021-11-25 16:39:21:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 6: Switch to one of the neighbors (after 13 configurations).
+2021-11-25 16:39:21:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local search 1: Switch to one of the neighbors (after 36 configurations).
+2021-11-25 16:39:21:DEBUG:smac.optimizer.ei_optimization.LocalSearch:	Local searches took [1, 3, 1, 2, 3, 1, 3, 1] steps and looked at [80, 84, 80, 81, 86, 80, 85, 80] configurations. Computing the acquisition function in vectorized for took 0.000316 seconds on average.
+2021-11-25 16:39:21:DEBUG:smac.optimizer.ei_optimization.LocalAndSortedRandomSearch:	First 5 acq func (origin) values of selected configurations: [[0.13974943032011922, 'Random Search (sorted)'], [0.13974943032011922, 'Random Search (sorted)'], [0.13974943032011922, 'Random Search (sorted)'], [0.13974943032011922, 'Random Search (sorted)'], [0.13974943032011922, 'Random Search (sorted)']]
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 277
+
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1978, time spent on choosing next configurations: 0.0989 (0.50), time left for intensification: 0.0989 (0.50)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.000452 to 0.098912
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.25_2.dat 0 99999999999999.0 0 901169687 -param1 277
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 4.75148, 901169687
+
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 4.751480, time: -1.000000, additional: {}
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 1 runs: 4.7515, adding 1 runs to the queue
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 970.000000 (target runs)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 277
+
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1985, time spent on choosing next configurations: 0.0993 (0.50), time left for intensification: 0.0993 (0.50)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.098912 to 0.099271
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.75_7.dat 0 99999999999999.0 0 1188061818 -param1 277
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 0.551483, 1188061818
+
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 0.551483, time: -1.000000, additional: {}
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 2 runs: 2.6515, still 1 runs to go (continue racing)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 969.000000 (target runs)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 277
+
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1990, time spent on choosing next configurations: 0.0995 (0.50), time left for intensification: 0.0995 (0.50)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.099271 to 0.099504
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.50_8.dat 0 99999999999999.0 0 675178351 -param1 277
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 1.7744, 675178351
+
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 1.774400, time: -1.000000, additional: {}
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 3 runs: 2.3591, adding 2 runs to the queue
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 968.000000 (target runs)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 277
+
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.1999, time spent on choosing next configurations: 0.0999 (0.50), time left for intensification: 0.0999 (0.50)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.099504 to 0.099941
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.50_4.dat 0 99999999999999.0 0 949043248 -param1 277
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 2.60016, 949043248
+
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 2.600160, time: -1.000000, additional: {}
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 4 runs: 2.4194, still 3 runs to go (continue racing)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 967.000000 (target runs)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 277
+
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.2006, time spent on choosing next configurations: 0.1003 (0.50), time left for intensification: 0.1003 (0.50)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.099941 to 0.100298
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR30x500-0.50_3.dat 0 99999999999999.0 0 928968641 -param1 277
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 1.53534, 928968641
+
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 1.535340, time: -1.000000, additional: {}
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 5 runs: 2.2426, still 2 runs to go (continue racing)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 966.000000 (target runs)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 277
+
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.2010, time spent on choosing next configurations: 0.1005 (0.50), time left for intensification: 0.1005 (0.50)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.100298 to 0.100500
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR10x500-0.25_5.dat 0 99999999999999.0 0 92841080 -param1 277
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 2.48348, 92841080
+
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 2.483480, time: -1.000000, additional: {}
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 6 runs: 2.2827, still 1 runs to go (continue racing)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 965.000000 (target runs)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 277
+
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.2014, time spent on choosing next configurations: 0.1007 (0.50), time left for intensification: 0.1007 (0.50)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.100500 to 0.100696
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.25_9.dat 0 99999999999999.0 0 1397259499 -param1 277
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 4.11725, 1397259499
+
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 4.117250, time: -1.000000, additional: {}
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (2.5207) is better than challenger (2.5448) on 7 runs.
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 7 runs: 2.5448, but worse than incumbent
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 964.000000 (target runs)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Add run of incumbent for instance=../instances/training/OR5x500-0.75_7.dat
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.2019, time spent on choosing next configurations: 0.1009 (0.50), time left for intensification: 0.1009 (0.50)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.100696 to 0.100948
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.75_7.dat 0 99999999999999.0 0 1873306803 -param1 236
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 0.603971, 1873306803
+
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 0.603971, time: -1.000000, additional: {}
+2021-11-25 16:39:21:INFO:smac.intensification.intensification.Intensifier:	Updated estimated cost of incumbent on 9 runs: 2.6980
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (2.6980) is at least as good as the challenger (2.6980) on 9 runs.
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 963.000000 (target runs)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Intensify on Configuration:
+  param1, Value: 278
+
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Configuration origin: Random Search (sorted)
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Cutoff for challenger: None
+2021-11-25 16:39:21:DEBUG:smac.intensification.intensification.Intensifier:	Add run of challenger
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.2025, time spent on choosing next configurations: 0.1013 (0.50), time left for intensification: 0.1013 (0.50)
+2021-11-25 16:39:21:DEBUG:smac.optimizer.smbo.SMBO:	Updated intensification time bound from 0.100948 to 0.101261
+2021-11-25 16:39:21:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.75_7.dat 0 99999999999999.0 0 1873306803 -param1 278
+2021-11-25 16:39:22:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 0.729411, 1873306803
+
+2021-11-25 16:39:22:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:22:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 0.729411, time: -1.000000, additional: {}
+2021-11-25 16:39:22:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (1.6952) is better than challenger (1.8371) on 4 runs.
+2021-11-25 16:39:22:DEBUG:smac.intensification.intensification.Intensifier:	Estimated cost of challenger on 4 runs: 1.8371, but worse than incumbent
+2021-11-25 16:39:22:DEBUG:smac.intensification.intensification.Intensifier:	Wallclock time limit for intensification reached (used: 0.793847 sec, available: 0.101261 sec)
+2021-11-25 16:39:22:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 962.000000 (target runs)
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	##########################################################
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	Statistics:
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	#Incumbent changed: 1
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	#Submitted target algorithm runs: 38 / 1000.0
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	#Finished target algorithm runs: 38 / 1000.0
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	#Configurations: 8
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	Used wallclock time: 3.53 / inf sec 
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	Used target algorithm runtime: -38.00 / inf sec
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	Debug Statistics:
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	Average Configurations per Intensify: 0.00
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	Exponential Moving Average of Configurations per Intensify: 0.00
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	##########################################################
+2021-11-25 16:39:22:DEBUG:smac.intensification.intensification.Intensifier:	Add run of incumbent for instance=../instances/training/OR5x500-0.25_6.dat
+2021-11-25 16:39:22:DEBUG:smac.optimizer.smbo.SMBO:	Total time: 0.0006, time spent on choosing next configurations: 0.0003 (0.50), time left for intensification: 0.0003 (0.50)
+2021-11-25 16:39:22:DEBUG:smac.optimizer.smbo.SMBO:	New intensification time bound: 0.000305
+2021-11-25 16:39:22:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Calling: python ./target_algorithm/ILSWrapper.py ../instances/training/OR5x500-0.25_6.dat 0 99999999999999.0 0 1267694572 -param1 236
+2021-11-25 16:39:22:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stdout: Result for SMAC: SUCCESS, -1, -1, 6.89536, 1267694572
+
+2021-11-25 16:39:22:DEBUG:smac.tae.execute_ta_run_old.ExecuteTARunOld:	Stderr: 
+2021-11-25 16:39:22:DEBUG:smac.optimizer.smbo.SMBO:	Return: Status: <StatusType.SUCCESS: 1>, cost: 6.895360, time: -1.000000, additional: {}
+2021-11-25 16:39:22:INFO:smac.intensification.intensification.Intensifier:	Updated estimated cost of incumbent on 10 runs: 3.1177
+2021-11-25 16:39:22:DEBUG:smac.intensification.intensification.Intensifier:	Incumbent (3.1177) is at least as good as the challenger (3.1177) on 10 runs.
+2021-11-25 16:39:22:DEBUG:smac.optimizer.smbo.SMBO:	Remaining budget: inf (wallclock), inf (ta costs), 961.000000 (target runs)
+2021-11-25 16:39:22:DEBUG:smac.intensification.intensification.Intensifier:	Generating new challenger from optimizer
+2021-11-25 16:39:22:DEBUG:smac.optimizer.epm_configuration_chooser.EPMChooser:	Search for next configuration
+2021-11-25 16:39:22:DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:	Transform runhistory into X,y format
+2021-11-25 16:39:22:DEBUG:smac.runhistory.runhistory2epm.RunHistory2EPM4Cost:	Converted 39 observations
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	Saving stats to smac3-output_2021-11-25_16:39:18_487203/run_21/stats.json
+2021-11-25 16:39:22:INFO:smac.stats.stats.Stats:	##########################################################
+2021-11-25 16:39:22:INFO:smac.stats.stats.Stats:	Statistics:
+2021-11-25 16:39:22:INFO:smac.stats.stats.Stats:	#Incumbent changed: 1
+2021-11-25 16:39:22:INFO:smac.stats.stats.Stats:	#Submitted target algorithm runs: 39 / 1000.0
+2021-11-25 16:39:22:INFO:smac.stats.stats.Stats:	#Finished target algorithm runs: 39 / 1000.0
+2021-11-25 16:39:22:INFO:smac.stats.stats.Stats:	#Configurations: 8
+2021-11-25 16:39:22:INFO:smac.stats.stats.Stats:	Used wallclock time: 3.63 / inf sec 
+2021-11-25 16:39:22:INFO:smac.stats.stats.Stats:	Used target algorithm runtime: -39.00 / inf sec
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	Debug Statistics:
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	Average Configurations per Intensify: 0.00
+2021-11-25 16:39:22:DEBUG:smac.stats.stats.Stats:	Exponential Moving Average of Configurations per Intensify: 0.00
+2021-11-25 16:39:22:INFO:smac.stats.stats.Stats:	##########################################################
+2021-11-25 16:39:22:INFO:smac.facade.smac_ac_facade.SMAC4AC:	Final Incumbent: Configuration:
+  param1, Value: 236
+
+2021-11-25 16:39:22:INFO:smac.facade.smac_ac_facade.SMAC4AC:	Estimated cost of incumbent: 3.117748

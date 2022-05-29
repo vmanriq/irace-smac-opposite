@@ -1,0 +1,590 @@
+
+R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # R < iraceRun.R --no-save --args 10 ./ak scenario.txt TRUE trainInstancesHARD.txt 0.3 0.2
+> # se necesita estar parado en la carpeta  tunners/irace/tunning
+> library('irace')
+> library('devtools')
+> load_all()
+  [90m─[39m[90m  [39m[90minstalling *source* package ‘irace’ ...[39m[36m[39m
+     files ‘R/generation.R’, ‘R/irace-options.R’, ‘R/irace.R’, ‘R/main.R’, ‘R/model.R’, ‘vignettes/irace-acotsp-stdout.txt’ have the wrong MD5 checksums
+     ** using staged installation
+     ** libs
+     installing via 'install.libs.R' to /tmp/RtmpGv3jYl/devtools_install_d5ac19f9c3ec/00LOCK-irace/00new/irace
+  [90m─[39m[90m  [39m[90mDONE (irace)[39m[36m[39m
+> 
+> args <- commandArgs()
+> 
+> cat("Los commands Args son", args, "\n")
+Los commands Args son /usr/lib/R/bin/exec/R --no-save --args 30 ./acotsp scenario.txt TRUE instances-list.txt 0.4 0.2 
+> setwd(args[5])
+> #
+> seed <- args[4]
+> 
+> scenario <- readScenario(filename = args[6])
+> scenario$seed <- seed
+> scenario$OL <- as.logical(args[7])
+> scenario$trainInstancesFile <- args[8]
+> scenario$generationPercentage <- as.double(args[9])
+> scenario$filterThresh <- as.double(args[10])
+> irace.main(scenario = scenario)
+## irace scenario:
+scenarioFile = "./scenario.txt"
+parameterFile = "/root/irace-smac-opposite/irace/tunning/acotsp/parameters.txt"
+execDir = "/root/irace-smac-opposite/irace/tunning/acotsp"
+logFile = "/root/irace-smac-opposite/irace/tunning/acotsp/irace.Rdata"
+recoveryFile = NULL
+instances = c("/root/irace-smac-opposite/irace/tunning/acotsp/instances/eil76.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/lin318.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/d1291.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr1002.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/vm1084.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr299.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/u2319.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/st70.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/kroA100.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/bier127.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr2392.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr144.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/d198.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/kroA200.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/berlin52.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pcb442.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/fl1400.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/att532.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr439.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/rat195.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/ch130.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pcb3038.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/kroE100.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/rd400.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr152.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/ts225.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/nrw1379.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/u2152.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/d493.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/gr96.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/linhp318.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/ulysses22.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/u724.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/u159.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr226.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/gil262.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/u1060.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/kroC100.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/u574.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/fl417.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/gr137.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/ch150.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp")
+initConfigurations = NULL
+trainInstancesDir = "/root/irace-smac-opposite/irace/tunning/acotsp/instances"
+trainInstancesFile = "/root/irace-smac-opposite/irace/tunning/acotsp/instances-list.txt"
+configurationsFile = ""
+forbiddenExps = NULL = expression()
+forbiddenFile = ""
+targetRunner = "/root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py"
+targetRunnerRetries = 0
+targetRunnerData = ""
+targetRunnerParallel = NULL
+targetEvaluator = NULL
+maxExperiments = 5000
+maxTime = 0
+budgetEstimation = 0.02
+digits = 2
+debugLevel = 3
+nbIterations = 0
+nbExperimentsPerIteration = 0
+sampleInstances = TRUE
+testType = "friedman"
+firstTest = 5
+eachTest = 1
+minNbSurvival = 0
+nbConfigurations = 0
+mu = 5
+confidence = 0.95
+deterministic = FALSE
+seed = 30
+parallel = 0
+loadBalancing = TRUE
+mpi = FALSE
+batchmode = "0"
+softRestart = TRUE
+softRestartThreshold = 0.01
+testInstancesDir = ""
+testInstancesFile = ""
+testInstances = NULL
+testNbElites = 1
+testIterationElites = FALSE
+elitist = TRUE
+elitistNewInstances = 1
+elitistLimit = 2
+repairConfiguration = NULL
+capping = FALSE
+cappingType = "median"
+boundType = "candidate"
+boundMax = NULL
+boundDigits = 0
+boundPar = 1
+boundAsTimeout = TRUE
+postselection = 0
+aclib = FALSE
+OL = TRUE
+generationPercentage = 0.4
+filterThresh = 0.2
+## end of irace scenario
+# --- Parameters Hierarchy ---
+[1] "algorithm"   "localsearch" "alpha"       "beta"        "rho"         "ants"        "elitistants" "nnls"        "dlb"        
+  algorithm localsearch       alpha        beta         rho        ants elitistants        nnls         dlb 
+          1           1           1           1           1           1           2           2           2 
+    algorithm   localsearch         alpha          beta           rho          ants   elitistants          nnls           dlb 
+           ""            ""            ""            ""            ""            ""   "algorithm" "localsearch" "localsearch" 
+    Parameter Level  Depends.on
+1   algorithm     1            
+2 localsearch     1            
+3       alpha     1            
+4        beta     1            
+5         rho     1            
+6        ants     1            
+7 elitistants     2   algorithm
+8        nnls     2 localsearch
+9         dlb     2 localsearch
+
+# ------------------------
+$names
+[1] "algorithm"   "localsearch" "alpha"       "beta"        "rho"         "ants"        "elitistants" "nnls"        "dlb"        
+
+$types
+  algorithm localsearch       alpha        beta         rho        ants elitistants        nnls         dlb 
+        "c"         "c"         "r"         "r"         "r"         "i"         "i"         "i"         "c" 
+
+$switches
+       algorithm      localsearch            alpha             beta              rho             ants      elitistants             nnls              dlb 
+  "--algorithm " "--localsearch "       "--alpha "        "--beta "        "--rho  "        "--ants " "--elitistants "        "--nnls "         "--dlb " 
+
+$domain
+$domain$algorithm
+[1] "eas"
+
+$domain$localsearch
+[1] "0" "1" "2" "3"
+
+$domain$alpha
+[1]  1 10
+
+$domain$beta
+[1]  1 10
+
+$domain$rho
+[1] 0.1 1.0
+
+$domain$ants
+[1]   5 100
+
+$domain$elitistants
+[1]   1 750
+
+$domain$nnls
+[1]  5 50
+
+$domain$dlb
+[1] "0" "1"
+
+
+$conditions
+$conditions$algorithm
+[1] TRUE
+
+$conditions$localsearch
+[1] TRUE
+
+$conditions$alpha
+[1] TRUE
+
+$conditions$beta
+[1] TRUE
+
+$conditions$rho
+[1] TRUE
+
+$conditions$ants
+[1] TRUE
+
+$conditions$elitistants
+expression(algorithm == "eas")
+
+$conditions$nnls
+expression(localsearch %in% c(1, 2, 3))
+
+$conditions$dlb
+expression(localsearch %in% c(1, 2, 3))
+
+
+$isFixed
+  algorithm localsearch       alpha        beta         rho        ants elitistants        nnls         dlb 
+       TRUE       FALSE       FALSE       FALSE       FALSE       FALSE       FALSE       FALSE       FALSE 
+
+$transform
+$transform$algorithm
+[1] ""
+
+$transform$localsearch
+[1] ""
+
+$transform$alpha
+[1] ""
+
+$transform$beta
+[1] ""
+
+$transform$rho
+[1] ""
+
+$transform$ants
+[1] ""
+
+$transform$elitistants
+[1] ""
+
+$transform$nnls
+[1] ""
+
+$transform$dlb
+[1] ""
+
+
+$depends
+$depends$algorithm
+character(0)
+
+$depends$localsearch
+character(0)
+
+$depends$alpha
+character(0)
+
+$depends$beta
+character(0)
+
+$depends$rho
+character(0)
+
+$depends$ants
+character(0)
+
+$depends$elitistants
+[1] "algorithm"
+
+$depends$nnls
+[1] "localsearch"
+
+$depends$dlb
+[1] "localsearch"
+
+
+$hierarchy
+  algorithm localsearch       alpha        beta         rho        ants elitistants        nnls         dlb 
+          1           1           1           1           1           1           2           2           2 
+
+$nbParameters
+[1] 9
+
+$nbFixed
+[1] 1
+
+$nbVariable
+[1] 8
+
+# 2022-05-29 16:36:17 UTC: Parameters have been read
+# 2022-05-29 16:36:18 UTC: RNGkind: Mersenne-Twister Inversion Rejection
+# 2022-05-29 16:36:18 UTC: .Random.seed: 10403, 624, 728485722, 238460179, -993476808, -2052130855, -410288698, -35863153, 1164015236, -124478539, 916316402, -1580504117, 1344905360, -284368047, -131193634, 967887815, -122468004, -1951962451, -1071106678, 544530819, -829473560, -340554295, 1791278838, 1010133247, 1444480820, 1050437797, 2100636962, 604102203, -872221632, 2030360385, -15750130, -1219003081, -1079898100, -1079806563, 947595194, -1554169357, -805689704, 1709088697, -2128917466, 299886703, -1752579100, 472412565, 196904274, 2114841771, -1831455760, -1441085647, 1522532158, 1794345639, -1917353284, 1347632269, -918051350, 2008464995, -479953848, -1374736983, 1428301142, 227754975, -1656836972, -964184443, -1787369086, -1550412005, 1012817824, -2113031391, -1976426898, 1411118103, -1176592020, -958021763, -1338986470, 1074288339, 166280696, 98842521, -2043917690, -70878385, 763543876, -691456139, 1852266930, 33742219, -1625917616, 6069009, -1726412386, -400049785, -1513984996, 139066989, 1670989386, -795276477, -614241368, 649903497, 1481423798, 1454411455, -245300748, 968619109, -1152330270, -260456453, -2143716608, 340164353, 1340588238, -2110924041, 1842209484, 1160706397, -1029412742, -1620059213, 913179992, 834125689, -464095002, -1236763089, 614756004, 535752021, -1581883886, 534920811, 1136814768, -1932894479, 1674658814, -754624409, -1725168260, -368857011, 1161107114, 877905955, -261879032, -1615577751, 1205633558, 1078282655, 1171785556, -307158459, 2010837570, 182671579, -1670625696, 145177313, -1496804562, 1363489239, -909650900, -1896406211, 737038554, -1731473261, -2057274184, 827406169, -718153914, 404615439, -968438780, 722572085, -188640654, 1709444939, 1001524752, -430173487, 931180126, -1455134905, 1816940252, -403156435, -1338829046, -937495293, -935437720, -554848951, 1130985590, -821463937, -1174684492, 1944010789, 1613577890, -1895079493, -2117156416, 875030209, -1318283890, 756676791, 1747219852, -1263125219, 874932538, 525612403, -1835490280, -928473287, -564763226, -738274321, -2017339036, 1739139349, -1029638446, -29339605, 767385968, -1609976143, 1556039870, 1151133223, -814004164, -1331698675, 1923827562, -852323869, 1959418312, 643894569, -1232363818, -474673313, -1725685228, -1715581435, 358595330, -1255548261, 221834528, 1740669601, 1584121838, -580636777, -1891907860, -2098968835, -1352355430, 1111558739, 1710127992, 934672153, -782490618, 2023958223, 174954180, -2127712523, 1919716146, -1355874037, -1396939568, 1221282449, -400223458, -624503545, 521204124, -1368234515, -424302646, -1597595965, 1944062248, 872832265, 1490744630, 989862463, 1521039220, 1757826021, 1149921122, 1366737787, 126011520, 1885933185, 1751001678, -2049190281, 828753996, -2114371363, -37672454, 751456051, 1933181656, 980500217, -874835354, 1891821999, 463602724, 1595352277, 2000441234, -622321173, 931600432, 1805176433, -1169552002, -42322969, 1667582716, 132634573, -227919830, -1139598429, -1353226104, 1104518377, 770669462, 1839371551, -1578959660, 644823493, -1497021502, -735437733, 629429216, 387549793, 1440464046, -1506218665, -319129172, -160617795, 190042714, 640156691, -1705821640, 148010713, 929771718, 51780751, -1263066748, 618498741, 1344816114, 2141434571, 955612048, -1888861615, 2143696862, -1704000825, 1355830364, -1619510867, 132184202, -1269823357, 2097706984, 96914633, -2057227786, -262897665, 1042903604, 1412503461, 19419170, 1232856379, 135630656, 550106689, 2038202126, 439579703, 206691084, -524811107, 1345628858, -1852692237, 655499672, 1456578233, -911966426, 1381285743, -83562780, 838394005, -2008520622, 932819883, 132091632, 926393905, -1322151362, -77774425, 1202326972, 328960909, 624027882, 984966499, -1630849208, -1311642455, -87549866, 332258015, 718575508, -1350310523, 617319554, 1503927835, 1007581856, 1316114977, -237473426, 428043031, -2050757524, -44970371, -797199590, -297746989, -783369992, 1416017561, -2078343802, 1563873871, 1071868996, 568403573, -1229669198, 956441739, -417508784, -503776751, -1826349922, -973279097, 1414166300, -1094070931, -730527414, 477835843, 1115137704, -202441591, 1975266998, 80127423, -1891865356, 836739941, -288950046, 1222297339, 977737216, 1560976897, -1450732594, 937480695, -72831540, -994932643, 474016634, -680803661, -1126105000, -1383481735, -1267553306, -25930449, 11180452, -871474091, 2122662162, 1444218219, 92718512, 178666993, 909498110, -66711705, 789155964, -1216676019, 734157226, 1121546019, 31835656, -166331287, 701854998, -873013089, -1095175596, 280777029, 1211274562, -145236005, 1737974112, 92985825, 1461839406, 1694738647, -1135075540, 1800548925, 1335645146, 72038291, 2040592312, -1976388007, -197686714, -322615281, -424511740, 1140359733, -1898842766, -49654197, 2113136912, 674722257, 1996407134, -80699833, 1010784732, -802741971, -852370934, -1291314173, -487746200, 1581182025, -1767117962, 1310100351, 950151092, -1114509531, 640049570, -514627397, 349658304, -51706431, 2101307534, -324800585, -1037418356, -509031395, 312863802, 1209474163, 57057048, -1906729415, 688232614, -1159615761, -950860700, -652765163, -1565337134, 941233963, 1463598192, -1381722703, -32056386, 2100600103, -1941712068, -1757007091, -421819798, -1908459293, 1466373320, 1315032105, -2015915562, 1272817247, -1471148780, -438797051, -1984274942, 520446363, 2128545824, -199024223, 1786256110, 1987683991, -1284042260, -735160835, -1720339302, -1845005997, -1039534472, -638159335, -2072717562, -679379505, -1545322044, 384015861, -2126516686, -1384364021, -2076622896, 166046097, 1075193374, -1748366329, -613483364, 1464874221, 852978378, 297190851, 1026180136, 1685494793, 351299638, 1644441919, -451239308, 1929902821, -2147055006, 1688586875, -830053504, -1742000767, 962854222, 104648055, -493448372, -1420111907, -1541165830, -313248205, -1990001192, 151076345, -2078456474, -1923301201, -1447153884, -992701483, -40815982, -1620514581, -473861328, -1477268111, 2106892414, -1129780505, -1843866116, 381494989, -146965718, -1767456093, -569433208, -1166713879, -1584501098, 155331615, -228988972, -1969723195, 572712642, 40674139, 413495008, -1845810847, -795144274, -73046953, 1306576044, -1952040515, 2127025498, -2127205613, -1723222728, 863106521, -241769530, 53179279, 842583172, -429753931, -155277582, -333973045, 1085101712, -289169071, -1020638498, -1182189113, -996581540, -1744500563, 103136138, -1840828541, -269634840, -430568503, -582376202, -1773168897, -10101452, -1912486235, -1792576734, -460198853, 1578379840, -2037705407, -491433458, 309029687, -1616009716, 1435014045, 24784314, -1864167437, -1651106664, -314532423, -495341018, 1000707695, -1028908572, -1157279851, 1474317138, 230783659, 1372908016, 1095796017, -378591938, -1205667673, 860395708, 1503648397, -1113052182, -1781527453, -1801588152, -99570775, -1011217578, 971272671, 1737917076, 448533637, 170667906, -1823628005, -1951754848, 382923041, -297089938, 1648812567, 777336684, -1518740099, -1873627622, 2073371859, -1373621256, 1181037977, -1201819514, 360917327, 208672580, -1103817355, 403578802, 446524299, -1173344944, -24028911, -1795477602, 1043212167, 1249804828, -1778017171, 131910730, 1316575555, 1509417384, -2086847607, -1669881418, 12106943, -1304176652, 171922021, -1102504990, 853003771, 2051059968, -540361471, 1039361742, 1592772855, -63997748, -739109027, 459894394, -1132222029, 1321204568, -891830919, 551214822, 1266428975, -321076060, -1486238891, 979379218, -991703957, 137830576, -2122441487, 912681470, 761448039, 580066172, 1135496781
+# 2022-05-29 16:36:18 UTC: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 5
+# minNbSurvival: 5
+# nbParameters: 8
+# seed: 30
+# confidence level: 0.95
+# budget: 5000
+# mu: 5
+# deterministic: FALSE
+
+# 2022-05-29 16:36:18 UTC: Iteration 1 of 5
+# experimentsUsedSoFar: 0
+# remainingBudget: 5000
+# currentBudget: 1000
+# nbConfigurations: 166
+# 2022-05-29 16:36:18 UTC: Sample 166 configurations from uniform distribution
+# 2022-05-29 16:36:18 UTC: Configurations for the race n 1 (elite configurations listed first, then new configurations):
+    .ID. algorithm localsearch alpha beta  rho ants elitistants nnls  dlb .PARENT.
+1      1       eas           1  6.97 1.42 0.23   27         493   25    1       NA
+2      2       eas           3  9.95 8.23 0.90   23           7   18    0       NA
+3      3       eas           3  9.25 9.95 0.30    9         174   34    0       NA
+4      4       eas           2  1.61 4.49 0.50   80         143   27    1       NA
+5      5       eas           2  9.56 7.42 0.28   95         680    8    0       NA
+6      6       eas           3  7.52 2.75 0.22   44         404   43    0       NA
+7      7       eas           0  5.60 7.55 0.93   89          31   NA <NA>       NA
+8      8       eas           0  9.91 2.60 0.38   78         431   NA <NA>       NA
+9      9       eas           1  5.12 1.98 0.76   17         501   24    0       NA
+10    10       eas           1  2.40 7.33 0.12   99         415   15    1       NA
+11    11       eas           3  3.14 9.84 0.20   50         554    9    0       NA
+12    12       eas           1  5.77 7.43 0.77   31         657   29    1       NA
+13    13       eas           3  6.52 9.93 0.97   81         115   28    0       NA
+14    14       eas           3  1.51 5.53 0.96    7         295   49    1       NA
+15    15       eas           0  9.19 3.20 0.17   13         692   NA <NA>       NA
+16    16       eas           0  6.28 6.58 0.49   96         152   NA <NA>       NA
+17    17       eas           1  5.80 9.75 0.89   57          29   40    0       NA
+18    18       eas           1  2.89 7.21 0.91   59         300   23    1       NA
+19    19       eas           2  3.16 9.16 0.32    7         747    6    1       NA
+20    20       eas           3  1.15 6.23 0.39   89         232   41    0       NA
+21    21       eas           1  9.27 4.44 0.56   50         225    7    1       NA
+22    22       eas           3  9.81 5.11 0.36   56         685   47    0       NA
+23    23       eas           2  6.92 6.63 0.39   12         635   22    1       NA
+24    24       eas           0  7.64 9.02 0.36   91         740   NA <NA>       NA
+25    25       eas           2  9.29 4.40 0.44   90         532   10    0       NA
+26    26       eas           3  1.41 3.46 0.28   68         266   27    0       NA
+27    27       eas           1  4.29 3.31 0.93   86          73   37    1       NA
+28    28       eas           0  2.14 1.52 0.45   43         715   NA <NA>       NA
+29    29       eas           3  6.88 5.97 0.77   49         691   47    0       NA
+30    30       eas           1  8.16 8.03 0.92   97         541   14    0       NA
+31    31       eas           0  1.74 8.07 0.41   63         451   NA <NA>       NA
+32    32       eas           2  4.77 4.05 0.63   88         668   19    1       NA
+33    33       eas           0  7.63 9.20 0.13   11         193   NA <NA>       NA
+34    34       eas           1  4.05 8.36 0.83    5         329   50    0       NA
+35    35       eas           1  6.45 7.14 0.25   92         180   14    1       NA
+36    36       eas           1  8.46 1.33 0.95   39         502   32    1       NA
+37    37       eas           3  1.72 4.10 0.71   35          49   25    0       NA
+38    38       eas           1  8.98 3.48 0.22   17         610   21    1       NA
+39    39       eas           2  5.04 8.05 0.14   75          83   10    0       NA
+40    40       eas           3  2.97 1.80 0.33   12         454   21    0       NA
+41    41       eas           3  4.46 5.78 0.88   65         431   30    0       NA
+42    42       eas           1  4.75 2.27 0.45   27         325   50    0       NA
+43    43       eas           1  2.46 6.68 0.91   70         459   33    1       NA
+44    44       eas           1  2.12 8.38 0.14   91          22   35    0       NA
+45    45       eas           2  4.93 9.10 0.63   37         660   39    1       NA
+46    46       eas           0  2.72 2.08 0.29    8         135   NA <NA>       NA
+47    47       eas           0  9.30 2.90 0.12   23          18   NA <NA>       NA
+48    48       eas           1  7.95 7.68 0.23   81         166   27    1       NA
+49    49       eas           2  1.51 8.85 0.66   24         247    9    1       NA
+50    50       eas           2  8.93 2.75 0.32   78         190   27    0       NA
+51    51       eas           0  7.41 4.58 0.55   20         610   NA <NA>       NA
+52    52       eas           2  3.13 9.73 0.96   71         664   43    0       NA
+53    53       eas           3  2.21 7.39 0.36   91         579   33    1       NA
+54    54       eas           1  2.77 4.76 0.85   62         560    7    1       NA
+55    55       eas           3  5.10 5.29 0.60   40         520   38    1       NA
+56    56       eas           2  7.13 4.21 0.50   52         381   25    1       NA
+57    57       eas           2  8.37 2.43 0.47   46         630   28    1       NA
+58    58       eas           2  1.79 5.29 0.37   53         457   37    0       NA
+59    59       eas           2  8.11 9.44 0.15   49         291   31    1       NA
+60    60       eas           3  4.18 8.72 0.85   19         178   10    0       NA
+61    61       eas           1  9.69 3.59 0.72   85         183   44    0       NA
+62    62       eas           3  7.73 8.44 0.61   58          23   32    0       NA
+63    63       eas           2  8.89 4.24 0.25   89         493   18    0       NA
+64    64       eas           1  7.43 6.87 0.92   28         460    8    0       NA
+65    65       eas           3  9.04 5.94 0.20   45         262   27    0       NA
+66    66       eas           3  9.57 6.59 0.82   63         380   27    0       NA
+67    67       eas           0  3.74 9.05 0.33   99         227   NA <NA>       NA
+68    68       eas           0  9.29 6.82 0.41   32         510   NA <NA>       NA
+69    69       eas           2  2.86 3.64 0.41   49         357   44    1       NA
+70    70       eas           0  1.63 9.82 0.77   90         219   NA <NA>       NA
+71    71       eas           3  2.96 6.15 0.15  100         213    7    0       NA
+72    72       eas           0  7.91 5.65 0.17   70         738   NA <NA>       NA
+73    73       eas           3  6.58 4.47 0.25   23         274   40    1       NA
+74    74       eas           0  3.31 5.97 0.23   11         199   NA <NA>       NA
+75    75       eas           3  7.54 1.23 0.42   86         450   32    0       NA
+76    76       eas           1  1.58 5.28 0.73   68         209   42    1       NA
+77    77       eas           1  9.49 7.24 0.61   62         610   14    0       NA
+78    78       eas           3  7.37 4.11 0.57   94         508   17    0       NA
+79    79       eas           0  4.12 1.31 0.15   47         513   NA <NA>       NA
+80    80       eas           0  4.81 3.49 0.83   52         207   NA <NA>       NA
+81    81       eas           2  6.64 6.36 0.98   59         360   40    0       NA
+82    82       eas           0  8.23 3.73 0.47   58         437   NA <NA>       NA
+83    83       eas           2  4.94 3.23 0.82   86         472   33    1       NA
+84    84       eas           2  2.44 3.97 0.51   51         137   27    0       NA
+85    85       eas           2  2.31 2.75 0.34   52         298   27    0       NA
+86    86       eas           3  4.98 3.74 0.39   76         547    5    1       NA
+87    87       eas           2  5.23 4.73 0.35   56         524   10    0       NA
+88    88       eas           2  5.06 4.17 0.17   33         237   46    1       NA
+89    89       eas           3  2.94 8.97 0.74   53         600   37    1       NA
+90    90       eas           3  4.11 5.34 0.68   11         445   18    0       NA
+91    91       eas           3  8.56 5.13 0.23   97         411   34    1       NA
+92    92       eas           2  3.47 9.83 0.20   81         381   15    0       NA
+93    93       eas           0  9.15 6.21 0.56   26         472   NA <NA>       NA
+94    94       eas           1  8.69 6.42 0.56   22         568   16    0       NA
+95    95       eas           3  5.91 4.85 0.53   66         421   49    0       NA
+96    96       eas           1  8.97 3.81 0.84   14         457   15    1       NA
+97    97       eas           3  4.66 1.19 0.95   50         206   10    1       NA
+98    98       eas           2  6.30 4.12 0.57   80         705   14    1       NA
+99    99       eas           3  9.73 1.77 0.30   95         436   18    1       NA
+100  100       eas           2  2.51 5.12 0.50   66         141    8    1       NA
+101  101       eas           2  2.08 7.29 0.89   48          16   40    0       NA
+102  102       eas           1  6.95 1.71 0.47   86         719   27    1       NA
+103  103       eas           2  1.27 3.03 0.80   46         458   42    1       NA
+104  104       eas           3  7.61 6.15 0.41   87         713   22    0       NA
+105  105       eas           0  7.28 6.51 0.51    7         537   NA <NA>       NA
+106  106       eas           1  5.44 1.61 0.48   67         561   18    1       NA
+107  107       eas           0  6.53 9.70 0.35   95         515   NA <NA>       NA
+108  108       eas           1  7.07 3.28 0.24   49         534   46    1       NA
+109  109       eas           2  7.92 1.39 0.54    6         673   21    0       NA
+110  110       eas           0  2.45 8.45 0.15   15         510   NA <NA>       NA
+111  111       eas           3  4.22 1.46 0.37   88         189    8    0       NA
+112  112       eas           1  6.36 2.40 0.98   41         361   38    0       NA
+113  113       eas           2  1.22 9.25 0.64   36          97   29    1       NA
+114  114       eas           1  7.33 2.88 0.60   61         309   42    0       NA
+115  115       eas           3  4.65 7.97 0.91   13         211   32    1       NA
+116  116       eas           0  9.25 5.11 0.66   82         438   NA <NA>       NA
+117  117       eas           1  2.44 3.83 0.43   57          82   27    0       NA
+118  118       eas           2  9.69 2.05 0.61   68          94   32    0       NA
+119  119       eas           3  7.93 8.04 0.25   81         213   18    0       NA
+120  120       eas           1  6.28 7.03 0.44   40          88   38    1       NA
+121  121       eas           3  9.87 1.65 0.84   41         141   25    1       NA
+122  122       eas           1  4.96 5.52 0.25   34         247   12    0       NA
+123  123       eas           1  1.09 1.88 0.31   80         745   30    1       NA
+124  124       eas           2  7.38 7.47 0.77   66         408   22    0       NA
+125  125       eas           0  1.71 1.54 0.98   51         367   NA <NA>       NA
+126  126       eas           2  1.76 6.38 0.41   88         323   41    0       NA
+127  127       eas           2  9.09 3.17 0.65   85         407    6    1       NA
+128  128       eas           1  8.71 4.47 0.66   80          49   28    0       NA
+129  129       eas           3  4.20 4.19 0.19   94         519   23    1       NA
+130  130       eas           1  2.94 6.01 0.96   74         483    6    1       NA
+131  131       eas           0  5.25 1.70 0.45   40         265   NA <NA>       NA
+132  132       eas           1  8.02 4.22 0.63   77         325   13    1       NA
+133  133       eas           3  6.04 9.55 0.63   90         312   12    0       NA
+134  134       eas           3  4.38 4.88 0.39   68         114   19    0       NA
+135  135       eas           1  1.49 5.91 0.97   74         566   17    1       NA
+136  136       eas           3  3.17 9.45 0.94   48         114   29    1       NA
+137  137       eas           1  3.08 8.21 0.98   57         712   47    0       NA
+138  138       eas           3  9.47 8.22 0.46   26         744   34    1       NA
+139  139       eas           0  4.56 7.01 0.58   85         384   NA <NA>       NA
+140  140       eas           3  4.28 5.37 0.78   89         668   22    1       NA
+141  141       eas           0  6.19 2.46 0.25    9         683   NA <NA>       NA
+142  142       eas           3  5.48 5.42 0.61   19         529   38    0       NA
+143  143       eas           0  3.13 4.67 0.46   21         198   NA <NA>       NA
+144  144       eas           0  4.81 4.84 0.93   59         534   NA <NA>       NA
+145  145       eas           3  7.08 3.96 0.54   89         356   23    1       NA
+146  146       eas           0  7.20 9.53 0.29   10         427   NA <NA>       NA
+147  147       eas           3  5.74 7.84 0.27   85          35   21    0       NA
+148  148       eas           1  9.42 9.40 0.69   53         507   40    1       NA
+149  149       eas           0  9.91 9.02 0.47   37         273   NA <NA>       NA
+150  150       eas           2  6.94 6.76 0.86   10         158    7    1       NA
+151  151       eas           0  7.83 8.83 0.37   31         670   NA <NA>       NA
+152  152       eas           2  2.47 7.47 0.15   51         559   40    1       NA
+153  153       eas           2  5.06 4.62 0.40   67         539   29    1       NA
+154  154       eas           3  5.71 1.31 0.86   83         154   30    0       NA
+155  155       eas           0  7.57 6.22 0.56   14         376   NA <NA>       NA
+156  156       eas           0  2.67 9.52 0.19   95         160   NA <NA>       NA
+157  157       eas           0  7.33 7.02 0.78   18         182   NA <NA>       NA
+158  158       eas           2  5.87 4.57 0.48    9         168   10    1       NA
+159  159       eas           3  2.43 6.28 0.27   55         214   30    1       NA
+160  160       eas           0  1.05 8.21 0.94   56         292   NA <NA>       NA
+161  161       eas           2  9.13 1.66 0.69   61         556   48    0       NA
+162  162       eas           1  6.98 6.73 0.92   38         340   15    0       NA
+163  163       eas           0  5.16 1.76 0.57   90          93   NA <NA>       NA
+164  164       eas           0  7.66 1.92 0.93   79         423   NA <NA>       NA
+165  165       eas           1  8.38 2.45 0.38   51         447   35    1       NA
+166  166       eas           0  2.16 3.31 0.35   89         553   NA <NA>       NA
+# 2022-05-29 16:36:18 UTC: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# 2022-05-29 16:36:18 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 1 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 6.97 --beta 1.42 --rho  0.23 --ants 27 --elitistants 493 --nnls 25 --dlb 1
+# 2022-05-29 16:36:28 UTC: DONE (1) Elapsed wall-clock seconds: 10.04
+2.092370502679255
+# 2022-05-29 16:36:28 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 2 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 9.95 --beta 8.23 --rho  0.9 --ants 23 --elitistants 7 --nnls 18 --dlb 0
+# 2022-05-29 16:36:28 UTC: DONE (2) Elapsed wall-clock seconds: 0.18
+0.07655014034192396
+# 2022-05-29 16:36:28 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 3 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 9.25 --beta 9.95 --rho  0.3 --ants 9 --elitistants 174 --nnls 34 --dlb 0
+# 2022-05-29 16:36:38 UTC: DONE (3) Elapsed wall-clock seconds: 10.04
+1.3013523858127074
+# 2022-05-29 16:36:38 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 4 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 2 --alpha 1.61 --beta 4.49 --rho  0.5 --ants 80 --elitistants 143 --nnls 27 --dlb 1
+# 2022-05-29 16:36:38 UTC: DONE (4) Elapsed wall-clock seconds: 0.08
+0.025516713447307986
+# 2022-05-29 16:36:38 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 5 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 2 --alpha 9.56 --beta 7.42 --rho  0.28 --ants 95 --elitistants 680 --nnls 8 --dlb 0
+# 2022-05-29 16:36:48 UTC: DONE (5) Elapsed wall-clock seconds: 10.04
+0.10206685378923194
+# 2022-05-29 16:36:48 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 6 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 7.52 --beta 2.75 --rho  0.22 --ants 44 --elitistants 404 --nnls 43 --dlb 0
+# 2022-05-29 16:36:58 UTC: DONE (6) Elapsed wall-clock seconds: 10.04
+0.45930084205154376
+# 2022-05-29 16:36:58 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 7 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 0 --alpha 5.6 --beta 7.55 --rho  0.93 --ants 89 --elitistants 31
+# 2022-05-29 16:36:58 UTC: DONE (7) Elapsed wall-clock seconds: 0.06
+0.07655014034192396
+# 2022-05-29 16:36:58 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 8 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 0 --alpha 9.91 --beta 2.6 --rho  0.38 --ants 78 --elitistants 431
+# 2022-05-29 16:37:08 UTC: DONE (8) Elapsed wall-clock seconds: 10.03
+1.3523858127073234
+# 2022-05-29 16:37:08 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 9 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 5.12 --beta 1.98 --rho  0.76 --ants 17 --elitistants 501 --nnls 24 --dlb 0
+# 2022-05-29 16:37:18 UTC: DONE (9) Elapsed wall-clock seconds: 10.04
+2.041337075784639
+# 2022-05-29 16:37:18 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 10 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 2.4 --beta 7.33 --rho  0.12 --ants 99 --elitistants 415 --nnls 15 --dlb 1
+# 2022-05-29 16:37:18 UTC: DONE (10) Elapsed wall-clock seconds: 0.06
+0.0
+# 2022-05-29 16:37:18 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 11 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 3.14 --beta 9.84 --rho  0.2 --ants 50 --elitistants 554 --nnls 9 --dlb 0
+# 2022-05-29 16:37:18 UTC: DONE (11) Elapsed wall-clock seconds: 0.05
+0.07655014034192396
+# 2022-05-29 16:37:18 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 12 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 5.77 --beta 7.43 --rho  0.77 --ants 31 --elitistants 657 --nnls 29 --dlb 1
+# 2022-05-29 16:37:28 UTC: DONE (12) Elapsed wall-clock seconds: 10.05
+0.3827507017096198
+# 2022-05-29 16:37:28 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 13 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 6.52 --beta 9.93 --rho  0.97 --ants 81 --elitistants 115 --nnls 28 --dlb 0
+# 2022-05-29 16:37:29 UTC: DONE (13) Elapsed wall-clock seconds: 0.08
+0.0
+# 2022-05-29 16:37:29 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 14 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 1.51 --beta 5.53 --rho  0.96 --ants 7 --elitistants 295 --nnls 49 --dlb 1
+# 2022-05-29 16:37:39 UTC: DONE (14) Elapsed wall-clock seconds: 10.04
+0.7655014034192396
+# 2022-05-29 16:37:39 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 15 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 0 --alpha 9.19 --beta 3.2 --rho  0.17 --ants 13 --elitistants 692
+# 2022-05-29 16:37:49 UTC: DONE (15) Elapsed wall-clock seconds: 10.05
+1.684103087522327
+# 2022-05-29 16:37:49 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 16 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 0 --alpha 6.28 --beta 6.58 --rho  0.49 --ants 96 --elitistants 152
+# 2022-05-29 16:37:59 UTC: DONE (16) Elapsed wall-clock seconds: 10.03
+0.07655014034192396
+# 2022-05-29 16:37:59 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 17 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 5.8 --beta 9.75 --rho  0.89 --ants 57 --elitistants 29 --nnls 40 --dlb 0
+# 2022-05-29 16:37:59 UTC: DONE (17) Elapsed wall-clock seconds: 0.15
+0.0
+# 2022-05-29 16:37:59 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 18 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 2.89 --beta 7.21 --rho  0.91 --ants 59 --elitistants 300 --nnls 23 --dlb 1
+# 2022-05-29 16:37:59 UTC: DONE (18) Elapsed wall-clock seconds: 0.06
+0.0
+# 2022-05-29 16:37:59 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 19 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 2 --alpha 3.16 --beta 9.16 --rho  0.32 --ants 7 --elitistants 747 --nnls 6 --dlb 1
+# 2022-05-29 16:37:59 UTC: DONE (19) Elapsed wall-clock seconds: 0.04
+0.07655014034192396
+# 2022-05-29 16:37:59 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 20 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 1.15 --beta 6.23 --rho  0.39 --ants 89 --elitistants 232 --nnls 41 --dlb 0
+# 2022-05-29 16:37:59 UTC: DONE (20) Elapsed wall-clock seconds: 0.18
+0.0
+# 2022-05-29 16:37:59 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 21 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 9.27 --beta 4.44 --rho  0.56 --ants 50 --elitistants 225 --nnls 7 --dlb 1
+# 2022-05-29 16:38:09 UTC: DONE (21) Elapsed wall-clock seconds: 10.03
+0.9951518244450115
+# 2022-05-29 16:38:09 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 22 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 9.81 --beta 5.11 --rho  0.36 --ants 56 --elitistants 685 --nnls 47 --dlb 0
+# 2022-05-29 16:38:19 UTC: DONE (22) Elapsed wall-clock seconds: 10.03
+1.3013523858127074
+# 2022-05-29 16:38:19 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 23 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 2 --alpha 6.92 --beta 6.63 --rho  0.39 --ants 12 --elitistants 635 --nnls 22 --dlb 1
+# 2022-05-29 16:38:29 UTC: DONE (23) Elapsed wall-clock seconds: 10.04
+1.3523858127073234
+# 2022-05-29 16:38:29 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 24 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 0 --alpha 7.64 --beta 9.02 --rho  0.36 --ants 91 --elitistants 740
+# 2022-05-29 16:38:39 UTC: DONE (24) Elapsed wall-clock seconds: 10.03
+0.35723398826231184
+# 2022-05-29 16:38:39 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 25 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 2 --alpha 9.29 --beta 4.4 --rho  0.44 --ants 90 --elitistants 532 --nnls 10 --dlb 0
+# 2022-05-29 16:38:49 UTC: DONE (25) Elapsed wall-clock seconds: 10.04
+0.3827507017096198
+# 2022-05-29 16:38:49 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 26 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 1.41 --beta 3.46 --rho  0.28 --ants 68 --elitistants 266 --nnls 27 --dlb 0
+# 2022-05-29 16:38:49 UTC: DONE (26) Elapsed wall-clock seconds: 0.12
+0.0
+# 2022-05-29 16:38:49 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 27 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 4.29 --beta 3.31 --rho  0.93 --ants 86 --elitistants 73 --nnls 37 --dlb 1
+# 2022-05-29 16:38:49 UTC: DONE (27) Elapsed wall-clock seconds: 0.08
+0.0
+# 2022-05-29 16:38:49 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 28 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 0 --alpha 2.14 --beta 1.52 --rho  0.45 --ants 43 --elitistants 715
+# 2022-05-29 16:39:00 UTC: DONE (28) Elapsed wall-clock seconds: 10.04
+1.1482521051288594
+# 2022-05-29 16:39:00 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 29 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 6.88 --beta 5.97 --rho  0.77 --ants 49 --elitistants 691 --nnls 47 --dlb 0
+# 2022-05-29 16:39:10 UTC: DONE (29) Elapsed wall-clock seconds: 10.04
+1.2758356723653994
+# 2022-05-29 16:39:10 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 30 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 8.16 --beta 8.03 --rho  0.92 --ants 97 --elitistants 541 --nnls 14 --dlb 0
+# 2022-05-29 16:39:20 UTC: DONE (30) Elapsed wall-clock seconds: 10.04
+0.5613676958407757
+# 2022-05-29 16:39:20 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 31 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 0 --alpha 1.74 --beta 8.07 --rho  0.41 --ants 63 --elitistants 451
+# 2022-05-29 16:39:30 UTC: DONE (31) Elapsed wall-clock seconds: 10.03
+0.28068384792038786
+# 2022-05-29 16:39:30 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 32 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 2 --alpha 4.77 --beta 4.05 --rho  0.63 --ants 88 --elitistants 668 --nnls 19 --dlb 1
+# 2022-05-29 16:39:30 UTC: DONE (32) Elapsed wall-clock seconds: 0.10
+0.07655014034192396
+# 2022-05-29 16:39:30 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 33 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 0 --alpha 7.63 --beta 9.2 --rho  0.13 --ants 11 --elitistants 193
+# 2022-05-29 16:39:40 UTC: DONE (33) Elapsed wall-clock seconds: 10.04
+1.582036233733095
+# 2022-05-29 16:39:40 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 34 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 4.05 --beta 8.36 --rho  0.83 --ants 5 --elitistants 329 --nnls 50 --dlb 0
+# 2022-05-29 16:39:50 UTC: DONE (34) Elapsed wall-clock seconds: 10.03
+1.709619800969635
+# 2022-05-29 16:39:50 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 35 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 6.45 --beta 7.14 --rho  0.25 --ants 92 --elitistants 180 --nnls 14 --dlb 1
+# 2022-05-29 16:40:00 UTC: DONE (35) Elapsed wall-clock seconds: 10.03
+0.07655014034192396
+# 2022-05-29 16:40:00 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 36 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 8.46 --beta 1.33 --rho  0.95 --ants 39 --elitistants 502 --nnls 32 --dlb 1
+# 2022-05-29 16:40:10 UTC: DONE (36) Elapsed wall-clock seconds: 10.03
+1.0972186782342435
+# 2022-05-29 16:40:10 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 37 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 1.72 --beta 4.1 --rho  0.71 --ants 35 --elitistants 49 --nnls 25 --dlb 0
+# 2022-05-29 16:40:10 UTC: DONE (37) Elapsed wall-clock seconds: 0.08
+0.0
+# 2022-05-29 16:40:10 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 38 10 434056811 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 8.98 --beta 3.48 --rho  0.22 --ants 17 --elitistants 610 --nnls 21 --dlb 1
+# 2022-05-29 16:40:10 UTC: DONE (38) Elapsed wall-clock seconds: 0.40
+Traceback (most recent call last):
+  File "/root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py", line 68, in <module>
+    out_, err_ = io.communicate()
+  File "/usr/lib/python3.8/subprocess.py", line 1015, in communicate
+    stdout = self.stdout.read()
+KeyboardInterrupt

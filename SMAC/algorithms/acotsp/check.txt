@@ -1,0 +1,3588 @@
+./target_algorithm/acotsp -i ./instances/eil76.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678405
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/eil76.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/eil76.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678405
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0030100000 seconds
+best 563, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 563
+ Best Solution was found after 1 iterations
+
+try 0, Best 563, found at iteration 1, found at time 0.002991
+ t_avgbest = 0.002991
+ t_avgtotal = 0.003571
+./target_algorithm/acotsp -i ./instances/lin318.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678405
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/lin318.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/lin318.tsp ... 
+
+EUC_2D
+EUC_2D
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678405
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0162530000 seconds
+best 43042, iteration: 1, time 0.01
+
+ Best Solution in try 0 is 43042
+ Best Solution was found after 1 iterations
+
+try 0, Best 43042, found at iteration 1, found at time 0.007236
+ t_avgbest = 0.007236
+ t_avgtotal = 0.007755
+./target_algorithm/acotsp -i ./instances/pr107.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678405
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/pr107.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/pr107.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678405
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0010000000 seconds
+best 48499, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 48499
+ Best Solution was found after 1 iterations
+
+try 0, Best 48499, found at iteration 1, found at time 0.000973
+ t_avgbest = 0.000973
+ t_avgtotal = 0.001122
+./target_algorithm/acotsp -i ./instances/kroD100.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678405
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/kroD100.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/kroD100.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678405
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0008640000 seconds
+best 21464, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 21464
+ Best Solution was found after 1 iterations
+
+try 0, Best 21464, found at iteration 1, found at time 0.000939
+ t_avgbest = 0.000939
+ t_avgtotal = 0.001089
+./target_algorithm/acotsp -i ./instances/d1291.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678405
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/d1291.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/d1291.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678405
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0929140000 seconds
+best 56062, iteration: 1, time 0.06
+
+ Best Solution in try 0 is 56062
+ Best Solution was found after 1 iterations
+
+try 0, Best 56062, found at iteration 1, found at time 0.059800
+ t_avgbest = 0.059800
+ t_avgtotal = 0.062479
+./target_algorithm/acotsp -i ./instances/pr1002.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678405
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/pr1002.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/pr1002.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678405
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0556620000 seconds
+best 269703, iteration: 1, time 0.04
+
+ Best Solution in try 0 is 269703
+ Best Solution was found after 1 iterations
+
+try 0, Best 269703, found at iteration 1, found at time 0.036062
+ t_avgbest = 0.036062
+ t_avgtotal = 0.037462
+./target_algorithm/acotsp -i ./instances/vm1084.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678405
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/vm1084.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/vm1084.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678405
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0711120000 seconds
+best 249534, iteration: 1, time 0.04
+
+ Best Solution in try 0 is 249534
+ Best Solution was found after 1 iterations
+
+try 0, Best 249534, found at iteration 1, found at time 0.042946
+ t_avgbest = 0.042946
+ t_avgtotal = 0.045646
+./target_algorithm/acotsp -i ./instances/pr299.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678405
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/pr299.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/pr299.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678405
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0049430000 seconds
+best 51452, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 51452
+ Best Solution was found after 1 iterations
+
+try 0, Best 51452, found at iteration 1, found at time 0.003682
+ t_avgbest = 0.003682
+ t_avgtotal = 0.004049
+./target_algorithm/acotsp -i ./instances/u2319.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678405
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/u2319.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/u2319.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678405
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.2843970000 seconds
+best 252776, iteration: 1, time 0.18
+
+ Best Solution in try 0 is 252776
+ Best Solution was found after 1 iterations
+
+try 0, Best 252776, found at iteration 1, found at time 0.183172
+ t_avgbest = 0.183172
+ t_avgtotal = 0.187542
+./target_algorithm/acotsp -i ./instances/tsp225.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678406
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/tsp225.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/tsp225.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678406
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0026310000 seconds
+best 4100, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 4100
+ Best Solution was found after 1 iterations
+
+try 0, Best 4100, found at iteration 1, found at time 0.002317
+ t_avgbest = 0.002317
+ t_avgtotal = 0.002581
+./target_algorithm/acotsp -i ./instances/st70.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678406
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/st70.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/st70.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678406
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0004600000 seconds
+best 683, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 683
+ Best Solution was found after 1 iterations
+
+try 0, Best 683, found at iteration 1, found at time 0.000476
+ t_avgbest = 0.000476
+ t_avgtotal = 0.000568
+./target_algorithm/acotsp -i ./instances/rat783.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678406
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/rat783.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/rat783.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678406
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0308020000 seconds
+best 9282, iteration: 1, time 0.02
+
+ Best Solution in try 0 is 9282
+ Best Solution was found after 1 iterations
+
+try 0, Best 9282, found at iteration 1, found at time 0.022112
+ t_avgbest = 0.022112
+ t_avgtotal = 0.023224
+./target_algorithm/acotsp -i ./instances/fnl4461.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678406
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/fnl4461.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/fnl4461.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678406
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 1.3455930000 seconds
+best 192490, iteration: 1, time 0.74
+
+ Best Solution in try 0 is 192490
+ Best Solution was found after 1 iterations
+
+try 0, Best 192490, found at iteration 1, found at time 0.742703
+ t_avgbest = 0.742703
+ t_avgtotal = 0.756880
+./target_algorithm/acotsp -i ./instances/kroA100.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678408
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/kroA100.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/kroA100.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678408
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0007640000 seconds
+best 21378, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 21378
+ Best Solution was found after 1 iterations
+
+try 0, Best 21378, found at iteration 1, found at time 0.000752
+ t_avgbest = 0.000752
+ t_avgtotal = 0.000876
+./target_algorithm/acotsp -i ./instances/bier127.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678408
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/bier127.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/bier127.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678408
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0010790000 seconds
+best 119161, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 119161
+ Best Solution was found after 1 iterations
+
+try 0, Best 119161, found at iteration 1, found at time 0.001022
+ t_avgbest = 0.001022
+ t_avgtotal = 0.001173
+./target_algorithm/acotsp -i ./instances/pr2392.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678408
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/pr2392.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/pr2392.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678408
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.3376220000 seconds
+best 402173, iteration: 1, time 0.20
+
+ Best Solution in try 0 is 402173
+ Best Solution was found after 1 iterations
+
+try 0, Best 402173, found at iteration 1, found at time 0.199617
+ t_avgbest = 0.199617
+ t_avgtotal = 0.203126
+./target_algorithm/acotsp -i ./instances/pr144.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678408
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/pr144.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/pr144.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678408
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0012430000 seconds
+best 60689, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 60689
+ Best Solution was found after 1 iterations
+
+try 0, Best 60689, found at iteration 1, found at time 0.001101
+ t_avgbest = 0.001101
+ t_avgtotal = 0.001308
+./target_algorithm/acotsp -i ./instances/d198.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678408
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/d198.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/d198.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678408
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0022450000 seconds
+best 16509, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 16509
+ Best Solution was found after 1 iterations
+
+try 0, Best 16509, found at iteration 1, found at time 0.002013
+ t_avgbest = 0.002013
+ t_avgtotal = 0.002281
+./target_algorithm/acotsp -i ./instances/kroA200.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678408
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/kroA200.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/kroA200.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678408
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0023040000 seconds
+best 30291, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 30291
+ Best Solution was found after 1 iterations
+
+try 0, Best 30291, found at iteration 1, found at time 0.001935
+ t_avgbest = 0.001935
+ t_avgtotal = 0.002189
+./target_algorithm/acotsp -i ./instances/berlin52.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678408
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/berlin52.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/berlin52.tsp ... 
+
+EUC_2D
+EUC_2D
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678408
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0003970000 seconds
+best 8240, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 8240
+ Best Solution was found after 1 iterations
+
+try 0, Best 8240, found at iteration 1, found at time 0.000309
+ t_avgbest = 0.000309
+ t_avgtotal = 0.000385
+./target_algorithm/acotsp -i ./instances/pcb442.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678409
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/pcb442.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/pcb442.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678409
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0100330000 seconds
+best 52223, iteration: 1, time 0.01
+
+ Best Solution in try 0 is 52223
+ Best Solution was found after 1 iterations
+
+try 0, Best 52223, found at iteration 1, found at time 0.007360
+ t_avgbest = 0.007360
+ t_avgtotal = 0.007897
+./target_algorithm/acotsp -i ./instances/fl1400.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678409
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/fl1400.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/fl1400.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678409
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.1023750000 seconds
+best 23673, iteration: 1, time 0.07
+
+ Best Solution in try 0 is 23673
+ Best Solution was found after 1 iterations
+
+try 0, Best 23673, found at iteration 1, found at time 0.070536
+ t_avgbest = 0.070536
+ t_avgtotal = 0.072940
+./target_algorithm/acotsp -i ./instances/att532.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678409
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/att532.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/att532.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678409
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0167860000 seconds
+best 28695, iteration: 1, time 0.01
+
+ Best Solution in try 0 is 28695
+ Best Solution was found after 1 iterations
+
+try 0, Best 28695, found at iteration 1, found at time 0.010924
+ t_avgbest = 0.010924
+ t_avgtotal = 0.011653
+./target_algorithm/acotsp -i ./instances/pr439.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678409
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/pr439.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/pr439.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678409
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0101260000 seconds
+best 111801, iteration: 1, time 0.01
+
+ Best Solution in try 0 is 111801
+ Best Solution was found after 1 iterations
+
+try 0, Best 111801, found at iteration 1, found at time 0.008511
+ t_avgbest = 0.008511
+ t_avgtotal = 0.009081
+./target_algorithm/acotsp -i ./instances/rat195.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678409
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/rat195.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/rat195.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678409
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0018780000 seconds
+best 2402, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 2402
+ Best Solution was found after 1 iterations
+
+try 0, Best 2402, found at iteration 1, found at time 0.001831
+ t_avgbest = 0.001831
+ t_avgtotal = 0.002031
+./target_algorithm/acotsp -i ./instances/ch130.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678409
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/ch130.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/ch130.tsp ... 
+
+EUC_2D
+EUC_2D
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678409
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0011080000 seconds
+best 6202, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 6202
+ Best Solution was found after 1 iterations
+
+try 0, Best 6202, found at iteration 1, found at time 0.001020
+ t_avgbest = 0.001020
+ t_avgtotal = 0.001191
+./target_algorithm/acotsp -i ./instances/pcb3038.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678409
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/pcb3038.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/pcb3038.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678409
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.5598280000 seconds
+best 144626, iteration: 1, time 0.33
+
+ Best Solution in try 0 is 144626
+ Best Solution was found after 1 iterations
+
+try 0, Best 144626, found at iteration 1, found at time 0.326190
+ t_avgbest = 0.326190
+ t_avgtotal = 0.331099
+./target_algorithm/acotsp -i ./instances/kroE100.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678410
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/kroE100.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/kroE100.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678410
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0007420000 seconds
+best 22338, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 22338
+ Best Solution was found after 1 iterations
+
+try 0, Best 22338, found at iteration 1, found at time 0.000697
+ t_avgbest = 0.000697
+ t_avgtotal = 0.000843
+./target_algorithm/acotsp -i ./instances/rl1889.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678410
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/rl1889.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/rl1889.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678410
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.2428910000 seconds
+best 344628, iteration: 1, time 0.15
+
+ Best Solution in try 0 is 344628
+ Best Solution was found after 1 iterations
+
+try 0, Best 344628, found at iteration 1, found at time 0.145637
+ t_avgbest = 0.145637
+ t_avgtotal = 0.152495
+./target_algorithm/acotsp -i ./instances/rd400.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678410
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/rd400.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/rd400.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678410
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0105800000 seconds
+best 16012, iteration: 1, time 0.01
+
+ Best Solution in try 0 is 16012
+ Best Solution was found after 1 iterations
+
+try 0, Best 16012, found at iteration 1, found at time 0.007258
+ t_avgbest = 0.007258
+ t_avgtotal = 0.008172
+./target_algorithm/acotsp -i ./instances/pr152.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678410
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/pr152.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/pr152.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678410
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0012220000 seconds
+best 81271, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 81271
+ Best Solution was found after 1 iterations
+
+try 0, Best 81271, found at iteration 1, found at time 0.001207
+ t_avgbest = 0.001207
+ t_avgtotal = 0.001366
+./target_algorithm/acotsp -i ./instances/ulysses16.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678410
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/ulysses16.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/ulysses16.tsp ... 
+
+GEO
+GEO
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678410
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 15
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0002480000 seconds
+Segmentation fault (core dumped)
+./target_algorithm/acotsp -i ./instances/ts225.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678410
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/ts225.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/ts225.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678410
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0031480000 seconds
+best 128375, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 128375
+ Best Solution was found after 1 iterations
+
+try 0, Best 128375, found at iteration 1, found at time 0.002615
+ t_avgbest = 0.002615
+ t_avgtotal = 0.002877
+./target_algorithm/acotsp -i ./instances/nrw1379.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678410
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/nrw1379.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/nrw1379.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678410
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.1177950000 seconds
+best 58938, iteration: 1, time 0.07
+
+ Best Solution in try 0 is 58938
+ Best Solution was found after 1 iterations
+
+try 0, Best 58938, found at iteration 1, found at time 0.071794
+ t_avgbest = 0.071794
+ t_avgtotal = 0.074341
+./target_algorithm/acotsp -i ./instances/u2152.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678410
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/u2152.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/u2152.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678410
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.2643230000 seconds
+best 69328, iteration: 1, time 0.18
+
+ Best Solution in try 0 is 69328
+ Best Solution was found after 1 iterations
+
+try 0, Best 69328, found at iteration 1, found at time 0.175121
+ t_avgbest = 0.175121
+ t_avgtotal = 0.178958
+./target_algorithm/acotsp -i ./instances/d493.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678411
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/d493.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/d493.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678411
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0137330000 seconds
+best 36349, iteration: 1, time 0.01
+
+ Best Solution in try 0 is 36349
+ Best Solution was found after 1 iterations
+
+try 0, Best 36349, found at iteration 1, found at time 0.009423
+ t_avgbest = 0.009423
+ t_avgtotal = 0.010149
+./target_algorithm/acotsp -i ./instances/burma14.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678411
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/burma14.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/burma14.tsp ... 
+
+GEO
+GEO
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678411
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 13
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0004400000 seconds
+Segmentation fault (core dumped)
+./target_algorithm/acotsp -i ./instances/gr96.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678411
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/gr96.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/gr96.tsp ... 
+
+GEO
+GEO
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678411
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0012010000 seconds
+best 56405, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 56405
+ Best Solution was found after 1 iterations
+
+try 0, Best 56405, found at iteration 1, found at time 0.000694
+ t_avgbest = 0.000694
+ t_avgtotal = 0.000875
+./target_algorithm/acotsp -i ./instances/linhp318.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678411
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/linhp318.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/linhp318.tsp ... 
+
+EUC_2D
+EUC_2D
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678411
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0053740000 seconds
+best 43733, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 43733
+ Best Solution was found after 1 iterations
+
+try 0, Best 43733, found at iteration 1, found at time 0.004399
+ t_avgbest = 0.004399
+ t_avgtotal = 0.004835
+./target_algorithm/acotsp -i ./instances/ulysses22.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678411
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/ulysses22.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/ulysses22.tsp ... 
+
+GEO
+GEO
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678411
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0003390000 seconds
+best 7013, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 7013
+ Best Solution was found after 1 iterations
+
+try 0, Best 7013, found at iteration 1, found at time 0.000164
+ t_avgbest = 0.000164
+ t_avgtotal = 0.000191
+./target_algorithm/acotsp -i ./instances/u724.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678411
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/u724.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/u724.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678411
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0388990000 seconds
+best 43298, iteration: 1, time 0.02
+
+ Best Solution in try 0 is 43298
+ Best Solution was found after 1 iterations
+
+try 0, Best 43298, found at iteration 1, found at time 0.020842
+ t_avgbest = 0.020842
+ t_avgtotal = 0.021869
+./target_algorithm/acotsp -i ./instances/u159.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678411
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/u159.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/u159.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678411
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0016610000 seconds
+best 43623, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 43623
+ Best Solution was found after 1 iterations
+
+try 0, Best 43623, found at iteration 1, found at time 0.001398
+ t_avgbest = 0.001398
+ t_avgtotal = 0.001605
+./target_algorithm/acotsp -i ./instances/pr226.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678411
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/pr226.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/pr226.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678411
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0026180000 seconds
+best 81732, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 81732
+ Best Solution was found after 1 iterations
+
+try 0, Best 81732, found at iteration 1, found at time 0.002569
+ t_avgbest = 0.002569
+ t_avgtotal = 0.002830
+./target_algorithm/acotsp -i ./instances/gil262.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678411
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/gil262.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/gil262.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678411
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0038180000 seconds
+best 2439, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 2439
+ Best Solution was found after 1 iterations
+
+try 0, Best 2439, found at iteration 1, found at time 0.003067
+ t_avgbest = 0.003067
+ t_avgtotal = 0.003392
+./target_algorithm/acotsp -i ./instances/gr17.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678411
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/gr17.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/gr17.tsp ... 
+
+EXPLICIT
+EXPLICIT
+EDGE_WEIGHT_TYPE EXPLICIT not implemented
+./target_algorithm/acotsp -i ./instances/u1060.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678411
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/u1060.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/u1060.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678411
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0622820000 seconds
+best 233847, iteration: 1, time 0.04
+
+ Best Solution in try 0 is 233847
+ Best Solution was found after 1 iterations
+
+try 0, Best 233847, found at iteration 1, found at time 0.040183
+ t_avgbest = 0.040183
+ t_avgtotal = 0.041554
+./target_algorithm/acotsp -i ./instances/kroC100.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678411
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/kroC100.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/kroC100.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678411
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0007650000 seconds
+best 21341, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 21341
+ Best Solution was found after 1 iterations
+
+try 0, Best 21341, found at iteration 1, found at time 0.000854
+ t_avgbest = 0.000854
+ t_avgtotal = 0.000995
+./target_algorithm/acotsp -i ./instances/u574.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678411
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/u574.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/u574.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678411
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0171810000 seconds
+best 38953, iteration: 1, time 0.01
+
+ Best Solution in try 0 is 38953
+ Best Solution was found after 1 iterations
+
+try 0, Best 38953, found at iteration 1, found at time 0.013662
+ t_avgbest = 0.013662
+ t_avgtotal = 0.014490
+./target_algorithm/acotsp -i ./instances/u1817.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678411
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/u1817.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/u1817.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678411
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.1959540000 seconds
+best 62330, iteration: 1, time 0.12
+
+ Best Solution in try 0 is 62330
+ Best Solution was found after 1 iterations
+
+try 0, Best 62330, found at iteration 1, found at time 0.123589
+ t_avgbest = 0.123589
+ t_avgtotal = 0.126200
+./target_algorithm/acotsp -i ./instances/lin105.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678412
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/lin105.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/lin105.tsp ... 
+
+EUC_2D
+EUC_2D
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678412
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0008000000 seconds
+best 14426, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 14426
+ Best Solution was found after 1 iterations
+
+try 0, Best 14426, found at iteration 1, found at time 0.000797
+ t_avgbest = 0.000797
+ t_avgtotal = 0.000943
+./target_algorithm/acotsp -i ./instances/fl417.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678412
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/fl417.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/fl417.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678412
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0100310000 seconds
+best 12252, iteration: 1, time 0.01
+
+ Best Solution in try 0 is 12252
+ Best Solution was found after 1 iterations
+
+try 0, Best 12252, found at iteration 1, found at time 0.007022
+ t_avgbest = 0.007022
+ t_avgtotal = 0.007580
+./target_algorithm/acotsp -i ./instances/gr137.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678412
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/gr137.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/gr137.tsp ... 
+
+GEO
+GEO
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678412
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0034500000 seconds
+best 70712, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 70712
+ Best Solution was found after 1 iterations
+
+try 0, Best 70712, found at iteration 1, found at time 0.001547
+ t_avgbest = 0.001547
+ t_avgtotal = 0.001726
+./target_algorithm/acotsp -i ./instances/dsj1000.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678412
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/dsj1000.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/dsj1000.tsp ... 
+
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678412
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0690080000 seconds
+best 20008958, iteration: 1, time 0.04
+
+ Best Solution in try 0 is 20008958
+ Best Solution was found after 1 iterations
+
+try 0, Best 20008958, found at iteration 1, found at time 0.041495
+ t_avgbest = 0.041495
+ t_avgtotal = 0.045153
+./target_algorithm/acotsp -i ./instances/ch150.tsp -r 1 --tours 3 --time 0
+
+ACO algorithms for the TSP, v1.03
+	 OPTIONS:
+  -t  --time with argument "0.000"
+  -r  --tries with argument "1"
+  -s  --tours with argument "3"
+	Note: a seed was generated as 1643678412
+	Note: optimal solution value is set to default 1
+  -i  --tsplibfile with argument "./instances/ch150.tsp"
+mmas_flag is set to 1, run MAX-MIN Ant System
+	Note: local search flag is set to default 3 (3-opt)
+	Note: number or ants is set to default 25
+	Note: number of nearest neighbours in tour construction is set to default 20
+	Note: alpha is set to default 1
+	Note: beta is set to default 2
+	Note: rho is set to default 0.2
+	Note: q_0 is set to default 0
+	Note: number of elitist ants is set to default n
+	Note: number of ranks is set to default 0
+	Note: number nearest neighbours in local search is set to default 20
+	Note: dlb flag is set to default 1 (use don't look bits)
+Non-option arguments:
+
+reading tsp-file ./instances/ch150.tsp ... 
+
+EUC_2D
+EUC_2D
+calculating distance matrix ..
+
+ .. done
+
+Parameter-settings: 
+
+max_tries		 1
+max_tours		 3
+max_time		 0.00
+seed		 1643678412
+optimum			 1
+n_ants			 25
+nn_ants			 20
+alpha			 1.00
+beta			 2.00
+rho			 0.20
+q_0			 0.00
+elitist_ants		 0
+ras_ranks		 0
+ls_flag			 3
+nn_ls			 20
+dlb_flag		 1
+as_flag			 0
+eas_flag		 0
+ras_flag		 0
+mmas_flag		 1
+bwas_flag		 0
+acs_flag		 0
+
+allocate ants' memory ..
+
+ .. done
+Initialization took 0.0014020000 seconds
+best 6658, iteration: 1, time 0.00
+
+ Best Solution in try 0 is 6658
+ Best Solution was found after 1 iterations
+
+try 0, Best 6658, found at iteration 1, found at time 0.001237
+ t_avgbest = 0.001237
+ t_avgtotal = 0.001432

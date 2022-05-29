@@ -1,0 +1,459 @@
+
+R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # R < iraceRun.R --no-save --args 10 ./ak scenario.txt TRUE trainInstancesHARD.txt 0.3 0.2
+> # se necesita estar parado en la carpeta  tunners/irace/tunning
+> library('irace')
+> library('devtools')
+> load_all()
+  [90m─[39m[90m  [39m[90minstalling *source* package ‘irace’ ...[39m[36m[39m
+  files  files      files ‘R/generation.R’, ‘R/irace-options.R’, ‘R/irace.R’, ‘R/main.R’, ‘R/model.R’, ‘vignettes/irace-acotsp-stdout.txt’ have the wrong MD5 checksums
+     ** using staged installation
+     ** libs
+     installing via 'install.libs.R' to /tmp/RtmpR4ifTr/devtools_install_39f6813fbfce4/00LOCK-irace/00new/irace
+  [90m─[39m[90m  [39m[90mDONE (irace)[39m[36m[39m
+> 
+> args <- commandArgs()
+> 
+> cat("Los commands Args son", args, "\n")
+Los commands Args son /usr/lib/R/bin/exec/R --no-save --args 5 ./ga scenario.txt TRUE instances-list.txt 0.2 0.2 
+> setwd(args[5])
+> #
+> seed <- args[4]
+> 
+> scenario <- readScenario(filename = args[6])
+> scenario$seed <- seed
+> scenario$OL <- as.logical(args[7])
+> scenario$logFile <- stringr::str_interp("./iraceLog-${seed}-${args[7]}-g${args[9]}-f${args[10]}.Rdata")
+> scenario$trainInstancesFile <- args[8]
+> scenario$generationPercentage <- as.double(args[9])
+> scenario$filterThresh <- as.double(args[10])
+> irace.main(scenario = scenario)
+# 2022-06-06 17:54:55 UTC: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 3
+# minNbSurvival: 3
+# nbParameters: 3
+# seed: 5
+# confidence level: 0.95
+# budget: 5000
+# mu: 5
+# deterministic: FALSE
+
+# 2022-06-06 17:54:55 UTC: Iteration 1 of 3
+# experimentsUsedSoFar: 0
+# remainingBudget: 5000
+# currentBudget: 1666
+# nbConfigurations: 277
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          1|        277|         27|    8.000000000|        277|00:00:12|   NA|  NA|    NA|
+|x|          2|        277|        235|    8.000000000|        554|00:00:16|+0.37|0.69|0.6770|
+|x|          3|        277|        235|    6.666666667|        831|00:00:11|+0.50|0.66|0.8487|
+|x|          4|        277|        144|    25.00000000|       1108|00:00:13|+0.45|0.59|0.7685|
+|-|          5|         56|        144|    43.60000000|       1385|00:00:17|+0.14|0.31|0.9467|
+|-|          6|         16|        144|    47.66666667|       1441|00:00:02|-0.03|0.14|0.9807|
+|=|          7|         16|        260|    41.71428571|       1457|00:00:00|-0.00|0.14|0.9521|
+|=|          8|         16|        144|    50.00000000|       1473|00:00:00|+0.01|0.14|0.9012|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         144    mean value:     50.00000000
+Description of the best-so-far configuration:
+    .ID.  cr   mr ps .PARENT.
+144  144 0.8 0.43  2       NA
+
+# 2022-06-06 17:56:11 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+      cr   mr ps
+144 0.80 0.43  2
+260 0.86 0.44  4
+20  0.46 0.90  2
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 16
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 6
+# 2022-06-06 17:56:11 UTC: Iteration 2 of 3
+# experimentsUsedSoFar: 1473
+# remainingBudget: 3527
+# currentBudget: 1763
+# nbConfigurations: 198
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|          9|        198|        376|    6.000000000|        198|00:00:08|   NA|  NA|    NA|
+|x|          8|        198|        394|    15.00000000|        393|00:00:08|-0.00|0.50|0.8468|
+|x|          5|        198|        463|    33.33333333|        588|00:00:09|+0.11|0.40|0.8243|
+|x|          4|        198|        463|    28.00000000|        783|00:00:08|+0.16|0.37|0.8347|
+|-|          2|        120|        463|    75.60000000|        978|00:00:09|-0.14|0.09|1.0571|
+|=|          6|        120|        463|    68.66666667|       1095|00:00:05|-0.08|0.10|1.0168|
+|=|          1|        120|        463|    60.57142857|       1212|00:00:04|-0.06|0.09|0.9978|
+|=|          3|        120|        463|    53.25000000|       1329|00:00:04|-0.01|0.11|0.9464|
+|=|          7|        120|        279|    94.22222222|       1446|00:00:05|+0.02|0.13|0.9287|
+|-|         10|         76|        398|    58.60000000|       1566|00:00:05|-0.02|0.09|0.9439|
+|=|         11|         76|        398|    55.27272727|       1642|00:00:03|+0.01|0.10|0.9249|
+|=|         12|         76|        424|    63.66666667|       1718|00:00:03|+0.01|0.09|0.9277|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         424    mean value:     63.66666667
+Description of the best-so-far configuration:
+    .ID.   cr   mr ps .PARENT.
+424  424 0.97 0.38  2      260
+
+# 2022-06-06 17:57:28 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+      cr   mr ps
+424 0.97 0.38  2
+398 0.99 0.35  2
+280 0.89 0.38  2
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 76
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 14
+# 2022-06-06 17:57:29 UTC: Iteration 3 of 3
+# experimentsUsedSoFar: 3191
+# remainingBudget: 1809
+# currentBudget: 1809
+# nbConfigurations: 141
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         13|        141|        482|    12.00000000|        141|00:00:06|   NA|  NA|    NA|
+|x|          8|        141|        478|    14.00000000|        279|00:00:05|+0.21|0.60|0.8880|
+|x|         10|        141|        478|    12.00000000|        417|00:00:05|+0.34|0.56|0.7955|
+|x|          3|        141|        478|    9.500000000|        555|00:00:05|+0.43|0.57|0.6820|
+|-|         12|         40|        280|    9.600000000|        693|00:00:05|+0.09|0.27|0.9237|
+|-|          9|         27|        280|    10.66666667|        730|00:00:01|-0.07|0.10|0.8004|
+|=|         11|         27|        280|    10.00000000|        754|00:00:01|-0.01|0.14|0.7804|
+|=|          4|         27|        531|    14.00000000|        778|00:00:01|-0.04|0.09|0.8135|
+|=|          7|         27|        531|    13.55555556|        802|00:00:01|+0.01|0.12|0.7872|
+|=|          2|         27|        531|    18.20000000|        826|00:00:01|+0.00|0.10|0.8170|
+|=|          6|         27|        531|    25.63636364|        850|00:00:01|+0.00|0.09|0.8147|
+|=|          1|         27|        531|    24.33333333|        874|00:00:01|+0.03|0.11|0.7983|
+|=|          5|         27|        531|    34.92307692|        898|00:00:01|+0.01|0.09|0.8303|
+|=|         14|         27|        529|    34.85714286|        925|00:00:01|+0.02|0.09|0.8522|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         529    mean value:     34.85714286
+Description of the best-so-far configuration:
+    .ID.   cr   mr ps .PARENT.
+529  529 0.85 0.38  2      424
+
+# 2022-06-06 17:58:09 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+      cr   mr ps
+529 0.85 0.38  2
+424 0.97 0.38  2
+531 0.88 0.37  2
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 27
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 11
+# 2022-06-06 17:58:09 UTC: Iteration 4 of 4
+# experimentsUsedSoFar: 4116
+# remainingBudget: 884
+# currentBudget: 884
+# nbConfigurations: 61
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         15|         61|        659|    16.00000000|         61|00:00:02|   NA|  NA|    NA|
+|x|          4|         61|        642|    18.00000000|        119|00:00:02|+0.34|0.67|0.5611|
+|x|         13|         61|        617|    28.00000000|        177|00:00:02|+0.25|0.50|0.7744|
+|x|          6|         61|        668|    34.50000000|        235|00:00:02|+0.23|0.42|0.7458|
+|-|         10|         22|        668|    28.40000000|        293|00:00:02|+0.04|0.23|0.8813|
+|=|          3|         22|        668|    24.00000000|        312|00:00:00|+0.11|0.26|0.8283|
+|-|          7|         13|        668|    22.57142857|        331|00:00:00|-0.02|0.13|0.8873|
+|=|          1|         13|        668|    21.00000000|        341|00:00:00|+0.00|0.13|0.8854|
+|=|          8|         13|        529|    28.66666667|        351|00:00:00|+0.05|0.15|0.8403|
+|=|          5|         13|        424|    37.00000000|        361|00:00:00|+0.02|0.12|0.8851|
+|=|          9|         13|        529|    38.36363636|        371|00:00:00|+0.05|0.13|0.8566|
+|=|         11|         13|        529|    35.66666667|        381|00:00:00|+0.06|0.14|0.8579|
+|-|         12|          9|        529|    33.69230769|        391|00:00:00|+0.00|0.08|0.8734|
+|=|          2|          9|        529|    38.14285714|        397|00:00:00|-0.00|0.07|0.8809|
+|=|         14|          9|        529|    36.66666667|        403|00:00:00|-0.01|0.05|0.8770|
+|=|         16|          9|        529|    38.12500000|        412|00:00:00|-0.00|0.06|0.8632|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         529    mean value:     38.12500000
+Description of the best-so-far configuration:
+    .ID.   cr   mr ps .PARENT.
+529  529 0.85 0.38  2      424
+
+# 2022-06-06 17:58:28 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+      cr   mr ps
+529 0.85 0.38  2
+531 0.88 0.37  2
+424 0.97 0.38  2
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 9
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 8
+# 2022-06-06 17:58:28 UTC: Iteration 5 of 5
+# experimentsUsedSoFar: 4528
+# remainingBudget: 472
+# currentBudget: 472
+# nbConfigurations: 30
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         17|         30|        529|    10.00000000|         30|00:00:01|   NA|  NA|    NA|
+|x|          3|         30|        529|    6.000000000|         57|00:00:01|+0.39|0.69|0.4258|
+|x|          5|         30|        529|    53.33333333|         84|00:00:01|+0.45|0.63|0.5740|
+|x|         16|         30|        677|    17.00000000|        111|00:00:01|+0.45|0.59|0.5005|
+|-|          8|         16|        529|    47.20000000|        138|00:00:01|-0.08|0.13|0.9051|
+|=|          4|         16|        673|    36.00000000|        151|00:00:00|-0.06|0.12|0.8815|
+|=|         15|         16|        673|    36.85714286|        164|00:00:00|-0.04|0.11|0.8519|
+|=|         12|         16|        673|    33.75000000|        177|00:00:00|+0.02|0.14|0.8038|
+|=|          6|         16|        529|    49.55555556|        190|00:00:00|+0.03|0.14|0.8155|
+|=|          2|         16|        529|    54.20000000|        203|00:00:00|+0.01|0.11|0.8393|
+|=|         13|         16|        529|    50.72727273|        216|00:00:00|+0.05|0.14|0.8263|
+|-|         11|         10|        529|    47.00000000|        229|00:00:00|-0.03|0.06|0.9048|
+|=|         10|         10|        529|    43.69230769|        236|00:00:00|-0.01|0.07|0.8793|
+|=|          7|         10|        529|    41.28571429|        243|00:00:00|+0.02|0.09|0.8757|
+|=|         14|         10|        529|    39.60000000|        250|00:00:00|+0.01|0.07|0.8909|
+|=|          1|         10|        529|    37.75000000|        257|00:00:00|+0.01|0.07|0.8867|
+|=|          9|         10|        529|    36.47058824|        264|00:00:00|+0.03|0.09|0.8686|
+|=|         18|         10|        529|    35.22222222|        274|00:00:00|+0.04|0.09|0.8677|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         529    mean value:     35.22222222
+Description of the best-so-far configuration:
+    .ID.   cr   mr ps .PARENT.
+529  529 0.85 0.38  2      424
+
+# 2022-06-06 17:58:40 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+      cr   mr ps
+529 0.85 0.38  2
+531 0.88 0.37  2
+424 0.97 0.38  2
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 10
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 5
+# 2022-06-06 17:58:40 UTC: Iteration 6 of 6
+# experimentsUsedSoFar: 4802
+# remainingBudget: 198
+# currentBudget: 198
+# nbConfigurations: 13
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         19|         13|        529|    22.00000000|         13|00:00:00|   NA|  NA|    NA|
+|x|         11|         13|        529|    14.00000000|         23|00:00:00|+0.58|0.79|0.3775|
+|x|         17|         13|        529|    12.66666667|         33|00:00:00|+0.23|0.49|0.6715|
+|x|          6|         13|        529|    23.00000000|         43|00:00:00|+0.30|0.48|0.6699|
+|-|          1|          7|        529|    20.40000000|         53|00:00:00|-0.12|0.11|0.9729|
+|=|          7|          7|        529|    18.66666667|         57|00:00:00|-0.01|0.16|0.8748|
+|=|         12|          7|        529|    17.42857143|         61|00:00:00|+0.07|0.20|0.8294|
+|=|          3|          7|        529|    15.50000000|         65|00:00:00|+0.13|0.24|0.7715|
+|-|         13|          5|        529|    15.55555556|         69|00:00:00|+0.03|0.14|0.6170|
+|=|         18|          5|        529|    15.40000000|         71|00:00:00|+0.10|0.19|0.5825|
+|=|          2|          5|        529|    22.72727273|         73|00:00:00|+0.04|0.12|0.6319|
+|=|          5|          5|        529|    33.16666667|         75|00:00:00|+0.04|0.12|0.6187|
+|=|         14|          5|        529|    31.84615385|         77|00:00:00|+0.05|0.12|0.6192|
+|=|         15|          5|        529|    34.00000000|         79|00:00:00|+0.09|0.16|0.5918|
+|=|         16|          5|        529|    35.73333333|         81|00:00:00|+0.06|0.13|0.6207|
+|=|          9|          5|        529|    34.50000000|         83|00:00:00|+0.05|0.11|0.6494|
+|=|         10|          5|        529|    32.70588235|         85|00:00:00|+0.07|0.12|0.6330|
+|=|          8|          5|        529|    31.77777778|         87|00:00:00|+0.06|0.11|0.6345|
+|=|          4|          5|        529|    34.52631579|         89|00:00:00|+0.03|0.08|0.6680|
+|=|         20|          5|        529|    33.20000000|         94|00:00:00|+0.04|0.08|0.6786|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         529    mean value:     33.20000000
+Description of the best-so-far configuration:
+    .ID.   cr   mr ps .PARENT.
+529  529 0.85 0.38  2      424
+
+# 2022-06-06 17:58:45 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+      cr   mr ps
+529 0.85 0.38  2
+531 0.88 0.37  2
+424 0.97 0.38  2
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 5
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 5
+# 2022-06-06 17:58:45 UTC: Iteration 7 of 7
+# experimentsUsedSoFar: 4896
+# remainingBudget: 104
+# currentBudget: 104
+# nbConfigurations: 7
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         21|          7|        529|    8.000000000|          7|00:00:00|   NA|  NA|    NA|
+|x|         18|          7|        529|    11.00000000|         11|00:00:00|+0.64|0.82|0.6103|
+|x|          4|          7|        531|    21.33333333|         15|00:00:00|+0.52|0.68|0.5064|
+|x|          3|          7|        531|    16.50000000|         19|00:00:00|+0.59|0.69|0.3740|
+|-|         15|          4|        531|    38.40000000|         23|00:00:00|-0.09|0.13|0.6319|
+|=|         14|          4|        529|    31.00000000|         24|00:00:00|-0.07|0.10|0.6362|
+|=|         16|          4|        529|    35.14285714|         25|00:00:00|-0.10|0.06|0.6944|
+|=|          2|          4|        531|    46.00000000|         26|00:00:00|-0.00|0.12|0.6571|
+|=|         17|          4|        529|    39.11111111|         27|00:00:00|+0.05|0.15|0.6283|
+|=|          8|          4|        529|    36.80000000|         28|00:00:00|-0.01|0.10|0.6491|
+|=|         19|          4|        529|    35.45454545|         29|00:00:00|+0.05|0.14|0.6135|
+|=|         10|          4|        529|    32.83333333|         30|00:00:00|+0.05|0.13|0.5681|
+|=|          9|          4|        529|    31.53846154|         31|00:00:00|+0.10|0.17|0.5437|
+|=|          7|          4|        529|    30.00000000|         32|00:00:00|+0.10|0.17|0.5457|
+|=|         11|          4|        529|    28.40000000|         33|00:00:00|+0.10|0.16|0.5158|
+|=|          1|          4|        529|    27.25000000|         34|00:00:00|+0.11|0.16|0.5148|
+|=|         13|          4|        529|    26.58823529|         35|00:00:00|+0.09|0.15|0.5380|
+|!|         20|          4|        529|    25.55555556|         36|00:00:00|+0.11|0.16|0.5346|
+|=|          5|          4|        529|    32.00000000|         37|00:00:00|+0.09|0.13|0.5583|
+|=|          6|          4|        529|    33.10000000|         38|00:00:00|+0.06|0.10|0.5853|
+|=|         12|          4|        529|    32.00000000|         39|00:00:00|+0.07|0.11|0.5812|
+|=|         22|          4|        529|    43.27272727|         43|00:00:00|+0.03|0.08|0.6118|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         529    mean value:     43.27272727
+Description of the best-so-far configuration:
+    .ID.   cr   mr ps .PARENT.
+529  529 0.85 0.38  2      424
+
+# 2022-06-06 17:58:47 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+      cr   mr ps
+529 0.85 0.38  2
+531 0.88 0.37  2
+424 0.97 0.38  2
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 4
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 4
+# 2022-06-06 17:58:47 UTC: Iteration 8 of 8
+# experimentsUsedSoFar: 4939
+# remainingBudget: 61
+# currentBudget: 61
+# nbConfigurations: 5
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+|x|         23|          5|        424|    26.00000000|          5|00:00:00|   NA|  NA|    NA|
+|x|         15|          5|        711|    132.0000000|          7|00:00:00|-0.62|0.19|1.2208|
+|x|          8|          5|        424|    62.66666667|          9|00:00:00|-0.24|0.17|0.8840|
+|x|          4|          5|        424|    63.00000000|         11|00:00:00|-0.27|0.04|1.0012|
+|=|          1|          5|        424|    52.40000000|         13|00:00:00|-0.23|0.02|0.9913|
+|=|          6|          5|        424|    49.66666667|         15|00:00:00|-0.14|0.05|0.9225|
+|=|         10|          5|        424|    43.14285714|         17|00:00:00|-0.09|0.06|0.8727|
+|=|         16|          5|        424|    45.25000000|         19|00:00:00|-0.09|0.05|0.8480|
+|=|         12|          5|        424|    41.33333333|         21|00:00:00|-0.03|0.08|0.8157|
+|=|          2|          5|        531|    66.60000000|         23|00:00:00|-0.04|0.07|0.8174|
+|=|         18|          5|        531|    61.81818182|         25|00:00:00|+0.01|0.10|0.7924|
+|=|          7|          5|        531|    57.50000000|         27|00:00:00|+0.05|0.13|0.7555|
+|=|          5|          5|        424|    75.07692308|         29|00:00:00|+0.02|0.10|0.7942|
+|=|         20|          5|        531|    61.42857143|         31|00:00:00|+0.05|0.12|0.7810|
+|=|          3|          5|        531|    57.46666667|         33|00:00:00|+0.08|0.15|0.7513|
+|=|         22|          5|        424|    72.37500000|         35|00:00:00|+0.07|0.13|0.7410|
+|-|         11|          3|        424|    68.47058824|         37|00:00:00|-0.06|0.00|0.4563|
+|.|         13|          3|        424|    65.77777778|         37|00:00:00|-0.06|0.00|0.4663|
+|.|         14|          3|        424|    63.15789474|         37|00:00:00|-0.05|0.00|0.4747|
+|.|          9|          3|        424|    61.50000000|         37|00:00:00|-0.05|0.01|0.4813|
+|.|         19|          3|        424|    60.57142857|         37|00:00:00|-0.03|0.01|0.4845|
+|.|         17|          3|        424|    62.36363636|         37|00:00:00|-0.02|0.03|0.4835|
+|.|         21|          3|        424|    60.00000000|         37|00:00:00|-0.02|0.03|0.4625|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+Best-so-far configuration:         529    mean value:     43.47826087
+Description of the best-so-far configuration:
+    .ID.   cr   mr ps .PARENT.
+529  529 0.85 0.38  2      424
+
+# 2022-06-06 17:58:49 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+      cr   mr ps
+529 0.85 0.38  2
+531 0.88 0.37  2
+424 0.97 0.38  2
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 3
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 3
+# 2022-06-06 17:58:49 UTC: Stopped because there is not enough budget left to race more than the minimum (3)
+# You may either increase the budget or set 'minNbSurvival' to a lower value
+# Iteration: 9
+# nbIterations: 9
+# experimentsUsedSoFar: 4976
+# timeUsed: 0
+# remainingBudget: 24
+# currentBudget: 24
+# number of elites: 3
+# nbConfigurations: 3
+# Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+      cr   mr ps
+529 0.85 0.38  2
+531 0.88 0.37  2
+424 0.97 0.38  2
+# Best configurations as commandlines (first number is the configuration ID; same order as above):
+529  -cr 0.85 -mr 0.38 -ps 2
+531  -cr 0.88 -mr 0.37 -ps 2
+424  -cr 0.97 -mr 0.38 -ps 2
+> 
