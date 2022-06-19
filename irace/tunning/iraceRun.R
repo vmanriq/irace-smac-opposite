@@ -14,6 +14,7 @@ seed <- args[4]
 scenario <- readScenario(filename = args[6])
 scenario$seed <- seed
 scenario$OL <- as.logical(args[7])
+scenario$logFile <- stringr::str_interp("./iraceLog-${seed}-${args[7]}-g${args[9]}-f${args[10]}.Rdata")
 scenario$trainInstancesFile <- args[8]
 scenario$generationPercentage <- as.double(args[9])
 scenario$filterThresh <- as.double(args[10])

@@ -1,0 +1,13 @@
+MANIFEST.in
+README.rst
+requirements.txt
+setup.cfg
+setup.py
+pynisher/__init__.py
+pynisher/limit_function_call.py
+pynisher.egg-info/PKG-INFO
+pynisher.egg-info/SOURCES.txt
+pynisher.egg-info/dependency_links.txt
+pynisher.egg-info/requires.txt
+pynisher.egg-info/top_level.txt
+test/test_pynisher.py

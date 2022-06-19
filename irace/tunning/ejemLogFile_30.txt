@@ -1,0 +1,2277 @@
+
+R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> # R < iraceRun.R --no-save --args 10 ./ak scenario.txt TRUE trainInstancesHARD.txt 0.3 0.2
+> # se necesita estar parado en la carpeta  tunners/irace/tunning
+> library('irace')
+> library('devtools')
+> load_all()
+  [90m─[39m[90m  [39m[90minstalling *source* package ‘irace’ ...[39m[36m[39m
+     files ‘R/generation.R’, ‘R/irace-options.R’, ‘R/irace.R’, ‘R/main.R’, ‘R/model.R’, ‘vignettes/irace-acotsp-stdout.txt’ have the wrong MD5 checksums
+     ** using staged installation
+     ** libs
+     installing via 'install.libs.R' to /tmp/RtmptdPwmr/devtools_install_d77c5d30ace7/00LOCK-irace/00new/irace
+  [90m─[39m[90m  [39m[90mDONE (irace)[39m[36m[39m
+> 
+> args <- commandArgs()
+> 
+> cat("Los commands Args son", args, "\n")
+Los commands Args son /usr/lib/R/bin/exec/R --no-save --args 30 ./acotsp scenario.txt TRUE instances-list.txt 0.4 0.2 
+> setwd(args[5])
+> #
+> seed <- args[4]
+> 
+> scenario <- readScenario(filename = args[6])
+> scenario$seed <- seed
+> scenario$OL <- as.logical(args[7])
+> scenario$logFile <- './nice.Rdata'
+> scenario$trainInstancesFile <- args[8]
+> scenario$generationPercentage <- as.double(args[9])
+> scenario$filterThresh <- as.double(args[10])
+> irace.main(scenario = scenario)
+## irace scenario:
+scenarioFile = "./scenario.txt"
+parameterFile = "/root/irace-smac-opposite/irace/tunning/acotsp/parameters.txt"
+execDir = "/root/irace-smac-opposite/irace/tunning/acotsp"
+logFile = "/root/irace-smac-opposite/irace/tunning/acotsp/nice.Rdata"
+recoveryFile = NULL
+instances = c("/root/irace-smac-opposite/irace/tunning/acotsp/instances/eil76.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/lin318.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/d1291.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr1002.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/vm1084.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr299.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/u2319.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/st70.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/kroA100.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/bier127.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr2392.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr144.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/d198.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/kroA200.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/berlin52.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pcb442.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/fl1400.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/att532.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr439.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/rat195.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/ch130.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pcb3038.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/kroE100.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/rd400.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr152.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/ts225.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/nrw1379.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/u2152.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/d493.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/gr96.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/linhp318.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/ulysses22.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/u724.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/u159.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/pr226.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/gil262.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/u1060.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/kroC100.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/u574.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/fl417.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/gr137.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/ch150.tsp", "/root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp")
+initConfigurations = NULL
+trainInstancesDir = "/root/irace-smac-opposite/irace/tunning/acotsp/instances"
+trainInstancesFile = "/root/irace-smac-opposite/irace/tunning/acotsp/instances-list.txt"
+configurationsFile = ""
+forbiddenExps = NULL = expression()
+forbiddenFile = ""
+targetRunner = "/root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py"
+targetRunnerRetries = 0
+targetRunnerData = ""
+targetRunnerParallel = NULL
+targetEvaluator = NULL
+maxExperiments = 300
+maxTime = 0
+budgetEstimation = 0.02
+digits = 2
+debugLevel = 3
+nbIterations = 0
+nbExperimentsPerIteration = 0
+sampleInstances = TRUE
+testType = "friedman"
+firstTest = 5
+eachTest = 1
+minNbSurvival = 0
+nbConfigurations = 0
+mu = 5
+confidence = 0.95
+deterministic = FALSE
+seed = 30
+parallel = 0
+loadBalancing = TRUE
+mpi = FALSE
+batchmode = "0"
+softRestart = TRUE
+softRestartThreshold = 0.01
+testInstancesDir = ""
+testInstancesFile = ""
+testInstances = NULL
+testNbElites = 1
+testIterationElites = FALSE
+elitist = TRUE
+elitistNewInstances = 1
+elitistLimit = 2
+repairConfiguration = NULL
+capping = FALSE
+cappingType = "median"
+boundType = "candidate"
+boundMax = NULL
+boundDigits = 0
+boundPar = 1
+boundAsTimeout = TRUE
+postselection = 0
+aclib = FALSE
+OL = TRUE
+generationPercentage = 0.4
+filterThresh = 0.2
+## end of irace scenario
+# --- Parameters Hierarchy ---
+[1] "algorithm"   "localsearch" "alpha"       "beta"        "rho"         "ants"        "elitistants" "nnls"        "dlb"        
+  algorithm localsearch       alpha        beta         rho        ants elitistants        nnls         dlb 
+          1           1           1           1           1           1           2           2           2 
+    algorithm   localsearch         alpha          beta           rho          ants   elitistants          nnls           dlb 
+           ""            ""            ""            ""            ""            ""   "algorithm" "localsearch" "localsearch" 
+    Parameter Level  Depends.on
+1   algorithm     1            
+2 localsearch     1            
+3       alpha     1            
+4        beta     1            
+5         rho     1            
+6        ants     1            
+7 elitistants     2   algorithm
+8        nnls     2 localsearch
+9         dlb     2 localsearch
+
+# ------------------------
+$names
+[1] "algorithm"   "localsearch" "alpha"       "beta"        "rho"         "ants"        "elitistants" "nnls"        "dlb"        
+
+$types
+  algorithm localsearch       alpha        beta         rho        ants elitistants        nnls         dlb 
+        "c"         "c"         "r"         "r"         "r"         "i"         "i"         "i"         "c" 
+
+$switches
+       algorithm      localsearch            alpha             beta              rho             ants      elitistants             nnls              dlb 
+  "--algorithm " "--localsearch "       "--alpha "        "--beta "        "--rho  "        "--ants " "--elitistants "        "--nnls "         "--dlb " 
+
+$domain
+$domain$algorithm
+[1] "eas"
+
+$domain$localsearch
+[1] "0" "1" "2" "3"
+
+$domain$alpha
+[1]  1 10
+
+$domain$beta
+[1]  1 10
+
+$domain$rho
+[1] 0.1 1.0
+
+$domain$ants
+[1]   5 100
+
+$domain$elitistants
+[1]   1 750
+
+$domain$nnls
+[1]  5 50
+
+$domain$dlb
+[1] "0" "1"
+
+
+$conditions
+$conditions$algorithm
+[1] TRUE
+
+$conditions$localsearch
+[1] TRUE
+
+$conditions$alpha
+[1] TRUE
+
+$conditions$beta
+[1] TRUE
+
+$conditions$rho
+[1] TRUE
+
+$conditions$ants
+[1] TRUE
+
+$conditions$elitistants
+expression(algorithm == "eas")
+
+$conditions$nnls
+expression(localsearch %in% c(1, 2, 3))
+
+$conditions$dlb
+expression(localsearch %in% c(1, 2, 3))
+
+
+$isFixed
+  algorithm localsearch       alpha        beta         rho        ants elitistants        nnls         dlb 
+       TRUE       FALSE       FALSE       FALSE       FALSE       FALSE       FALSE       FALSE       FALSE 
+
+$transform
+$transform$algorithm
+[1] ""
+
+$transform$localsearch
+[1] ""
+
+$transform$alpha
+[1] ""
+
+$transform$beta
+[1] ""
+
+$transform$rho
+[1] ""
+
+$transform$ants
+[1] ""
+
+$transform$elitistants
+[1] ""
+
+$transform$nnls
+[1] ""
+
+$transform$dlb
+[1] ""
+
+
+$depends
+$depends$algorithm
+character(0)
+
+$depends$localsearch
+character(0)
+
+$depends$alpha
+character(0)
+
+$depends$beta
+character(0)
+
+$depends$rho
+character(0)
+
+$depends$ants
+character(0)
+
+$depends$elitistants
+[1] "algorithm"
+
+$depends$nnls
+[1] "localsearch"
+
+$depends$dlb
+[1] "localsearch"
+
+
+$hierarchy
+  algorithm localsearch       alpha        beta         rho        ants elitistants        nnls         dlb 
+          1           1           1           1           1           1           2           2           2 
+
+$nbParameters
+[1] 9
+
+$nbFixed
+[1] 1
+
+$nbVariable
+[1] 8
+
+# 2022-05-29 16:41:52 UTC: Parameters have been read
+# 2022-05-29 16:41:52 UTC: RNGkind: Mersenne-Twister Inversion Rejection
+# 2022-05-29 16:41:52 UTC: .Random.seed: 10403, 624, 728485722, 238460179, -993476808, -2052130855, -410288698, -35863153, 1164015236, -124478539, 916316402, -1580504117, 1344905360, -284368047, -131193634, 967887815, -122468004, -1951962451, -1071106678, 544530819, -829473560, -340554295, 1791278838, 1010133247, 1444480820, 1050437797, 2100636962, 604102203, -872221632, 2030360385, -15750130, -1219003081, -1079898100, -1079806563, 947595194, -1554169357, -805689704, 1709088697, -2128917466, 299886703, -1752579100, 472412565, 196904274, 2114841771, -1831455760, -1441085647, 1522532158, 1794345639, -1917353284, 1347632269, -918051350, 2008464995, -479953848, -1374736983, 1428301142, 227754975, -1656836972, -964184443, -1787369086, -1550412005, 1012817824, -2113031391, -1976426898, 1411118103, -1176592020, -958021763, -1338986470, 1074288339, 166280696, 98842521, -2043917690, -70878385, 763543876, -691456139, 1852266930, 33742219, -1625917616, 6069009, -1726412386, -400049785, -1513984996, 139066989, 1670989386, -795276477, -614241368, 649903497, 1481423798, 1454411455, -245300748, 968619109, -1152330270, -260456453, -2143716608, 340164353, 1340588238, -2110924041, 1842209484, 1160706397, -1029412742, -1620059213, 913179992, 834125689, -464095002, -1236763089, 614756004, 535752021, -1581883886, 534920811, 1136814768, -1932894479, 1674658814, -754624409, -1725168260, -368857011, 1161107114, 877905955, -261879032, -1615577751, 1205633558, 1078282655, 1171785556, -307158459, 2010837570, 182671579, -1670625696, 145177313, -1496804562, 1363489239, -909650900, -1896406211, 737038554, -1731473261, -2057274184, 827406169, -718153914, 404615439, -968438780, 722572085, -188640654, 1709444939, 1001524752, -430173487, 931180126, -1455134905, 1816940252, -403156435, -1338829046, -937495293, -935437720, -554848951, 1130985590, -821463937, -1174684492, 1944010789, 1613577890, -1895079493, -2117156416, 875030209, -1318283890, 756676791, 1747219852, -1263125219, 874932538, 525612403, -1835490280, -928473287, -564763226, -738274321, -2017339036, 1739139349, -1029638446, -29339605, 767385968, -1609976143, 1556039870, 1151133223, -814004164, -1331698675, 1923827562, -852323869, 1959418312, 643894569, -1232363818, -474673313, -1725685228, -1715581435, 358595330, -1255548261, 221834528, 1740669601, 1584121838, -580636777, -1891907860, -2098968835, -1352355430, 1111558739, 1710127992, 934672153, -782490618, 2023958223, 174954180, -2127712523, 1919716146, -1355874037, -1396939568, 1221282449, -400223458, -624503545, 521204124, -1368234515, -424302646, -1597595965, 1944062248, 872832265, 1490744630, 989862463, 1521039220, 1757826021, 1149921122, 1366737787, 126011520, 1885933185, 1751001678, -2049190281, 828753996, -2114371363, -37672454, 751456051, 1933181656, 980500217, -874835354, 1891821999, 463602724, 1595352277, 2000441234, -622321173, 931600432, 1805176433, -1169552002, -42322969, 1667582716, 132634573, -227919830, -1139598429, -1353226104, 1104518377, 770669462, 1839371551, -1578959660, 644823493, -1497021502, -735437733, 629429216, 387549793, 1440464046, -1506218665, -319129172, -160617795, 190042714, 640156691, -1705821640, 148010713, 929771718, 51780751, -1263066748, 618498741, 1344816114, 2141434571, 955612048, -1888861615, 2143696862, -1704000825, 1355830364, -1619510867, 132184202, -1269823357, 2097706984, 96914633, -2057227786, -262897665, 1042903604, 1412503461, 19419170, 1232856379, 135630656, 550106689, 2038202126, 439579703, 206691084, -524811107, 1345628858, -1852692237, 655499672, 1456578233, -911966426, 1381285743, -83562780, 838394005, -2008520622, 932819883, 132091632, 926393905, -1322151362, -77774425, 1202326972, 328960909, 624027882, 984966499, -1630849208, -1311642455, -87549866, 332258015, 718575508, -1350310523, 617319554, 1503927835, 1007581856, 1316114977, -237473426, 428043031, -2050757524, -44970371, -797199590, -297746989, -783369992, 1416017561, -2078343802, 1563873871, 1071868996, 568403573, -1229669198, 956441739, -417508784, -503776751, -1826349922, -973279097, 1414166300, -1094070931, -730527414, 477835843, 1115137704, -202441591, 1975266998, 80127423, -1891865356, 836739941, -288950046, 1222297339, 977737216, 1560976897, -1450732594, 937480695, -72831540, -994932643, 474016634, -680803661, -1126105000, -1383481735, -1267553306, -25930449, 11180452, -871474091, 2122662162, 1444218219, 92718512, 178666993, 909498110, -66711705, 789155964, -1216676019, 734157226, 1121546019, 31835656, -166331287, 701854998, -873013089, -1095175596, 280777029, 1211274562, -145236005, 1737974112, 92985825, 1461839406, 1694738647, -1135075540, 1800548925, 1335645146, 72038291, 2040592312, -1976388007, -197686714, -322615281, -424511740, 1140359733, -1898842766, -49654197, 2113136912, 674722257, 1996407134, -80699833, 1010784732, -802741971, -852370934, -1291314173, -487746200, 1581182025, -1767117962, 1310100351, 950151092, -1114509531, 640049570, -514627397, 349658304, -51706431, 2101307534, -324800585, -1037418356, -509031395, 312863802, 1209474163, 57057048, -1906729415, 688232614, -1159615761, -950860700, -652765163, -1565337134, 941233963, 1463598192, -1381722703, -32056386, 2100600103, -1941712068, -1757007091, -421819798, -1908459293, 1466373320, 1315032105, -2015915562, 1272817247, -1471148780, -438797051, -1984274942, 520446363, 2128545824, -199024223, 1786256110, 1987683991, -1284042260, -735160835, -1720339302, -1845005997, -1039534472, -638159335, -2072717562, -679379505, -1545322044, 384015861, -2126516686, -1384364021, -2076622896, 166046097, 1075193374, -1748366329, -613483364, 1464874221, 852978378, 297190851, 1026180136, 1685494793, 351299638, 1644441919, -451239308, 1929902821, -2147055006, 1688586875, -830053504, -1742000767, 962854222, 104648055, -493448372, -1420111907, -1541165830, -313248205, -1990001192, 151076345, -2078456474, -1923301201, -1447153884, -992701483, -40815982, -1620514581, -473861328, -1477268111, 2106892414, -1129780505, -1843866116, 381494989, -146965718, -1767456093, -569433208, -1166713879, -1584501098, 155331615, -228988972, -1969723195, 572712642, 40674139, 413495008, -1845810847, -795144274, -73046953, 1306576044, -1952040515, 2127025498, -2127205613, -1723222728, 863106521, -241769530, 53179279, 842583172, -429753931, -155277582, -333973045, 1085101712, -289169071, -1020638498, -1182189113, -996581540, -1744500563, 103136138, -1840828541, -269634840, -430568503, -582376202, -1773168897, -10101452, -1912486235, -1792576734, -460198853, 1578379840, -2037705407, -491433458, 309029687, -1616009716, 1435014045, 24784314, -1864167437, -1651106664, -314532423, -495341018, 1000707695, -1028908572, -1157279851, 1474317138, 230783659, 1372908016, 1095796017, -378591938, -1205667673, 860395708, 1503648397, -1113052182, -1781527453, -1801588152, -99570775, -1011217578, 971272671, 1737917076, 448533637, 170667906, -1823628005, -1951754848, 382923041, -297089938, 1648812567, 777336684, -1518740099, -1873627622, 2073371859, -1373621256, 1181037977, -1201819514, 360917327, 208672580, -1103817355, 403578802, 446524299, -1173344944, -24028911, -1795477602, 1043212167, 1249804828, -1778017171, 131910730, 1316575555, 1509417384, -2086847607, -1669881418, 12106943, -1304176652, 171922021, -1102504990, 853003771, 2051059968, -540361471, 1039361742, 1592772855, -63997748, -739109027, 459894394, -1132222029, 1321204568, -891830919, 551214822, 1266428975, -321076060, -1486238891, 979379218, -991703957, 137830576, -2122441487, 912681470, 761448039, 580066172, 1135496781
+# 2022-05-29 16:41:52 UTC: Initialization
+# Elitist race
+# Elitist new instances: 1
+# Elitist limit: 2
+# nbIterations: 5
+# minNbSurvival: 5
+# nbParameters: 8
+# seed: 30
+# confidence level: 0.95
+# budget: 300
+# mu: 5
+# deterministic: FALSE
+
+# 2022-05-29 16:41:52 UTC: Iteration 1 of 5
+# experimentsUsedSoFar: 0
+# remainingBudget: 300
+# currentBudget: 60
+# nbConfigurations: 10
+# 2022-05-29 16:41:52 UTC: Sample 10 configurations from uniform distribution
+# 2022-05-29 16:41:52 UTC: Configurations for the race n 1 (elite configurations listed first, then new configurations):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls  dlb .PARENT.
+1     1       eas           3  4.89 3.87 0.96    5          29   49    1       NA
+2     2       eas           1  9.29 9.95 0.75   34         674   33    1       NA
+3     3       eas           3  1.65 6.40 0.70   55         185   21    1       NA
+4     4       eas           0  9.50 5.63 0.91   64         457   NA <NA>       NA
+5     5       eas           1  3.70 2.77 0.49   77         295   10    0       NA
+6     6       eas           3  1.91 5.17 0.49   31         316   26    0       NA
+7     7       eas           2  8.81 8.84 0.46   92         672   19    1       NA
+8     8       eas           1  7.21 9.55 0.67   24         100   29    0       NA
+9     9       eas           2  7.88 5.61 0.59   82         623   10    0       NA
+10   10       eas           0  2.54 6.88 0.83   74          20   NA <NA>       NA
+# 2022-05-29 16:41:52 UTC: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# 2022-05-29 16:41:52 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 1 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 4.89 --beta 3.87 --rho  0.96 --ants 5 --elitistants 29 --nnls 49 --dlb 1
+# 2022-05-29 16:42:02 UTC: DONE (1) Elapsed wall-clock seconds: 10.04
+2.194437356468487
+# 2022-05-29 16:42:02 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 2 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 9.29 --beta 9.95 --rho  0.75 --ants 34 --elitistants 674 --nnls 33 --dlb 1
+# 2022-05-29 16:42:12 UTC: DONE (2) Elapsed wall-clock seconds: 10.03
+0.8930849706557795
+# 2022-05-29 16:42:12 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 3 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 1.65 --beta 6.4 --rho  0.7 --ants 55 --elitistants 185 --nnls 21 --dlb 1
+# 2022-05-29 16:42:12 UTC: DONE (3) Elapsed wall-clock seconds: 0.07
+0.0
+# 2022-05-29 16:42:12 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 4 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 0 --alpha 9.5 --beta 5.63 --rho  0.91 --ants 64 --elitistants 457
+# 2022-05-29 16:42:22 UTC: DONE (4) Elapsed wall-clock seconds: 10.03
+0.7399846899719316
+# 2022-05-29 16:42:22 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 5 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 3.7 --beta 2.77 --rho  0.49 --ants 77 --elitistants 295 --nnls 10 --dlb 0
+# 2022-05-29 16:42:33 UTC: DONE (5) Elapsed wall-clock seconds: 10.03
+0.9696351109977035
+# 2022-05-29 16:42:33 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 6 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 1.91 --beta 5.17 --rho  0.49 --ants 31 --elitistants 316 --nnls 26 --dlb 0
+# 2022-05-29 16:42:43 UTC: DONE (6) Elapsed wall-clock seconds: 10.04
+0.6889512630773157
+# 2022-05-29 16:42:43 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 7 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 2 --alpha 8.81 --beta 8.84 --rho  0.46 --ants 92 --elitistants 672 --nnls 19 --dlb 1
+# 2022-05-29 16:42:53 UTC: DONE (7) Elapsed wall-clock seconds: 10.04
+0.7655014034192396
+# 2022-05-29 16:42:53 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 8 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 7.21 --beta 9.55 --rho  0.67 --ants 24 --elitistants 100 --nnls 29 --dlb 0
+# 2022-05-29 16:43:03 UTC: DONE (8) Elapsed wall-clock seconds: 10.04
+1.0206685378923195
+# 2022-05-29 16:43:03 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 9 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 2 --alpha 7.88 --beta 5.61 --rho  0.59 --ants 82 --elitistants 623 --nnls 10 --dlb 0
+# 2022-05-29 16:43:13 UTC: DONE (9) Elapsed wall-clock seconds: 10.03
+0.48481755549885175
+# 2022-05-29 16:43:13 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 10 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 0 --alpha 2.54 --beta 6.88 --rho  0.83 --ants 74 --elitistants 20
+# 2022-05-29 16:43:13 UTC: DONE (10) Elapsed wall-clock seconds: 0.06
+0.07655014034192396
+|x|          1|         10|          3|    0.000000000|         10|00:01:20|   NA|  NA|    NA|
+# 2022-05-29 16:43:13 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 1 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 3 --alpha 4.89 --beta 3.87 --rho  0.96 --ants 5 --elitistants 29 --nnls 49 --dlb 1
+# 2022-05-29 16:43:28 UTC: DONE (1) Elapsed wall-clock seconds: 15.02
+0.374079137871973
+# 2022-05-29 16:43:28 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 2 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 1 --alpha 9.29 --beta 9.95 --rho  0.75 --ants 34 --elitistants 674 --nnls 33 --dlb 1
+# 2022-05-29 16:43:38 UTC: DONE (2) Elapsed wall-clock seconds: 10.33
+0.8169322016531038
+# 2022-05-29 16:43:38 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 3 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 3 --alpha 1.65 --beta 6.4 --rho  0.7 --ants 55 --elitistants 185 --nnls 21 --dlb 1
+# 2022-05-29 16:43:48 UTC: DONE (3) Elapsed wall-clock seconds: 10.10
+0.4141173207183314
+# 2022-05-29 16:43:48 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 4 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 0 --alpha 9.5 --beta 5.63 --rho  0.91 --ants 64 --elitistants 457
+# 2022-05-29 16:43:58 UTC: DONE (4) Elapsed wall-clock seconds: 10.10
+0.5095530000287251
+# 2022-05-29 16:43:58 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 5 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 1 --alpha 3.7 --beta 2.77 --rho  0.49 --ants 77 --elitistants 295 --nnls 10 --dlb 0
+# 2022-05-29 16:44:12 UTC: DONE (5) Elapsed wall-clock seconds: 13.94
+0.8387385684047879
+# 2022-05-29 16:44:12 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 6 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 3 --alpha 1.91 --beta 5.17 --rho  0.49 --ants 31 --elitistants 316 --nnls 26 --dlb 0
+# 2022-05-29 16:44:42 UTC: DONE (6) Elapsed wall-clock seconds: 29.98
+0.3201446883784981
+# 2022-05-29 16:44:42 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 7 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 2 --alpha 8.81 --beta 8.84 --rho  0.46 --ants 92 --elitistants 672 --nnls 19 --dlb 1
+# 2022-05-29 16:44:52 UTC: DONE (7) Elapsed wall-clock seconds: 10.10
+0.293236414242296
+# 2022-05-29 16:44:52 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 8 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 1 --alpha 7.21 --beta 9.55 --rho  0.67 --ants 24 --elitistants 100 --nnls 29 --dlb 0
+# 2022-05-29 16:45:22 UTC: DONE (8) Elapsed wall-clock seconds: 29.65
+0.28884727333061516
+# 2022-05-29 16:45:22 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 9 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 2 --alpha 7.88 --beta 5.61 --rho  0.59 --ants 82 --elitistants 623 --nnls 10 --dlb 0
+# 2022-05-29 16:45:35 UTC: DONE (9) Elapsed wall-clock seconds: 12.67
+0.3902048094266099
+# 2022-05-29 16:45:35 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 10 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 0 --alpha 2.54 --beta 6.88 --rho  0.83 --ants 74 --elitistants 20
+# 2022-05-29 16:45:45 UTC: DONE (10) Elapsed wall-clock seconds: 10.11
+0.9288847702062328
+|x|          2|         10|          3|   0.2070586604|         20|00:02:32|-0.31|0.35|1.1085|
+# 2022-05-29 16:45:45 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 1 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 3 --alpha 4.89 --beta 3.87 --rho  0.96 --ants 5 --elitistants 29 --nnls 49 --dlb 1
+# 2022-05-29 16:45:58 UTC: DONE (1) Elapsed wall-clock seconds: 13.26
+1.8985682068495306
+# 2022-05-29 16:45:58 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 2 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 1 --alpha 9.29 --beta 9.95 --rho  0.75 --ants 34 --elitistants 674 --nnls 33 --dlb 1
+# 2022-05-29 16:46:08 UTC: DONE (2) Elapsed wall-clock seconds: 10.23
+2.447509658922047
+# 2022-05-29 16:46:08 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 3 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 3 --alpha 1.65 --beta 6.4 --rho  0.7 --ants 55 --elitistants 185 --nnls 21 --dlb 1
+# 2022-05-29 16:46:19 UTC: DONE (3) Elapsed wall-clock seconds: 10.23
+1.0262058355623154
+# 2022-05-29 16:46:19 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 4 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 0 --alpha 9.5 --beta 5.63 --rho  0.91 --ants 64 --elitistants 457
+# 2022-05-29 16:46:29 UTC: DONE (4) Elapsed wall-clock seconds: 10.23
+0.8845999195818255
+# 2022-05-29 16:46:29 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 5 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 1 --alpha 3.7 --beta 2.77 --rho  0.49 --ants 77 --elitistants 295 --nnls 10 --dlb 0
+# 2022-05-29 16:46:39 UTC: DONE (5) Elapsed wall-clock seconds: 10.23
+0.2727225048513138
+# 2022-05-29 16:46:39 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 6 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 3 --alpha 1.91 --beta 5.17 --rho  0.49 --ants 31 --elitistants 316 --nnls 26 --dlb 0
+# 2022-05-29 16:47:09 UTC: DONE (6) Elapsed wall-clock seconds: 30.25
+0.3566371217286411
+# 2022-05-29 16:47:09 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 7 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 2 --alpha 8.81 --beta 8.84 --rho  0.46 --ants 92 --elitistants 672 --nnls 19 --dlb 1
+# 2022-05-29 16:47:20 UTC: DONE (7) Elapsed wall-clock seconds: 10.25
+0.5506896732574605
+# 2022-05-29 16:47:20 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 8 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 1 --alpha 7.21 --beta 9.55 --rho  0.67 --ants 24 --elitistants 100 --nnls 29 --dlb 0
+# 2022-05-29 16:47:46 UTC: DONE (8) Elapsed wall-clock seconds: 26.32
+0.5017394800790196
+# 2022-05-29 16:47:46 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 9 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 2 --alpha 7.88 --beta 5.61 --rho  0.59 --ants 82 --elitistants 623 --nnls 10 --dlb 0
+# 2022-05-29 16:47:56 UTC: DONE (9) Elapsed wall-clock seconds: 10.23
+1.0506809321515358
+# 2022-05-29 16:47:56 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 10 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 0 --alpha 2.54 --beta 6.88 --rho  0.83 --ants 74 --elitistants 20
+# 2022-05-29 16:48:06 UTC: DONE (10) Elapsed wall-clock seconds: 10.23
+0.9213125644656562
+|x|          3|         10|          6|   0.4552443577|         30|00:02:21|-0.07|0.29|0.7966|
+# 2022-05-29 16:48:06 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 1 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 3 --alpha 4.89 --beta 3.87 --rho  0.96 --ants 5 --elitistants 29 --nnls 49 --dlb 1
+# 2022-05-29 16:49:40 UTC: DONE (1) Elapsed wall-clock seconds: 93.77
+3.6271814028899136
+# 2022-05-29 16:49:40 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 2 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 1 --alpha 9.29 --beta 9.95 --rho  0.75 --ants 34 --elitistants 674 --nnls 33 --dlb 1
+# 2022-05-29 16:50:35 UTC: DONE (2) Elapsed wall-clock seconds: 55.38
+3.209798100413001
+# 2022-05-29 16:50:35 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 3 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 3 --alpha 1.65 --beta 6.4 --rho  0.7 --ants 55 --elitistants 185 --nnls 21 --dlb 1
+# 2022-05-29 16:51:29 UTC: DONE (3) Elapsed wall-clock seconds: 53.69
+1.4761784779203138
+# 2022-05-29 16:51:29 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 4 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 0 --alpha 9.5 --beta 5.63 --rho  0.91 --ants 64 --elitistants 457
+# 2022-05-29 16:52:08 UTC: DONE (4) Elapsed wall-clock seconds: 39.01
+3.2519746283535818
+# 2022-05-29 16:52:08 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 5 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 1 --alpha 3.7 --beta 2.77 --rho  0.49 --ants 77 --elitistants 295 --nnls 10 --dlb 0
+# 2022-05-29 16:53:43 UTC: DONE (5) Elapsed wall-clock seconds: 94.55
+1.0001862340194778
+# 2022-05-29 16:53:43 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 6 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 3 --alpha 1.91 --beta 5.17 --rho  0.49 --ants 31 --elitistants 316 --nnls 26 --dlb 0
+# 2022-05-29 16:55:06 UTC: DONE (6) Elapsed wall-clock seconds: 83.11
+1.3507443883307955
+# 2022-05-29 16:55:06 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 7 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 2 --alpha 8.81 --beta 8.84 --rho  0.46 --ants 92 --elitistants 672 --nnls 19 --dlb 1
+# 2022-05-29 16:55:45 UTC: DONE (7) Elapsed wall-clock seconds: 38.84
+1.0451014975406154
+# 2022-05-29 16:55:45 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 8 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 1 --alpha 7.21 --beta 9.55 --rho  0.67 --ants 24 --elitistants 100 --nnls 29 --dlb 0
+# 2022-05-29 16:56:37 UTC: DONE (8) Elapsed wall-clock seconds: 52.51
+2.5152547571837034
+# 2022-05-29 16:56:37 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 9 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 2 --alpha 7.88 --beta 5.61 --rho  0.59 --ants 82 --elitistants 623 --nnls 10 --dlb 0
+# 2022-05-29 16:57:26 UTC: DONE (9) Elapsed wall-clock seconds: 48.75
+1.8387870687860828
+# 2022-05-29 16:57:26 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 10 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 0 --alpha 2.54 --beta 6.88 --rho  0.83 --ants 74 --elitistants 20
+# 2022-05-29 16:58:32 UTC: DONE (10) Elapsed wall-clock seconds: 66.52
+1.7697709321560422
+|x|          4|         10|          6|   0.6791193654|         40|00:10:26|+0.12|0.34|0.6544|
+# 2022-05-29 16:58:32 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 1 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 3 --alpha 4.89 --beta 3.87 --rho  0.96 --ants 5 --elitistants 29 --nnls 49 --dlb 1
+# 2022-05-29 16:58:43 UTC: DONE (1) Elapsed wall-clock seconds: 10.07
+3.7928684987508516
+# 2022-05-29 16:58:43 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 2 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 1 --alpha 9.29 --beta 9.95 --rho  0.75 --ants 34 --elitistants 674 --nnls 33 --dlb 1
+# 2022-05-29 16:58:53 UTC: DONE (2) Elapsed wall-clock seconds: 10.07
+2.6232114467408585
+# 2022-05-29 16:58:53 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 3 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 3 --alpha 1.65 --beta 6.4 --rho  0.7 --ants 55 --elitistants 185 --nnls 21 --dlb 1
+# 2022-05-29 16:59:03 UTC: DONE (3) Elapsed wall-clock seconds: 10.07
+0.28389734272087214
+# 2022-05-29 16:59:03 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 4 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 0 --alpha 9.5 --beta 5.63 --rho  0.91 --ants 64 --elitistants 457
+# 2022-05-29 16:59:13 UTC: DONE (4) Elapsed wall-clock seconds: 10.07
+2.963888258005905
+# 2022-05-29 16:59:13 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 5 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 1 --alpha 3.7 --beta 2.77 --rho  0.49 --ants 77 --elitistants 295 --nnls 10 --dlb 0
+# 2022-05-29 16:59:23 UTC: DONE (5) Elapsed wall-clock seconds: 10.07
+0.034067681126504656
+# 2022-05-29 16:59:23 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 6 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 3 --alpha 1.91 --beta 5.17 --rho  0.49 --ants 31 --elitistants 316 --nnls 26 --dlb 0
+# 2022-05-29 16:59:33 UTC: DONE (6) Elapsed wall-clock seconds: 10.07
+1.0220304337951396
+# 2022-05-29 16:59:33 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 7 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 2 --alpha 8.81 --beta 8.84 --rho  0.46 --ants 92 --elitistants 672 --nnls 19 --dlb 1
+# 2022-05-29 16:59:43 UTC: DONE (7) Elapsed wall-clock seconds: 10.07
+2.305246422893482
+# 2022-05-29 16:59:43 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 8 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 1 --alpha 7.21 --beta 9.55 --rho  0.67 --ants 24 --elitistants 100 --nnls 29 --dlb 0
+# 2022-05-29 16:59:53 UTC: DONE (8) Elapsed wall-clock seconds: 10.07
+1.2150806268453327
+# 2022-05-29 16:59:53 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 9 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 2 --alpha 7.88 --beta 5.61 --rho  0.59 --ants 82 --elitistants 623 --nnls 10 --dlb 0
+# 2022-05-29 17:00:03 UTC: DONE (9) Elapsed wall-clock seconds: 10.07
+2.4301612536906654
+# 2022-05-29 17:00:03 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 10 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 0 --alpha 2.54 --beta 6.88 --rho  0.83 --ants 74 --elitistants 20
+# 2022-05-29 17:00:13 UTC: DONE (10) Elapsed wall-clock seconds: 10.07
+0.1476266182148535
+|-|          5|          7|          6|   0.7477015791|         50|00:01:40|-0.07|0.15|0.9534|
+# 2022-05-29 17:00:13 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 3 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 3 --alpha 1.65 --beta 6.4 --rho  0.7 --ants 55 --elitistants 185 --nnls 21 --dlb 1
+# 2022-05-29 17:00:23 UTC: DONE (3) Elapsed wall-clock seconds: 10.06
+0.18400392541707555
+# 2022-05-29 17:00:23 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 5 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 1 --alpha 3.7 --beta 2.77 --rho  0.49 --ants 77 --elitistants 295 --nnls 10 --dlb 0
+# 2022-05-29 17:00:33 UTC: DONE (5) Elapsed wall-clock seconds: 10.06
+0.308717697088649
+# 2022-05-29 17:00:33 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 6 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 3 --alpha 1.91 --beta 5.17 --rho  0.49 --ants 31 --elitistants 316 --nnls 26 --dlb 0
+# 2022-05-29 17:00:46 UTC: DONE (6) Elapsed wall-clock seconds: 12.78
+0.143114164213281
+# 2022-05-29 17:00:46 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 7 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 2 --alpha 8.81 --beta 8.84 --rho  0.46 --ants 92 --elitistants 672 --nnls 19 --dlb 1
+# 2022-05-29 17:00:56 UTC: DONE (7) Elapsed wall-clock seconds: 10.06
+0.0429342492639843
+# 2022-05-29 17:00:56 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 8 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 1 --alpha 7.21 --beta 9.55 --rho  0.67 --ants 24 --elitistants 100 --nnls 29 --dlb 0
+# 2022-05-29 17:01:06 UTC: DONE (8) Elapsed wall-clock seconds: 10.06
+0.46205430160287864
+# 2022-05-29 17:01:06 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 9 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 2 --alpha 7.88 --beta 5.61 --rho  0.59 --ants 82 --elitistants 623 --nnls 10 --dlb 0
+# 2022-05-29 17:01:16 UTC: DONE (9) Elapsed wall-clock seconds: 10.06
+0.19218187765783448
+# 2022-05-29 17:01:16 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 10 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 0 --alpha 2.54 --beta 6.88 --rho  0.83 --ants 74 --elitistants 20
+# 2022-05-29 17:01:26 UTC: DONE (10) Elapsed wall-clock seconds: 10.06
+0.36391887471377166
+|=|          6|          7|          6|   0.6469370099|         57|00:01:13|-0.00|0.16|0.8804|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# Stopped because experiments for next test (64) > max experiments (60)
+Best-so-far configuration:           6    mean value:    0.6469370099
+Description of the best-so-far configuration:
+  .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT.
+6    6       eas           3  1.91 5.17 0.49   31         316   26   0       NA
+
+# 2022-05-29 17:01:26 UTC: Memory used in race():
+          .irace$target.runner :             249.7 Kb
+                         Total :               0.2 Mb
+                            gc :              52.2 Mb
+# 2022-05-29 17:01:26 UTC: Results for the race of iteration 1 (from best to worst, according to the sum of ranks):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls  dlb .PARENT. .ALIVE. .RANK.
+6     6       eas           3  1.91 5.17 0.49   31         316   26    0       NA    TRUE     18
+5     5       eas           1  3.70 2.77 0.49   77         295   10    0       NA    TRUE     20
+7     7       eas           2  8.81 8.84 0.46   92         672   19    1       NA    TRUE     20
+3     3       eas           3  1.65 6.40 0.70   55         185   21    1       NA    TRUE     22
+10   10       eas           0  2.54 6.88 0.83   74          20   NA <NA>       NA    TRUE     27
+8     8       eas           1  7.21 9.55 0.67   24         100   29    0       NA    TRUE     30
+9     9       eas           2  7.88 5.61 0.59   82         623   10    0       NA    TRUE     31
+1     1       eas           3  4.89 3.87 0.96    5          29   49    1       NA   FALSE    Inf
+2     2       eas           1  9.29 9.95 0.75   34         674   33    1       NA   FALSE    Inf
+4     4       eas           0  9.50 5.63 0.91   64         457   NA <NA>       NA   FALSE    Inf
+# 2022-05-29 17:01:26 UTC: Extracting elites
+# 2022-05-29 17:01:26 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls  dlb .PARENT. .ALIVE. .RANK.           .WEIGHT.
+6     6       eas           3  1.91 5.17 0.49   31         316   26    0       NA    TRUE     18 0.3333333333333333
+5     5       eas           1  3.70 2.77 0.49   77         295   10    0       NA    TRUE     20 0.2666666666666667
+7     7       eas           2  8.81 8.84 0.46   92         672   19    1       NA    TRUE     20 0.2000000000000000
+3     3       eas           3  1.65 6.40 0.70   55         185   21    1       NA    TRUE     22 0.1333333333333333
+10   10       eas           0  2.54 6.88 0.83   74          20   NA <NA>       NA    TRUE     27 0.0666666666666667
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 7
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 7
+# 2022-05-29 17:01:26 UTC: Initialise model
+# 2022-05-29 17:01:26 UTC: End of iteration 1
+# 2022-05-29 17:01:26 UTC: All configurations (sampling order):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls  dlb .PARENT.
+1     1       eas           3  4.89 3.87 0.96    5          29   49    1       NA
+2     2       eas           1  9.29 9.95 0.75   34         674   33    1       NA
+3     3       eas           3  1.65 6.40 0.70   55         185   21    1       NA
+4     4       eas           0  9.50 5.63 0.91   64         457   NA <NA>       NA
+5     5       eas           1  3.70 2.77 0.49   77         295   10    0       NA
+6     6       eas           3  1.91 5.17 0.49   31         316   26    0       NA
+7     7       eas           2  8.81 8.84 0.46   92         672   19    1       NA
+8     8       eas           1  7.21 9.55 0.67   24         100   29    0       NA
+9     9       eas           2  7.88 5.61 0.59   82         623   10    0       NA
+10   10       eas           0  2.54 6.88 0.83   74          20   NA <NA>       NA
+# 2022-05-29 17:01:26 UTC: Memory used in irace():
+                  iraceResults :              47.4 Kb
+          .irace$target.runner :             249.7 Kb
+                         Total :               0.3 Mb
+                            gc :              52.2 Mb
+# 2022-05-29 17:01:27 UTC: Iteration 2 of 5
+# experimentsUsedSoFar: 57
+# remainingBudget: 243
+# currentBudget: 60
+# nbConfigurations: 12
+# 2022-05-29 17:01:27 UTC: Update model
+# Model:
+$localsearch
+$localsearch$`6`
+[1] 0.2 0.2 0.2 0.4
+
+$localsearch$`5`
+[1] 0.2 0.4 0.2 0.2
+
+$localsearch$`7`
+[1] 0.2 0.2 0.4 0.2
+
+$localsearch$`3`
+[1] 0.2 0.2 0.2 0.4
+
+$localsearch$`10`
+[1] 0.4 0.2 0.2 0.2
+
+
+$alpha
+$alpha$`6`
+[1] 3.528379 1.910000
+
+$alpha$`5`
+[1] 3.528379 3.700000
+
+$alpha$`7`
+[1] 3.528379 8.810000
+
+$alpha$`3`
+[1] 3.528379 1.650000
+
+$alpha$`10`
+[1] 3.528379 2.540000
+
+
+$beta
+$beta$`6`
+[1] 3.528379 5.170000
+
+$beta$`5`
+[1] 3.528379 2.770000
+
+$beta$`7`
+[1] 3.528379 8.840000
+
+$beta$`3`
+[1] 3.528379 6.400000
+
+$beta$`10`
+[1] 3.528379 6.880000
+
+
+$rho
+$rho$`6`
+[1] 0.3528379 0.4900000
+
+$rho$`5`
+[1] 0.3528379 0.4900000
+
+$rho$`7`
+[1] 0.3528379 0.4600000
+
+$rho$`3`
+[1] 0.3528379 0.7000000
+
+$rho$`10`
+[1] 0.3528379 0.8300000
+
+
+$ants
+$ants$`6`
+[1] 37.244 31.000
+
+$ants$`5`
+[1] 37.244 77.000
+
+$ants$`7`
+[1] 37.244 92.000
+
+$ants$`3`
+[1] 37.244 55.000
+
+$ants$`10`
+[1] 37.244 74.000
+
+
+$elitistants
+$elitistants$`6`
+[1] 293.6396 316.0000
+
+$elitistants$`5`
+[1] 293.6396 295.0000
+
+$elitistants$`7`
+[1] 293.6396 672.0000
+
+$elitistants$`3`
+[1] 293.6396 185.0000
+
+$elitistants$`10`
+[1] 293.6396  20.0000
+
+
+$nnls
+$nnls$`6`
+[1] 17.6419 26.0000
+
+$nnls$`5`
+[1] 17.6419 10.0000
+
+$nnls$`7`
+[1] 17.6419 19.0000
+
+$nnls$`3`
+[1] 17.6419 21.0000
+
+$nnls$`10`
+[1] 17.6419      NA
+
+
+$dlb
+$dlb$`6`
+[1] 0.6 0.4
+
+$dlb$`5`
+[1] 0.6 0.4
+
+$dlb$`7`
+[1] 0.4 0.6
+
+$dlb$`3`
+[1] 0.4 0.6
+
+$dlb$`10`
+[1] 0.5 0.5
+
+
+# 2022-05-29 17:01:27 UTC: Sample 7 configurations from model
+[1] "Se utilizo una descartada como padre"
+# 2022-05-29 17:01:27 UTC: Computing similarity of configurations ...... DONE
+# 2022-05-29 17:01:27 UTC: Configurations for the race n 2 (elite configurations listed first, then new configurations):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls  dlb .PARENT.
+6     6       eas           3  1.91 5.17 0.49   31         316   26    0       NA
+5     5       eas           1  3.70 2.77 0.49   77         295   10    0       NA
+7     7       eas           2  8.81 8.84 0.46   92         672   19    1       NA
+3     3       eas           3  1.65 6.40 0.70   55         185   21    1       NA
+10   10       eas           0  2.54 6.88 0.83   74          20   NA <NA>       NA
+11   11       eas           0  5.58 6.11 0.74   54         250   NA <NA>       10
+12   12       eas           3  7.55 2.52 0.56   10         174   12    0        6
+13   13       eas           0  6.88 1.04 0.71   18         253   NA <NA>        5
+14   14       eas           2  9.39 9.24 0.49   66         297   15    1        7
+15   15       eas           1  4.33 6.14 0.40   16         412   20    1        6
+16   16       eas           2  1.84 9.61 0.65   95         725   18    0        7
+17   17       eas           1  7.18 7.19 0.86   13         470    7    0        6
+# 2022-05-29 17:01:27 UTC: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# 2022-05-29 17:01:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 6 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 3 --alpha 1.91 --beta 5.17 --rho  0.49 --ants 31 --elitistants 316 --nnls 26 --dlb 0
+# 2022-05-29 17:01:27 UTC: DONE (6) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:01:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 5 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 1 --alpha 3.7 --beta 2.77 --rho  0.49 --ants 77 --elitistants 295 --nnls 10 --dlb 0
+# 2022-05-29 17:01:27 UTC: DONE (5) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:01:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 7 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 2 --alpha 8.81 --beta 8.84 --rho  0.46 --ants 92 --elitistants 672 --nnls 19 --dlb 1
+# 2022-05-29 17:01:27 UTC: DONE (7) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:01:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 3 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 3 --alpha 1.65 --beta 6.4 --rho  0.7 --ants 55 --elitistants 185 --nnls 21 --dlb 1
+# 2022-05-29 17:01:27 UTC: DONE (3) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:01:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 10 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 0 --alpha 2.54 --beta 6.88 --rho  0.83 --ants 74 --elitistants 20
+# 2022-05-29 17:01:27 UTC: DONE (10) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:01:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 11 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 0 --alpha 5.58 --beta 6.11 --rho  0.74 --ants 54 --elitistants 250
+# 2022-05-29 17:01:27 UTC: DONE (11) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:01:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 12 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 3 --alpha 7.55 --beta 2.52 --rho  0.56 --ants 10 --elitistants 174 --nnls 12 --dlb 0
+# 2022-05-29 17:01:27 UTC: DONE (12) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:01:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 13 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 0 --alpha 6.88 --beta 1.04 --rho  0.71 --ants 18 --elitistants 253
+# 2022-05-29 17:01:27 UTC: DONE (13) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:01:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 14 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 2 --alpha 9.39 --beta 9.24 --rho  0.49 --ants 66 --elitistants 297 --nnls 15 --dlb 1
+# 2022-05-29 17:01:27 UTC: DONE (14) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:01:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 15 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 1 --alpha 4.33 --beta 6.14 --rho  0.4 --ants 16 --elitistants 412 --nnls 20 --dlb 1
+# 2022-05-29 17:01:27 UTC: DONE (15) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:01:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 16 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 2 --alpha 1.84 --beta 9.61 --rho  0.65 --ants 95 --elitistants 725 --nnls 18 --dlb 0
+# 2022-05-29 17:01:27 UTC: DONE (16) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:01:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 17 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 1 --alpha 7.18 --beta 7.19 --rho  0.86 --ants 13 --elitistants 470 --nnls 7 --dlb 0
+# 2022-05-29 17:01:37 UTC: DONE (17) Elapsed wall-clock seconds: 10.03
+0.6676403087836428
+|x|          7|         12|          6|    0.000000000|         12|00:00:10|   NA|  NA|    NA|
+# 2022-05-29 17:01:37 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 11 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 0 --alpha 5.58 --beta 6.11 --rho  0.74 --ants 54 --elitistants 250
+# 2022-05-29 17:01:47 UTC: DONE (11) Elapsed wall-clock seconds: 10.07
+1.9077901430842608
+# 2022-05-29 17:01:47 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 12 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 3 --alpha 7.55 --beta 2.52 --rho  0.56 --ants 10 --elitistants 174 --nnls 12 --dlb 0
+# 2022-05-29 17:01:57 UTC: DONE (12) Elapsed wall-clock seconds: 10.07
+3.2137179196002728
+# 2022-05-29 17:01:57 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 13 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 0 --alpha 6.88 --beta 1.04 --rho  0.71 --ants 18 --elitistants 253
+# 2022-05-29 17:02:07 UTC: DONE (13) Elapsed wall-clock seconds: 10.07
+3.474903474903475
+# 2022-05-29 17:02:07 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 14 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 2 --alpha 9.39 --beta 9.24 --rho  0.49 --ants 66 --elitistants 297 --nnls 15 --dlb 1
+# 2022-05-29 17:02:18 UTC: DONE (14) Elapsed wall-clock seconds: 10.07
+0.783556665909607
+# 2022-05-29 17:02:18 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 15 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 1 --alpha 4.33 --beta 6.14 --rho  0.4 --ants 16 --elitistants 412 --nnls 20 --dlb 1
+# 2022-05-29 17:02:28 UTC: DONE (15) Elapsed wall-clock seconds: 10.07
+1.7488076311605723
+# 2022-05-29 17:02:28 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 16 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 2 --alpha 1.84 --beta 9.61 --rho  0.65 --ants 95 --elitistants 725 --nnls 18 --dlb 0
+# 2022-05-29 17:02:38 UTC: DONE (16) Elapsed wall-clock seconds: 10.07
+0.24982966159436748
+# 2022-05-29 17:02:38 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 17 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 1 --alpha 7.18 --beta 7.19 --rho  0.86 --ants 13 --elitistants 470 --nnls 7 --dlb 0
+# 2022-05-29 17:02:48 UTC: DONE (17) Elapsed wall-clock seconds: 10.06
+2.9071087894617307
+|x|          5|         12|          5|  0.01703384056|         19|00:01:10|+0.24|0.62|0.5957|
+# 2022-05-29 17:02:48 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 11 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 0 --alpha 5.58 --beta 6.11 --rho  0.74 --ants 54 --elitistants 250
+# 2022-05-29 17:03:26 UTC: DONE (11) Elapsed wall-clock seconds: 38.74
+2.4533593330631116
+# 2022-05-29 17:03:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 12 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 3 --alpha 7.55 --beta 2.52 --rho  0.56 --ants 10 --elitistants 174 --nnls 12 --dlb 0
+# 2022-05-29 17:04:08 UTC: DONE (12) Elapsed wall-clock seconds: 41.40
+2.8428075326183406
+# 2022-05-29 17:04:08 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 13 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 0 --alpha 6.88 --beta 1.04 --rho  0.71 --ants 18 --elitistants 253
+# 2022-05-29 17:04:52 UTC: DONE (13) Elapsed wall-clock seconds: 44.40
+3.3774087179431
+# 2022-05-29 17:04:52 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 14 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 2 --alpha 9.39 --beta 9.24 --rho  0.49 --ants 66 --elitistants 297 --nnls 15 --dlb 1
+# 2022-05-29 17:05:27 UTC: DONE (14) Elapsed wall-clock seconds: 34.33
+1.4509821105791878
+# 2022-05-29 17:05:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 15 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 1 --alpha 4.33 --beta 6.14 --rho  0.4 --ants 16 --elitistants 412 --nnls 20 --dlb 1
+# 2022-05-29 17:06:12 UTC: DONE (15) Elapsed wall-clock seconds: 45.37
+2.670267191043239
+# 2022-05-29 17:06:12 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 16 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 2 --alpha 1.84 --beta 9.61 --rho  0.65 --ants 95 --elitistants 725 --nnls 18 --dlb 0
+# 2022-05-29 17:09:07 UTC: DONE (16) Elapsed wall-clock seconds: 175.43
+0.9859448090005806
+# 2022-05-29 17:09:07 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 17 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 1 --alpha 7.18 --beta 7.19 --rho  0.86 --ants 13 --elitistants 470 --nnls 7 --dlb 0
+# 2022-05-29 17:09:41 UTC: DONE (17) Elapsed wall-clock seconds: 33.36
+3.0509514367406854
+|x|          4|         12|          5|   0.3447513050|         26|00:06:53|+0.47|0.65|0.4451|
+# 2022-05-29 17:09:41 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 11 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 0 --alpha 5.58 --beta 6.11 --rho  0.74 --ants 54 --elitistants 250
+# 2022-05-29 17:09:51 UTC: DONE (11) Elapsed wall-clock seconds: 10.04
+0.7144679765246237
+# 2022-05-29 17:09:51 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 12 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 7.55 --beta 2.52 --rho  0.56 --ants 10 --elitistants 174 --nnls 12 --dlb 0
+# 2022-05-29 17:10:01 UTC: DONE (12) Elapsed wall-clock seconds: 10.04
+2.347537637152335
+# 2022-05-29 17:10:01 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 13 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 0 --alpha 6.88 --beta 1.04 --rho  0.71 --ants 18 --elitistants 253
+# 2022-05-29 17:10:11 UTC: DONE (13) Elapsed wall-clock seconds: 10.03
+1.2758356723653994
+# 2022-05-29 17:10:11 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 14 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 2 --alpha 9.39 --beta 9.24 --rho  0.49 --ants 66 --elitistants 297 --nnls 15 --dlb 1
+# 2022-05-29 17:10:21 UTC: DONE (14) Elapsed wall-clock seconds: 10.04
+0.6634345496300077
+# 2022-05-29 17:10:21 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 15 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 4.33 --beta 6.14 --rho  0.4 --ants 16 --elitistants 412 --nnls 20 --dlb 1
+# 2022-05-29 17:10:31 UTC: DONE (15) Elapsed wall-clock seconds: 10.04
+0.5613676958407757
+# 2022-05-29 17:10:31 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 16 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 2 --alpha 1.84 --beta 9.61 --rho  0.65 --ants 95 --elitistants 725 --nnls 18 --dlb 0
+# 2022-05-29 17:10:31 UTC: DONE (16) Elapsed wall-clock seconds: 0.09
+0.07655014034192396
+# 2022-05-29 17:10:31 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 17 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 7.18 --beta 7.19 --rho  0.86 --ants 13 --elitistants 470 --nnls 7 --dlb 0
+# 2022-05-29 17:10:41 UTC: DONE (17) Elapsed wall-clock seconds: 10.03
+0.9696351109977035
+|x|          1|         12|         16|   0.3280811527|         33|00:01:00|+0.47|0.60|0.4711|
+# 2022-05-29 17:10:41 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 11 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 0 --alpha 5.58 --beta 6.11 --rho  0.74 --ants 54 --elitistants 250
+# 2022-05-29 17:10:51 UTC: DONE (11) Elapsed wall-clock seconds: 10.06
+0.1288027477919529
+# 2022-05-29 17:10:51 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 12 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 3 --alpha 7.55 --beta 2.52 --rho  0.56 --ants 10 --elitistants 174 --nnls 12 --dlb 0
+# 2022-05-29 17:11:01 UTC: DONE (12) Elapsed wall-clock seconds: 10.06
+0.3209846254497874
+# 2022-05-29 17:11:01 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 13 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 0 --alpha 6.88 --beta 1.04 --rho  0.71 --ants 18 --elitistants 253
+# 2022-05-29 17:11:11 UTC: DONE (13) Elapsed wall-clock seconds: 10.06
+0.2719169120052339
+# 2022-05-29 17:11:11 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 14 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 2 --alpha 9.39 --beta 9.24 --rho  0.49 --ants 66 --elitistants 297 --nnls 15 --dlb 1
+# 2022-05-29 17:11:21 UTC: DONE (14) Elapsed wall-clock seconds: 10.07
+0.18400392541707555
+# 2022-05-29 17:11:21 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 15 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 1 --alpha 4.33 --beta 6.14 --rho  0.4 --ants 16 --elitistants 412 --nnls 20 --dlb 1
+# 2022-05-29 17:11:31 UTC: DONE (15) Elapsed wall-clock seconds: 10.06
+0.12471377167157344
+# 2022-05-29 17:11:31 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 16 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 2 --alpha 1.84 --beta 9.61 --rho  0.65 --ants 95 --elitistants 725 --nnls 18 --dlb 0
+# 2022-05-29 17:11:43 UTC: DONE (16) Elapsed wall-clock seconds: 11.87
+0.19013738959764476
+# 2022-05-29 17:11:43 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 17 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 1 --alpha 7.18 --beta 7.19 --rho  0.86 --ants 13 --elitistants 470 --nnls 7 --dlb 0
+# 2022-05-29 17:11:53 UTC: DONE (17) Elapsed wall-clock seconds: 10.06
+0.11244684331043507
+|-|          6|          9|         16|   0.3004924001|         40|00:01:12|-0.15|0.08|0.7436|
+# 2022-05-29 17:11:53 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 11 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 0 --alpha 5.58 --beta 6.11 --rho  0.74 --ants 54 --elitistants 250
+# 2022-05-29 17:12:03 UTC: DONE (11) Elapsed wall-clock seconds: 10.10
+0.20707205822519648
+# 2022-05-29 17:12:03 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 14 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 2 --alpha 9.39 --beta 9.24 --rho  0.49 --ants 66 --elitistants 297 --nnls 15 --dlb 1
+# 2022-05-29 17:12:14 UTC: DONE (14) Elapsed wall-clock seconds: 10.10
+0.19224865924875056
+# 2022-05-29 17:12:14 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 15 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 1 --alpha 4.33 --beta 6.14 --rho  0.4 --ants 16 --elitistants 412 --nnls 20 --dlb 1
+# 2022-05-29 17:12:24 UTC: DONE (15) Elapsed wall-clock seconds: 10.10
+0.07562291502408829
+# 2022-05-29 17:12:24 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 16 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 2 --alpha 1.84 --beta 9.61 --rho  0.65 --ants 95 --elitistants 725 --nnls 18 --dlb 0
+# 2022-05-29 17:12:49 UTC: DONE (16) Elapsed wall-clock seconds: 25.15
+0.6569027306351531
+|=|          2|          9|         16|   0.3598941219|         44|00:00:55|-0.15|0.05|0.8052|
+# 2022-05-29 17:12:49 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 11 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 0 --alpha 5.58 --beta 6.11 --rho  0.74 --ants 54 --elitistants 250
+# 2022-05-29 17:12:59 UTC: DONE (11) Elapsed wall-clock seconds: 10.23
+0.8251603992937186
+# 2022-05-29 17:12:59 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 14 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 2 --alpha 9.39 --beta 9.24 --rho  0.49 --ants 66 --elitistants 297 --nnls 15 --dlb 1
+# 2022-05-29 17:13:09 UTC: DONE (14) Elapsed wall-clock seconds: 10.24
+0.6992884739777276
+# 2022-05-29 17:13:09 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 15 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 1 --alpha 4.33 --beta 6.14 --rho  0.4 --ants 16 --elitistants 412 --nnls 20 --dlb 1
+# 2022-05-29 17:13:20 UTC: DONE (15) Elapsed wall-clock seconds: 10.23
+0.24125452352231605
+# 2022-05-29 17:13:20 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 16 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 2 --alpha 1.84 --beta 9.61 --rho  0.65 --ants 95 --elitistants 725 --nnls 18 --dlb 0
+# 2022-05-29 17:13:53 UTC: DONE (16) Elapsed wall-clock seconds: 33.18
+0.6853027044981731
+|=|          3|          9|         15|   0.7745762469|         48|00:01:03|-0.09|0.06|0.8305|
+# 2022-05-29 17:13:53 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 6 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 3 --alpha 1.91 --beta 5.17 --rho  0.49 --ants 31 --elitistants 316 --nnls 26 --dlb 0
+# 2022-05-29 17:15:06 UTC: DONE (6) Elapsed wall-clock seconds: 72.96
+0.5332726767255541
+# 2022-05-29 17:15:06 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 5 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 1 --alpha 3.7 --beta 2.77 --rho  0.49 --ants 77 --elitistants 295 --nnls 10 --dlb 0
+# 2022-05-29 17:15:32 UTC: DONE (5) Elapsed wall-clock seconds: 26.68
+0.9809310789294109
+# 2022-05-29 17:15:32 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 7 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 2 --alpha 8.81 --beta 8.84 --rho  0.46 --ants 92 --elitistants 672 --nnls 19 --dlb 1
+# 2022-05-29 17:15:46 UTC: DONE (7) Elapsed wall-clock seconds: 13.25
+0.27958905148229585
+# 2022-05-29 17:15:46 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 3 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 3 --alpha 1.65 --beta 6.4 --rho  0.7 --ants 55 --elitistants 185 --nnls 21 --dlb 1
+# 2022-05-29 17:16:03 UTC: DONE (3) Elapsed wall-clock seconds: 17.05
+0.9831425177546945
+# 2022-05-29 17:16:03 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 10 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 0 --alpha 2.54 --beta 6.88 --rho  0.83 --ants 74 --elitistants 20
+# 2022-05-29 17:16:20 UTC: DONE (10) Elapsed wall-clock seconds: 17.58
+1.6964894988247783
+# 2022-05-29 17:16:20 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 11 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 0 --alpha 5.58 --beta 6.11 --rho  0.74 --ants 54 --elitistants 250
+# 2022-05-29 17:16:35 UTC: DONE (11) Elapsed wall-clock seconds: 14.28
+0.48588470189804633
+# 2022-05-29 17:16:35 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 14 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 2 --alpha 9.39 --beta 9.24 --rho  0.49 --ants 66 --elitistants 297 --nnls 15 --dlb 1
+# 2022-05-29 17:16:47 UTC: DONE (14) Elapsed wall-clock seconds: 12.13
+1.3439229661081205
+# 2022-05-29 17:16:47 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 15 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 1 --alpha 4.33 --beta 6.14 --rho  0.4 --ants 16 --elitistants 412 --nnls 20 --dlb 1
+# 2022-05-29 17:17:02 UTC: DONE (15) Elapsed wall-clock seconds: 15.26
+0.3168675916799353
+# 2022-05-29 17:17:02 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 16 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 2 --alpha 1.84 --beta 9.61 --rho  0.65 --ants 95 --elitistants 725 --nnls 18 --dlb 0
+# 2022-05-29 17:17:58 UTC: DONE (16) Elapsed wall-clock seconds: 56.46
+1.2933757929587788
+|=|          8|          9|         15|   0.7173626650|         57|00:04:05|-0.05|0.08|0.8195|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# Stopped because experiments for next test (66) > max experiments (60)
+Best-so-far configuration:          15    mean value:    0.7173626650
+Description of the best-so-far configuration:
+   .ID. algorithm localsearch alpha beta rho ants elitistants nnls dlb .PARENT.
+15   15       eas           1  4.33 6.14 0.4   16         412   20   1        6
+
+# 2022-05-29 17:17:58 UTC: Memory used in race():
+          .irace$target.runner :             249.7 Kb
+                         Total :               0.2 Mb
+                            gc :              52.8 Mb
+# 2022-05-29 17:17:58 UTC: Results for the race of iteration 2 (from best to worst, according to the sum of ranks):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls  dlb .PARENT. .ALIVE. .RANK.
+15   15       eas           1  4.33 6.14 0.40   16         412   20    1        6    TRUE   31.0
+7     7       eas           2  8.81 8.84 0.46   92         672   19    1       NA    TRUE   35.0
+6     6       eas           3  1.91 5.17 0.49   31         316   26    0       NA    TRUE   37.0
+16   16       eas           2  1.84 9.61 0.65   95         725   18    0        7    TRUE   37.5
+5     5       eas           1  3.70 2.77 0.49   77         295   10    0       NA    TRUE   40.0
+14   14       eas           2  9.39 9.24 0.49   66         297   15    1        7    TRUE   41.5
+3     3       eas           3  1.65 6.40 0.70   55         185   21    1       NA    TRUE   42.5
+11   11       eas           0  5.58 6.11 0.74   54         250   NA <NA>       10    TRUE   44.0
+10   10       eas           0  2.54 6.88 0.83   74          20   NA <NA>       NA    TRUE   51.5
+12   12       eas           3  7.55 2.52 0.56   10         174   12    0        6   FALSE    Inf
+13   13       eas           0  6.88 1.04 0.71   18         253   NA <NA>        5   FALSE    Inf
+17   17       eas           1  7.18 7.19 0.86   13         470    7    0        6   FALSE    Inf
+# 2022-05-29 17:17:58 UTC: Extracting elites
+# 2022-05-29 17:17:58 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT. .ALIVE. .RANK.           .WEIGHT.
+15   15       eas           1  4.33 6.14 0.40   16         412   20   1        6    TRUE   31.0 0.3333333333333333
+7     7       eas           2  8.81 8.84 0.46   92         672   19   1       NA    TRUE   35.0 0.2666666666666667
+6     6       eas           3  1.91 5.17 0.49   31         316   26   0       NA    TRUE   37.0 0.2000000000000000
+16   16       eas           2  1.84 9.61 0.65   95         725   18   0        7    TRUE   37.5 0.1333333333333333
+5     5       eas           1  3.70 2.77 0.49   77         295   10   0       NA    TRUE   40.0 0.0666666666666667
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 9
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 8
+# 2022-05-29 17:17:59 UTC: End of iteration 2
+# 2022-05-29 17:17:59 UTC: All configurations (sampling order):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls  dlb .PARENT.
+1     1       eas           3  4.89 3.87 0.96    5          29   49    1       NA
+2     2       eas           1  9.29 9.95 0.75   34         674   33    1       NA
+3     3       eas           3  1.65 6.40 0.70   55         185   21    1       NA
+4     4       eas           0  9.50 5.63 0.91   64         457   NA <NA>       NA
+5     5       eas           1  3.70 2.77 0.49   77         295   10    0       NA
+6     6       eas           3  1.91 5.17 0.49   31         316   26    0       NA
+7     7       eas           2  8.81 8.84 0.46   92         672   19    1       NA
+8     8       eas           1  7.21 9.55 0.67   24         100   29    0       NA
+9     9       eas           2  7.88 5.61 0.59   82         623   10    0       NA
+10   10       eas           0  2.54 6.88 0.83   74          20   NA <NA>       NA
+11   11       eas           0  5.58 6.11 0.74   54         250   NA <NA>       10
+12   12       eas           3  7.55 2.52 0.56   10         174   12    0        6
+13   13       eas           0  6.88 1.04 0.71   18         253   NA <NA>        5
+14   14       eas           2  9.39 9.24 0.49   66         297   15    1        7
+15   15       eas           1  4.33 6.14 0.40   16         412   20    1        6
+16   16       eas           2  1.84 9.61 0.65   95         725   18    0        7
+17   17       eas           1  7.18 7.19 0.86   13         470    7    0        6
+# 2022-05-29 17:17:59 UTC: Memory used in irace():
+                  iraceResults :              64.2 Kb
+          .irace$target.runner :             249.7 Kb
+                         Total :               0.3 Mb
+                            gc :              52.8 Mb
+# 2022-05-29 17:17:59 UTC: Iteration 3 of 5
+# experimentsUsedSoFar: 114
+# remainingBudget: 186
+# currentBudget: 62
+# nbConfigurations: 11
+# 2022-05-29 17:17:59 UTC: Update model
+# Model:
+$localsearch
+$localsearch$`15`
+[1] 0.12 0.52 0.12 0.24
+
+$localsearch$`7`
+[1] 0.12 0.12 0.64 0.12
+
+$localsearch$`6`
+[1] 0.12 0.12 0.12 0.64
+
+$localsearch$`16`
+[1] 0.12 0.12 0.64 0.12
+
+$localsearch$`5`
+[1] 0.12 0.64 0.12 0.12
+
+
+$alpha
+$alpha$`15`
+[1] 2.820372 4.330000
+
+$alpha$`7`
+[1] 2.820372 8.810000
+
+$alpha$`6`
+[1] 2.820372 1.910000
+
+$alpha$`16`
+[1] 2.820372 1.840000
+
+$alpha$`5`
+[1] 2.820372 3.700000
+
+
+$beta
+$beta$`15`
+[1] 2.820372 6.140000
+
+$beta$`7`
+[1] 2.820372 8.840000
+
+$beta$`6`
+[1] 2.820372 5.170000
+
+$beta$`16`
+[1] 2.820372 9.610000
+
+$beta$`5`
+[1] 2.820372 2.770000
+
+
+$rho
+$rho$`15`
+[1] 0.2820372 0.4000000
+
+$rho$`7`
+[1] 0.2820372 0.4600000
+
+$rho$`6`
+[1] 0.2820372 0.4900000
+
+$rho$`16`
+[1] 0.2820372 0.6500000
+
+$rho$`5`
+[1] 0.2820372 0.4900000
+
+
+$ants
+$ants$`15`
+[1] 29.77059 16.00000
+
+$ants$`7`
+[1] 29.77059 92.00000
+
+$ants$`6`
+[1] 29.77059 31.00000
+
+$ants$`16`
+[1] 29.77059 95.00000
+
+$ants$`5`
+[1] 29.77059 77.00000
+
+
+$elitistants
+$elitistants$`15`
+[1] 234.7176 412.0000
+
+$elitistants$`7`
+[1] 234.7176 672.0000
+
+$elitistants$`6`
+[1] 234.7176 316.0000
+
+$elitistants$`16`
+[1] 234.7176 725.0000
+
+$elitistants$`5`
+[1] 234.7176 295.0000
+
+
+$nnls
+$nnls$`15`
+[1] 14.10186 20.00000
+
+$nnls$`7`
+[1] 14.10186 19.00000
+
+$nnls$`6`
+[1] 14.10186 26.00000
+
+$nnls$`16`
+[1] 14.10186 18.00000
+
+$nnls$`5`
+[1] 14.10186 10.00000
+
+
+$dlb
+$dlb$`15`
+[1] 0.36 0.64
+
+$dlb$`7`
+[1] 0.24 0.76
+
+$dlb$`6`
+[1] 0.76 0.24
+
+$dlb$`16`
+[1] 0.64 0.36
+
+$dlb$`5`
+[1] 0.76 0.24
+
+
+# 2022-05-29 17:17:59 UTC: Sample 6 configurations from model
+[1] "Se utilizo una descartada como padre"
+# 2022-05-29 17:17:59 UTC: Computing similarity of configurations ....... DONE
+# 2022-05-29 17:17:59 UTC: Configurations for the race n 3 (elite configurations listed first, then new configurations):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT.
+15   15       eas           1  4.33 6.14 0.40   16         412   20   1        6
+7     7       eas           2  8.81 8.84 0.46   92         672   19   1       NA
+6     6       eas           3  1.91 5.17 0.49   31         316   26   0       NA
+16   16       eas           2  1.84 9.61 0.65   95         725   18   0        7
+5     5       eas           1  3.70 2.77 0.49   77         295   10   0       NA
+18   18       eas           1  3.34 1.58 0.48   75         505   23   0        5
+19   19       eas           2  6.11 8.47 0.68   33         657   22   1        7
+20   20       eas           1  2.31 2.70 0.52   42         668   41   0        6
+21   21       eas           2  6.51 9.07 0.84   35         400   33   1        7
+22   22       eas           1  6.37 3.04 0.55   28         463   12   0       15
+23   23       eas           2  5.68 7.79 0.81   61         745   24   0        7
+# 2022-05-29 17:17:59 UTC: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# 2022-05-29 17:17:59 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 15 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 1 --alpha 4.33 --beta 6.14 --rho  0.4 --ants 16 --elitistants 412 --nnls 20 --dlb 1
+# 2022-05-29 17:18:09 UTC: DONE (15) Elapsed wall-clock seconds: 10.03
+0.4930966469428008
+# 2022-05-29 17:18:09 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 7 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 2 --alpha 8.81 --beta 8.84 --rho  0.46 --ants 92 --elitistants 672 --nnls 19 --dlb 1
+# 2022-05-29 17:18:19 UTC: DONE (7) Elapsed wall-clock seconds: 10.03
+0.07044237813468583
+# 2022-05-29 17:18:19 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 6 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 3 --alpha 1.91 --beta 5.17 --rho  0.49 --ants 31 --elitistants 316 --nnls 26 --dlb 0
+# 2022-05-29 17:18:19 UTC: DONE (6) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:18:19 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 16 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 2 --alpha 1.84 --beta 9.61 --rho  0.65 --ants 95 --elitistants 725 --nnls 18 --dlb 0
+# 2022-05-29 17:18:19 UTC: DONE (16) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:18:19 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 5 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 1 --alpha 3.7 --beta 2.77 --rho  0.49 --ants 77 --elitistants 295 --nnls 10 --dlb 0
+# 2022-05-29 17:18:19 UTC: DONE (5) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:18:19 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 18 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 1 --alpha 3.34 --beta 1.58 --rho  0.48 --ants 75 --elitistants 505 --nnls 23 --dlb 0
+# 2022-05-29 17:18:19 UTC: DONE (18) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:18:19 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 19 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 2 --alpha 6.11 --beta 8.47 --rho  0.68 --ants 33 --elitistants 657 --nnls 22 --dlb 1
+# 2022-05-29 17:18:29 UTC: DONE (19) Elapsed wall-clock seconds: 10.03
+0.37569268338499107
+# 2022-05-29 17:18:29 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 20 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 1 --alpha 2.31 --beta 2.7 --rho  0.52 --ants 42 --elitistants 668 --nnls 41 --dlb 0
+# 2022-05-29 17:18:29 UTC: DONE (20) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:18:29 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 21 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 2 --alpha 6.51 --beta 9.07 --rho  0.84 --ants 35 --elitistants 400 --nnls 33 --dlb 1
+# 2022-05-29 17:18:29 UTC: DONE (21) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:18:29 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 22 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 1 --alpha 6.37 --beta 3.04 --rho  0.55 --ants 28 --elitistants 463 --nnls 12 --dlb 0
+# 2022-05-29 17:18:39 UTC: DONE (22) Elapsed wall-clock seconds: 10.03
+0.07044237813468583
+# 2022-05-29 17:18:39 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 23 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 2 --alpha 5.68 --beta 7.79 --rho  0.81 --ants 61 --elitistants 745 --nnls 24 --dlb 0
+# 2022-05-29 17:18:49 UTC: DONE (23) Elapsed wall-clock seconds: 10.03
+0.37569268338499107
+|x|          9|         11|          6|    0.000000000|         11|00:00:50|   NA|  NA|    NA|
+# 2022-05-29 17:18:49 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 18 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 1 --alpha 3.34 --beta 1.58 --rho  0.48 --ants 75 --elitistants 505 --nnls 23 --dlb 0
+# 2022-05-29 17:20:25 UTC: DONE (18) Elapsed wall-clock seconds: 95.89
+1.1447914726728963
+# 2022-05-29 17:20:25 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 19 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 2 --alpha 6.11 --beta 8.47 --rho  0.68 --ants 33 --elitistants 657 --nnls 22 --dlb 1
+# 2022-05-29 17:21:07 UTC: DONE (19) Elapsed wall-clock seconds: 41.76
+2.00968416901285
+# 2022-05-29 17:21:07 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 20 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 1 --alpha 2.31 --beta 2.7 --rho  0.52 --ants 42 --elitistants 668 --nnls 41 --dlb 0
+# 2022-05-29 17:22:38 UTC: DONE (20) Elapsed wall-clock seconds: 91.34
+1.9390247910344751
+# 2022-05-29 17:22:38 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 21 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 2 --alpha 6.51 --beta 9.07 --rho  0.84 --ants 35 --elitistants 400 --nnls 33 --dlb 1
+# 2022-05-29 17:23:31 UTC: DONE (21) Elapsed wall-clock seconds: 53.38
+2.593034847671527
+# 2022-05-29 17:23:31 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 22 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 1 --alpha 6.37 --beta 3.04 --rho  0.55 --ants 28 --elitistants 463 --nnls 12 --dlb 0
+# 2022-05-29 17:24:09 UTC: DONE (22) Elapsed wall-clock seconds: 37.60
+2.4434998849731056
+# 2022-05-29 17:24:09 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 23 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 2 --alpha 5.68 --beta 7.79 --rho  0.81 --ants 61 --elitistants 745 --nnls 24 --dlb 0
+# 2022-05-29 17:24:57 UTC: DONE (23) Elapsed wall-clock seconds: 47.73
+2.2408334520118753
+|x|          4|         11|         16|   0.4929724045|         17|00:06:07|+0.55|0.78|0.4031|
+# 2022-05-29 17:24:57 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 18 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 1 --alpha 3.34 --beta 1.58 --rho  0.48 --ants 75 --elitistants 505 --nnls 23 --dlb 0
+# 2022-05-29 17:24:57 UTC: DONE (18) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:24:57 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 19 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 2 --alpha 6.11 --beta 8.47 --rho  0.68 --ants 33 --elitistants 657 --nnls 22 --dlb 1
+# 2022-05-29 17:24:57 UTC: DONE (19) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:24:57 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 20 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 1 --alpha 2.31 --beta 2.7 --rho  0.52 --ants 42 --elitistants 668 --nnls 41 --dlb 0
+# 2022-05-29 17:24:57 UTC: DONE (20) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:24:57 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 21 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 2 --alpha 6.51 --beta 9.07 --rho  0.84 --ants 35 --elitistants 400 --nnls 33 --dlb 1
+# 2022-05-29 17:24:57 UTC: DONE (21) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:24:57 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 22 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 1 --alpha 6.37 --beta 3.04 --rho  0.55 --ants 28 --elitistants 463 --nnls 12 --dlb 0
+# 2022-05-29 17:24:57 UTC: DONE (22) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:24:57 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 23 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 2 --alpha 5.68 --beta 7.79 --rho  0.81 --ants 61 --elitistants 745 --nnls 24 --dlb 0
+# 2022-05-29 17:24:57 UTC: DONE (23) Elapsed wall-clock seconds: 0.04
+0.0
+|x|          7|         11|         16|   0.3286482697|         23|00:00:00|+0.28|0.52|0.4374|
+# 2022-05-29 17:24:57 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 18 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 3.34 --beta 1.58 --rho  0.48 --ants 75 --elitistants 505 --nnls 23 --dlb 0
+# 2022-05-29 17:25:07 UTC: DONE (18) Elapsed wall-clock seconds: 10.03
+0.7655014034192396
+# 2022-05-29 17:25:07 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 19 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 2 --alpha 6.11 --beta 8.47 --rho  0.68 --ants 33 --elitistants 657 --nnls 22 --dlb 1
+# 2022-05-29 17:25:17 UTC: DONE (19) Elapsed wall-clock seconds: 10.03
+0.45930084205154376
+# 2022-05-29 17:25:17 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 20 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 2.31 --beta 2.7 --rho  0.52 --ants 42 --elitistants 668 --nnls 41 --dlb 0
+# 2022-05-29 17:25:27 UTC: DONE (20) Elapsed wall-clock seconds: 10.03
+0.7655014034192396
+# 2022-05-29 17:25:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 21 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 2 --alpha 6.51 --beta 9.07 --rho  0.84 --ants 35 --elitistants 400 --nnls 33 --dlb 1
+# 2022-05-29 17:25:37 UTC: DONE (21) Elapsed wall-clock seconds: 10.04
+1.2248022454707834
+# 2022-05-29 17:25:37 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 22 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 6.37 --beta 3.04 --rho  0.55 --ants 28 --elitistants 463 --nnls 12 --dlb 0
+# 2022-05-29 17:25:47 UTC: DONE (22) Elapsed wall-clock seconds: 10.03
+0.07655014034192396
+# 2022-05-29 17:25:47 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 23 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 2 --alpha 5.68 --beta 7.79 --rho  0.81 --ants 61 --elitistants 745 --nnls 24 --dlb 0
+# 2022-05-29 17:25:57 UTC: DONE (23) Elapsed wall-clock seconds: 10.04
+0.5613676958407757
+|x|          1|         11|         16|   0.2656237373|         29|00:01:00|-0.01|0.24|0.6346|
+# 2022-05-29 17:25:57 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 18 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 1 --alpha 3.34 --beta 1.58 --rho  0.48 --ants 75 --elitistants 505 --nnls 23 --dlb 0
+# 2022-05-29 17:26:22 UTC: DONE (18) Elapsed wall-clock seconds: 24.89
+0.5360861339160655
+# 2022-05-29 17:26:22 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 19 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 2 --alpha 6.11 --beta 8.47 --rho  0.68 --ants 33 --elitistants 657 --nnls 22 --dlb 1
+# 2022-05-29 17:26:32 UTC: DONE (19) Elapsed wall-clock seconds: 10.10
+0.23917870438133798
+# 2022-05-29 17:26:32 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 20 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 1 --alpha 2.31 --beta 2.7 --rho  0.52 --ants 42 --elitistants 668 --nnls 41 --dlb 0
+# 2022-05-29 17:27:11 UTC: DONE (20) Elapsed wall-clock seconds: 38.26
+0.19960140812643812
+# 2022-05-29 17:27:11 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 21 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 2 --alpha 6.51 --beta 9.07 --rho  0.84 --ants 35 --elitistants 400 --nnls 33 --dlb 1
+# 2022-05-29 17:27:21 UTC: DONE (21) Elapsed wall-clock seconds: 10.10
+0.277700248793013
+# 2022-05-29 17:27:21 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 22 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 1 --alpha 6.37 --beta 3.04 --rho  0.55 --ants 28 --elitistants 463 --nnls 12 --dlb 0
+# 2022-05-29 17:27:35 UTC: DONE (22) Elapsed wall-clock seconds: 14.59
+0.44382842842817094
+# 2022-05-29 17:27:35 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 23 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 2 --alpha 5.68 --beta 7.79 --rho  0.81 --ants 61 --elitistants 745 --nnls 24 --dlb 0
+# 2022-05-29 17:28:01 UTC: DONE (23) Elapsed wall-clock seconds: 26.25
+0.5789807418001844
+|=|          2|         11|         16|   0.3438795360|         35|00:02:04|-0.14|0.09|0.7946|
+# 2022-05-29 17:28:01 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 18 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 1 --alpha 3.34 --beta 1.58 --rho  0.48 --ants 75 --elitistants 505 --nnls 23 --dlb 0
+# 2022-05-29 17:28:19 UTC: DONE (18) Elapsed wall-clock seconds: 17.23
+0.22552053285781717
+# 2022-05-29 17:28:19 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 19 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 2 --alpha 6.11 --beta 8.47 --rho  0.68 --ants 33 --elitistants 657 --nnls 22 --dlb 1
+# 2022-05-29 17:28:29 UTC: DONE (19) Elapsed wall-clock seconds: 10.23
+0.6048845299907344
+# 2022-05-29 17:28:29 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 20 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 1 --alpha 2.31 --beta 2.7 --rho  0.52 --ants 42 --elitistants 668 --nnls 41 --dlb 0
+# 2022-05-29 17:28:43 UTC: DONE (20) Elapsed wall-clock seconds: 13.74
+0.8478872746979947
+# 2022-05-29 17:28:43 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 21 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 2 --alpha 6.51 --beta 9.07 --rho  0.84 --ants 35 --elitistants 400 --nnls 33 --dlb 1
+# 2022-05-29 17:28:53 UTC: DONE (21) Elapsed wall-clock seconds: 10.23
+0.5402003461477947
+# 2022-05-29 17:28:53 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 22 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 1 --alpha 6.37 --beta 3.04 --rho  0.55 --ants 28 --elitistants 463 --nnls 12 --dlb 0
+# 2022-05-29 17:29:08 UTC: DONE (22) Elapsed wall-clock seconds: 14.96
+0.49649481652418664
+# 2022-05-29 17:29:08 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 23 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 2 --alpha 5.68 --beta 7.79 --rho  0.81 --ants 61 --elitistants 745 --nnls 24 --dlb 0
+# 2022-05-29 17:29:30 UTC: DONE (23) Elapsed wall-clock seconds: 22.56
+0.6992884739777276
+|=|          3|         11|          6|   0.4527462436|         41|00:01:28|-0.11|0.07|0.8165|
+# 2022-05-29 17:29:30 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 18 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 1 --alpha 3.34 --beta 1.58 --rho  0.48 --ants 75 --elitistants 505 --nnls 23 --dlb 0
+# 2022-05-29 17:30:29 UTC: DONE (18) Elapsed wall-clock seconds: 59.02
+0.26189754088002626
+# 2022-05-29 17:30:29 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 19 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 2 --alpha 6.11 --beta 8.47 --rho  0.68 --ants 33 --elitistants 657 --nnls 22 --dlb 1
+# 2022-05-29 17:30:45 UTC: DONE (19) Elapsed wall-clock seconds: 15.05
+0.6618520484241919
+# 2022-05-29 17:30:45 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 20 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 1 --alpha 2.31 --beta 2.7 --rho  0.52 --ants 42 --elitistants 668 --nnls 41 --dlb 0
+# 2022-05-29 17:32:12 UTC: DONE (20) Elapsed wall-clock seconds: 87.18
+0.17312406803649505
+# 2022-05-29 17:32:12 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 21 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 2 --alpha 6.51 --beta 9.07 --rho  0.84 --ants 35 --elitistants 400 --nnls 33 --dlb 1
+# 2022-05-29 17:32:32 UTC: DONE (21) Elapsed wall-clock seconds: 20.19
+0.3054944777213334
+# 2022-05-29 17:32:32 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 22 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 1 --alpha 6.37 --beta 3.04 --rho  0.55 --ants 28 --elitistants 463 --nnls 12 --dlb 0
+# 2022-05-29 17:33:07 UTC: DONE (22) Elapsed wall-clock seconds: 35.61
+1.4952485657239618
+# 2022-05-29 17:33:07 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 23 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 2 --alpha 5.68 --beta 7.79 --rho  0.81 --ants 61 --elitistants 745 --nnls 24 --dlb 0
+# 2022-05-29 17:34:14 UTC: DONE (23) Elapsed wall-clock seconds: 66.22
+0.16775343088937753
+|=|          8|         11|         18|   0.4191138691|         47|00:04:43|-0.12|0.04|0.8485|
+# 2022-05-29 17:34:14 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 18 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 1 --alpha 3.34 --beta 1.58 --rho  0.48 --ants 75 --elitistants 505 --nnls 23 --dlb 0
+# 2022-05-29 17:34:25 UTC: DONE (18) Elapsed wall-clock seconds: 11.23
+0.11040235525024533
+# 2022-05-29 17:34:25 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 19 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 2 --alpha 6.11 --beta 8.47 --rho  0.68 --ants 33 --elitistants 657 --nnls 22 --dlb 1
+# 2022-05-29 17:34:35 UTC: DONE (19) Elapsed wall-clock seconds: 10.06
+0.30258423290807984
+# 2022-05-29 17:34:35 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 20 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 1 --alpha 2.31 --beta 2.7 --rho  0.52 --ants 42 --elitistants 668 --nnls 41 --dlb 0
+# 2022-05-29 17:34:53 UTC: DONE (20) Elapsed wall-clock seconds: 17.60
+0.14720314033366044
+# 2022-05-29 17:34:53 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 21 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 2 --alpha 6.51 --beta 9.07 --rho  0.84 --ants 35 --elitistants 400 --nnls 33 --dlb 1
+# 2022-05-29 17:35:03 UTC: DONE (21) Elapsed wall-clock seconds: 10.06
+0.18400392541707555
+# 2022-05-29 17:35:03 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 22 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 1 --alpha 6.37 --beta 3.04 --rho  0.55 --ants 28 --elitistants 463 --nnls 12 --dlb 0
+# 2022-05-29 17:35:13 UTC: DONE (22) Elapsed wall-clock seconds: 10.06
+0.03271180896303565
+# 2022-05-29 17:35:13 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 23 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 2 --alpha 5.68 --beta 7.79 --rho  0.81 --ants 61 --elitistants 745 --nnls 24 --dlb 0
+# 2022-05-29 17:35:23 UTC: DONE (23) Elapsed wall-clock seconds: 10.06
+0.2085377821393523
+|=|          6|         11|         18|   0.3805249299|         53|00:01:09|-0.06|0.07|0.8223|
+# 2022-05-29 17:35:23 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 18 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 1 --alpha 3.34 --beta 1.58 --rho  0.48 --ants 75 --elitistants 505 --nnls 23 --dlb 0
+# 2022-05-29 17:35:33 UTC: DONE (18) Elapsed wall-clock seconds: 10.07
+2.7140585964115376
+# 2022-05-29 17:35:33 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 19 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 2 --alpha 6.11 --beta 8.47 --rho  0.68 --ants 33 --elitistants 657 --nnls 22 --dlb 1
+# 2022-05-29 17:35:43 UTC: DONE (19) Elapsed wall-clock seconds: 10.07
+1.9645696116284352
+# 2022-05-29 17:35:43 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 20 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 1 --alpha 2.31 --beta 2.7 --rho  0.52 --ants 42 --elitistants 668 --nnls 41 --dlb 0
+# 2022-05-29 17:35:53 UTC: DONE (20) Elapsed wall-clock seconds: 10.07
+1.192368839427663
+# 2022-05-29 17:35:53 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 21 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 2 --alpha 6.51 --beta 9.07 --rho  0.84 --ants 35 --elitistants 400 --nnls 33 --dlb 1
+# 2022-05-29 17:36:03 UTC: DONE (21) Elapsed wall-clock seconds: 10.07
+2.305246422893482
+# 2022-05-29 17:36:03 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 22 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 1 --alpha 6.37 --beta 3.04 --rho  0.55 --ants 28 --elitistants 463 --nnls 12 --dlb 0
+# 2022-05-29 17:36:13 UTC: DONE (22) Elapsed wall-clock seconds: 10.07
+3.361344537815126
+# 2022-05-29 17:36:13 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 23 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 2 --alpha 5.68 --beta 7.79 --rho  0.81 --ants 61 --elitistants 745 --nnls 24 --dlb 0
+# 2022-05-29 17:36:23 UTC: DONE (23) Elapsed wall-clock seconds: 10.07
+2.6459232341585284
+|=|          5|         11|          6|   0.4905438596|         59|00:01:00|-0.06|0.06|0.8383|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# Stopped because experiments for next test (70) > max experiments (62)
+Best-so-far configuration:           6    mean value:    0.4905438596
+Description of the best-so-far configuration:
+  .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT.
+6    6       eas           3  1.91 5.17 0.49   31         316   26   0       NA
+
+# 2022-05-29 17:36:23 UTC: Memory used in race():
+          .irace$target.runner :             249.7 Kb
+                         Total :               0.2 Mb
+                            gc :              52.9 Mb
+# 2022-05-29 17:36:23 UTC: Results for the race of iteration 3 (from best to worst, according to the sum of ranks):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT. .ALIVE. .RANK.
+6     6       eas           3  1.91 5.17 0.49   31         316   26   0       NA    TRUE   45.5
+18   18       eas           1  3.34 1.58 0.48   75         505   23   0        5    TRUE   46.5
+20   20       eas           1  2.31 2.70 0.52   42         668   41   0        6    TRUE   48.5
+7     7       eas           2  8.81 8.84 0.46   92         672   19   1       NA    TRUE   50.0
+15   15       eas           1  4.33 6.14 0.40   16         412   20   1        6    TRUE   50.5
+16   16       eas           2  1.84 9.61 0.65   95         725   18   0        7    TRUE   51.0
+5     5       eas           1  3.70 2.77 0.49   77         295   10   0       NA    TRUE   56.5
+22   22       eas           1  6.37 3.04 0.55   28         463   12   0       15    TRUE   59.0
+21   21       eas           2  6.51 9.07 0.84   35         400   33   1        7    TRUE   60.0
+19   19       eas           2  6.11 8.47 0.68   33         657   22   1        7    TRUE   60.5
+23   23       eas           2  5.68 7.79 0.81   61         745   24   0        7    TRUE   66.0
+# 2022-05-29 17:36:23 UTC: Extracting elites
+# 2022-05-29 17:36:23 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT. .ALIVE. .RANK.           .WEIGHT.
+6     6       eas           3  1.91 5.17 0.49   31         316   26   0       NA    TRUE   45.5 0.3333333333333333
+18   18       eas           1  3.34 1.58 0.48   75         505   23   0        5    TRUE   46.5 0.2666666666666667
+20   20       eas           1  2.31 2.70 0.52   42         668   41   0        6    TRUE   48.5 0.2000000000000000
+7     7       eas           2  8.81 8.84 0.46   92         672   19   1       NA    TRUE   50.0 0.1333333333333333
+15   15       eas           1  4.33 6.14 0.40   16         412   20   1        6    TRUE   50.5 0.0666666666666667
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 11
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 10
+# 2022-05-29 17:36:23 UTC: End of iteration 3
+# 2022-05-29 17:36:23 UTC: All configurations (sampling order):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls  dlb .PARENT.
+1     1       eas           3  4.89 3.87 0.96    5          29   49    1       NA
+2     2       eas           1  9.29 9.95 0.75   34         674   33    1       NA
+3     3       eas           3  1.65 6.40 0.70   55         185   21    1       NA
+4     4       eas           0  9.50 5.63 0.91   64         457   NA <NA>       NA
+5     5       eas           1  3.70 2.77 0.49   77         295   10    0       NA
+6     6       eas           3  1.91 5.17 0.49   31         316   26    0       NA
+7     7       eas           2  8.81 8.84 0.46   92         672   19    1       NA
+8     8       eas           1  7.21 9.55 0.67   24         100   29    0       NA
+9     9       eas           2  7.88 5.61 0.59   82         623   10    0       NA
+10   10       eas           0  2.54 6.88 0.83   74          20   NA <NA>       NA
+11   11       eas           0  5.58 6.11 0.74   54         250   NA <NA>       10
+12   12       eas           3  7.55 2.52 0.56   10         174   12    0        6
+13   13       eas           0  6.88 1.04 0.71   18         253   NA <NA>        5
+14   14       eas           2  9.39 9.24 0.49   66         297   15    1        7
+15   15       eas           1  4.33 6.14 0.40   16         412   20    1        6
+16   16       eas           2  1.84 9.61 0.65   95         725   18    0        7
+17   17       eas           1  7.18 7.19 0.86   13         470    7    0        6
+18   18       eas           1  3.34 1.58 0.48   75         505   23    0        5
+19   19       eas           2  6.11 8.47 0.68   33         657   22    1        7
+20   20       eas           1  2.31 2.70 0.52   42         668   41    0        6
+21   21       eas           2  6.51 9.07 0.84   35         400   33    1        7
+22   22       eas           1  6.37 3.04 0.55   28         463   12    0       15
+23   23       eas           2  5.68 7.79 0.81   61         745   24    0        7
+# 2022-05-29 17:36:23 UTC: Memory used in irace():
+                  iraceResults :              68.2 Kb
+          .irace$target.runner :             249.7 Kb
+                         Total :               0.3 Mb
+                            gc :              52.8 Mb
+# 2022-05-29 17:36:23 UTC: Iteration 4 of 5
+# experimentsUsedSoFar: 173
+# remainingBudget: 127
+# currentBudget: 63
+# nbConfigurations: 10
+# 2022-05-29 17:36:23 UTC: Update model
+# Model:
+$localsearch
+$localsearch$`6`
+[1] 0.04990822 0.04990822 0.04990822 0.85027534
+
+$localsearch$`18`
+[1] 0.04990822 0.85027534 0.04990822 0.04990822
+
+$localsearch$`20`
+[1] 0.048 0.648 0.048 0.256
+
+$localsearch$`7`
+[1] 0.04990822 0.04990822 0.85027534 0.04990822
+
+$localsearch$`15`
+[1] 0.048 0.808 0.048 0.096
+
+
+$alpha
+$alpha$`6`
+[1] 2.306403 1.910000
+
+$alpha$`18`
+[1] 2.306403 3.340000
+
+$alpha$`20`
+[1] 2.306403 2.310000
+
+$alpha$`7`
+[1] 2.306403 8.810000
+
+$alpha$`15`
+[1] 2.306403 4.330000
+
+
+$beta
+$beta$`6`
+[1] 2.306403 5.170000
+
+$beta$`18`
+[1] 2.306403 1.580000
+
+$beta$`20`
+[1] 2.306403 2.700000
+
+$beta$`7`
+[1] 2.306403 8.840000
+
+$beta$`15`
+[1] 2.306403 6.140000
+
+
+$rho
+$rho$`6`
+[1] 0.2306403 0.4900000
+
+$rho$`18`
+[1] 0.2306403 0.4800000
+
+$rho$`20`
+[1] 0.2306403 0.5200000
+
+$rho$`7`
+[1] 0.2306403 0.4600000
+
+$rho$`15`
+[1] 0.2306403 0.4000000
+
+
+$ants
+$ants$`6`
+[1] 24.34536 31.00000
+
+$ants$`18`
+[1] 24.34536 75.00000
+
+$ants$`20`
+[1] 24.34536 42.00000
+
+$ants$`7`
+[1] 24.34536 92.00000
+
+$ants$`15`
+[1] 24.34536 16.00000
+
+
+$elitistants
+$elitistants$`6`
+[1] 191.9439 316.0000
+
+$elitistants$`18`
+[1] 191.9439 505.0000
+
+$elitistants$`20`
+[1] 191.9439 668.0000
+
+$elitistants$`7`
+[1] 191.9439 672.0000
+
+$elitistants$`15`
+[1] 191.9439 412.0000
+
+
+$nnls
+$nnls$`6`
+[1] 11.53201 26.00000
+
+$nnls$`18`
+[1] 11.53201 23.00000
+
+$nnls$`20`
+[1] 11.53201 41.00000
+
+$nnls$`7`
+[1] 11.53201 19.00000
+
+$nnls$`15`
+[1] 11.53201 20.00000
+
+
+$dlb
+$dlb$`6`
+[1] 0.8949402 0.1050598
+
+$dlb$`18`
+[1] 0.8949402 0.1050598
+
+$dlb$`20`
+[1] 0.8949402 0.1050598
+
+$dlb$`7`
+[1] 0.1050598 0.8949402
+
+$dlb$`15`
+[1] 0.1497247 0.8502753
+
+
+# 2022-05-29 17:36:23 UTC: Sample 5 configurations from model
+# 2022-05-29 17:36:23 UTC: Computing similarity of configurations ....... DONE
+# 2022-05-29 17:36:23 UTC: Configurations for the race n 4 (elite configurations listed first, then new configurations):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT.
+6     6       eas           3  1.91 5.17 0.49   31         316   26   0       NA
+18   18       eas           1  3.34 1.58 0.48   75         505   23   0        5
+20   20       eas           1  2.31 2.70 0.52   42         668   41   0        6
+7     7       eas           2  8.81 8.84 0.46   92         672   19   1       NA
+15   15       eas           1  4.33 6.14 0.40   16         412   20   1        6
+24   24       eas           1  1.64 5.20 0.74   73         523   33   1       18
+25   25       eas           1  2.20 1.17 0.16   81         627    5   0       18
+26   26       eas           1  3.60 7.96 0.31   34         550   45   0       20
+27   27       eas           1  7.65 5.66 0.45   45         560   23   1       18
+28   28       eas           3  2.37 9.85 0.29   91         343   40   0        6
+# 2022-05-29 17:36:23 UTC: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# 2022-05-29 17:36:23 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 6 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 3 --alpha 1.91 --beta 5.17 --rho  0.49 --ants 31 --elitistants 316 --nnls 26 --dlb 0
+# 2022-05-29 17:36:23 UTC: DONE (6) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:36:23 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 18 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 1 --alpha 3.34 --beta 1.58 --rho  0.48 --ants 75 --elitistants 505 --nnls 23 --dlb 0
+# 2022-05-29 17:36:23 UTC: DONE (18) Elapsed wall-clock seconds: 0.05
+0.0
+# 2022-05-29 17:36:23 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 20 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 1 --alpha 2.31 --beta 2.7 --rho  0.52 --ants 42 --elitistants 668 --nnls 41 --dlb 0
+# 2022-05-29 17:36:24 UTC: DONE (20) Elapsed wall-clock seconds: 0.05
+0.0
+# 2022-05-29 17:36:24 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 7 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 2 --alpha 8.81 --beta 8.84 --rho  0.46 --ants 92 --elitistants 672 --nnls 19 --dlb 1
+# 2022-05-29 17:36:24 UTC: DONE (7) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:36:24 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 15 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 1 --alpha 4.33 --beta 6.14 --rho  0.4 --ants 16 --elitistants 412 --nnls 20 --dlb 1
+# 2022-05-29 17:36:24 UTC: DONE (15) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:36:24 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 24 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 1 --alpha 1.64 --beta 5.2 --rho  0.74 --ants 73 --elitistants 523 --nnls 33 --dlb 1
+# 2022-05-29 17:36:24 UTC: DONE (24) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:36:24 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 25 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 1 --alpha 2.2 --beta 1.17 --rho  0.16 --ants 81 --elitistants 627 --nnls 5 --dlb 0
+# 2022-05-29 17:36:24 UTC: DONE (25) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:36:24 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 26 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 1 --alpha 3.6 --beta 7.96 --rho  0.31 --ants 34 --elitistants 550 --nnls 45 --dlb 0
+# 2022-05-29 17:36:24 UTC: DONE (26) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:36:24 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 27 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 1 --alpha 7.65 --beta 5.66 --rho  0.45 --ants 45 --elitistants 560 --nnls 23 --dlb 1
+# 2022-05-29 17:36:24 UTC: DONE (27) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:36:24 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 28 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 3 --alpha 2.37 --beta 9.85 --rho  0.29 --ants 91 --elitistants 343 --nnls 40 --dlb 0
+# 2022-05-29 17:36:24 UTC: DONE (28) Elapsed wall-clock seconds: 0.05
+0.0
+|x|         10|         10|          6|    0.000000000|         10|00:00:00|   NA|  NA|    NA|
+# 2022-05-29 17:36:24 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 24 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 1 --alpha 1.64 --beta 5.2 --rho  0.74 --ants 73 --elitistants 523 --nnls 33 --dlb 1
+# 2022-05-29 17:36:34 UTC: DONE (24) Elapsed wall-clock seconds: 10.57
+0.40158763640635364
+# 2022-05-29 17:36:34 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 25 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 1 --alpha 2.2 --beta 1.17 --rho  0.16 --ants 81 --elitistants 627 --nnls 5 --dlb 0
+# 2022-05-29 17:36:44 UTC: DONE (25) Elapsed wall-clock seconds: 10.10
+1.000236445539711
+# 2022-05-29 17:36:44 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 26 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 1 --alpha 3.6 --beta 7.96 --rho  0.31 --ants 34 --elitistants 550 --nnls 45 --dlb 0
+# 2022-05-29 17:37:28 UTC: DONE (26) Elapsed wall-clock seconds: 43.73
+0.34122757036452056
+# 2022-05-29 17:37:28 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 27 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 1 --alpha 7.65 --beta 5.66 --rho  0.45 --ants 45 --elitistants 560 --nnls 23 --dlb 1
+# 2022-05-29 17:37:38 UTC: DONE (27) Elapsed wall-clock seconds: 10.10
+0.3273152262781671
+# 2022-05-29 17:37:38 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 28 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 3 --alpha 2.37 --beta 9.85 --rho  0.29 --ants 91 --elitistants 343 --nnls 40 --dlb 0
+# 2022-05-29 17:38:24 UTC: DONE (28) Elapsed wall-clock seconds: 45.51
+0.7579065630679356
+|x|          2|         10|         15|  0.03781145751|         15|00:02:00|+0.00|0.50|0.4500|
+# 2022-05-29 17:38:24 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 24 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 1 --alpha 1.64 --beta 5.2 --rho  0.74 --ants 73 --elitistants 523 --nnls 33 --dlb 1
+# 2022-05-29 17:38:24 UTC: DONE (24) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:38:24 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 25 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 1 --alpha 2.2 --beta 1.17 --rho  0.16 --ants 81 --elitistants 627 --nnls 5 --dlb 0
+# 2022-05-29 17:38:34 UTC: DONE (25) Elapsed wall-clock seconds: 10.03
+0.07044237813468583
+# 2022-05-29 17:38:34 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 26 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 1 --alpha 3.6 --beta 7.96 --rho  0.31 --ants 34 --elitistants 550 --nnls 45 --dlb 0
+# 2022-05-29 17:38:44 UTC: DONE (26) Elapsed wall-clock seconds: 10.03
+0.4461350615196769
+# 2022-05-29 17:38:44 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 27 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 1 --alpha 7.65 --beta 5.66 --rho  0.45 --ants 45 --elitistants 560 --nnls 23 --dlb 1
+# 2022-05-29 17:38:44 UTC: DONE (27) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:38:44 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 28 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 3 --alpha 2.37 --beta 9.85 --rho  0.29 --ants 91 --elitistants 343 --nnls 40 --dlb 0
+# 2022-05-29 17:38:44 UTC: DONE (28) Elapsed wall-clock seconds: 0.05
+0.0
+|x|          9|         10|         20|  0.06653380271|         20|00:00:20|-0.13|0.25|0.7129|
+# 2022-05-29 17:38:44 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 24 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 1.64 --beta 5.2 --rho  0.74 --ants 73 --elitistants 523 --nnls 33 --dlb 1
+# 2022-05-29 17:38:44 UTC: DONE (24) Elapsed wall-clock seconds: 0.07
+0.0
+# 2022-05-29 17:38:44 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 25 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 2.2 --beta 1.17 --rho  0.16 --ants 81 --elitistants 627 --nnls 5 --dlb 0
+# 2022-05-29 17:38:54 UTC: DONE (25) Elapsed wall-clock seconds: 10.03
+0.025516713447307986
+# 2022-05-29 17:38:54 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 26 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 3.6 --beta 7.96 --rho  0.31 --ants 34 --elitistants 550 --nnls 45 --dlb 0
+# 2022-05-29 17:39:04 UTC: DONE (26) Elapsed wall-clock seconds: 10.03
+0.7399846899719316
+# 2022-05-29 17:39:04 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 27 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 7.65 --beta 5.66 --rho  0.45 --ants 45 --elitistants 560 --nnls 23 --dlb 1
+# 2022-05-29 17:39:14 UTC: DONE (27) Elapsed wall-clock seconds: 10.03
+1.1482521051288594
+# 2022-05-29 17:39:14 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 28 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 2.37 --beta 9.85 --rho  0.29 --ants 91 --elitistants 343 --nnls 40 --dlb 0
+# 2022-05-29 17:39:14 UTC: DONE (28) Elapsed wall-clock seconds: 0.11
+0.0
+|x|          1|         10|         24|   0.1003969091|         25|00:00:30|-0.18|0.12|0.8101|
+# 2022-05-29 17:39:14 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 24 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 1 --alpha 1.64 --beta 5.2 --rho  0.74 --ants 73 --elitistants 523 --nnls 33 --dlb 1
+# 2022-05-29 17:39:14 UTC: DONE (24) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:39:14 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 25 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 1 --alpha 2.2 --beta 1.17 --rho  0.16 --ants 81 --elitistants 627 --nnls 5 --dlb 0
+# 2022-05-29 17:39:14 UTC: DONE (25) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:39:14 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 26 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 1 --alpha 3.6 --beta 7.96 --rho  0.31 --ants 34 --elitistants 550 --nnls 45 --dlb 0
+# 2022-05-29 17:39:14 UTC: DONE (26) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:39:14 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 27 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 1 --alpha 7.65 --beta 5.66 --rho  0.45 --ants 45 --elitistants 560 --nnls 23 --dlb 1
+# 2022-05-29 17:39:14 UTC: DONE (27) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 17:39:14 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 28 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 3 --alpha 2.37 --beta 9.85 --rho  0.29 --ants 91 --elitistants 343 --nnls 40 --dlb 0
+# 2022-05-29 17:39:15 UTC: DONE (28) Elapsed wall-clock seconds: 0.05
+0.0
+|=|          7|         10|         24|  0.08031752728|         30|00:00:00|-0.13|0.09|0.6211|
+# 2022-05-29 17:39:15 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 24 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 1 --alpha 1.64 --beta 5.2 --rho  0.74 --ants 73 --elitistants 523 --nnls 33 --dlb 1
+# 2022-05-29 17:39:34 UTC: DONE (24) Elapsed wall-clock seconds: 19.92
+0.8277099603204691
+# 2022-05-29 17:39:34 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 25 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 1 --alpha 2.2 --beta 1.17 --rho  0.16 --ants 81 --elitistants 627 --nnls 5 --dlb 0
+# 2022-05-29 17:39:50 UTC: DONE (25) Elapsed wall-clock seconds: 15.78
+2.562425758839437
+# 2022-05-29 17:39:50 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 26 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 1 --alpha 3.6 --beta 7.96 --rho  0.31 --ants 34 --elitistants 550 --nnls 45 --dlb 0
+# 2022-05-29 17:41:24 UTC: DONE (26) Elapsed wall-clock seconds: 93.41
+0.424912174286653
+# 2022-05-29 17:41:24 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 27 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 1 --alpha 7.65 --beta 5.66 --rho  0.45 --ants 45 --elitistants 560 --nnls 23 --dlb 1
+# 2022-05-29 17:41:39 UTC: DONE (27) Elapsed wall-clock seconds: 15.53
+0.6580610104379913
+# 2022-05-29 17:41:39 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 28 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 3 --alpha 2.37 --beta 9.85 --rho  0.29 --ants 91 --elitistants 343 --nnls 40 --dlb 0
+# 2022-05-29 17:43:15 UTC: DONE (28) Elapsed wall-clock seconds: 95.62
+0.8390830742790709
+|=|          8|         10|         20|   0.1897044799|         35|00:04:00|-0.08|0.10|0.6508|
+# 2022-05-29 17:43:15 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 24 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 1 --alpha 1.64 --beta 5.2 --rho  0.74 --ants 73 --elitistants 523 --nnls 33 --dlb 1
+# 2022-05-29 17:44:10 UTC: DONE (24) Elapsed wall-clock seconds: 54.78
+1.3814182268330357
+# 2022-05-29 17:44:10 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 25 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 1 --alpha 2.2 --beta 1.17 --rho  0.16 --ants 81 --elitistants 627 --nnls 5 --dlb 0
+# 2022-05-29 17:45:56 UTC: DONE (25) Elapsed wall-clock seconds: 106.57
+1.5342396722281257
+# 2022-05-29 17:45:56 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 26 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 1 --alpha 3.6 --beta 7.96 --rho  0.31 --ants 34 --elitistants 550 --nnls 45 --dlb 0
+# 2022-05-29 17:48:03 UTC: DONE (26) Elapsed wall-clock seconds: 127.09
+1.3118543430868836
+# 2022-05-29 17:48:03 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 27 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 1 --alpha 7.65 --beta 5.66 --rho  0.45 --ants 45 --elitistants 560 --nnls 23 --dlb 1
+# 2022-05-29 17:48:45 UTC: DONE (27) Elapsed wall-clock seconds: 41.92
+2.00584993920007
+# 2022-05-29 17:48:45 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 28 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 3 --alpha 2.37 --beta 9.85 --rho  0.29 --ants 91 --elitistants 343 --nnls 40 --dlb 0
+# 2022-05-29 17:53:27 UTC: DONE (28) Elapsed wall-clock seconds: 281.56
+1.5353351664603485
+|=|          4|         10|          6|   0.4133018595|         40|00:10:11|-0.07|0.09|0.6753|
+# 2022-05-29 17:53:27 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 24 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 1 --alpha 1.64 --beta 5.2 --rho  0.74 --ants 73 --elitistants 523 --nnls 33 --dlb 1
+# 2022-05-29 17:53:37 UTC: DONE (24) Elapsed wall-clock seconds: 10.06
+0.0654236179260713
+# 2022-05-29 17:53:37 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 25 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 1 --alpha 2.2 --beta 1.17 --rho  0.16 --ants 81 --elitistants 627 --nnls 5 --dlb 0
+# 2022-05-29 17:53:47 UTC: DONE (25) Elapsed wall-clock seconds: 10.06
+0.45592083742230943
+# 2022-05-29 17:53:47 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 26 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 1 --alpha 3.6 --beta 7.96 --rho  0.31 --ants 34 --elitistants 550 --nnls 45 --dlb 0
+# 2022-05-29 17:54:07 UTC: DONE (26) Elapsed wall-clock seconds: 19.76
+0.21058227019954204
+# 2022-05-29 17:54:07 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 27 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 1 --alpha 7.65 --beta 5.66 --rho  0.45 --ants 45 --elitistants 560 --nnls 23 --dlb 1
+# 2022-05-29 17:54:17 UTC: DONE (27) Elapsed wall-clock seconds: 10.06
+0.32711808963035655
+# 2022-05-29 17:54:17 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 28 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 3 --alpha 2.37 --beta 9.85 --rho  0.29 --ants 91 --elitistants 343 --nnls 40 --dlb 0
+# 2022-05-29 17:54:36 UTC: DONE (28) Elapsed wall-clock seconds: 19.41
+0.34756297023225385
+|=|          6|         10|          7|   0.3121006243|         45|00:01:09|+0.02|0.14|0.6590|
+# 2022-05-29 17:54:36 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 24 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 1 --alpha 1.64 --beta 5.2 --rho  0.74 --ants 73 --elitistants 523 --nnls 33 --dlb 1
+# 2022-05-29 17:54:47 UTC: DONE (24) Elapsed wall-clock seconds: 11.26
+0.8181675145539413
+# 2022-05-29 17:54:47 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 25 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 1 --alpha 2.2 --beta 1.17 --rho  0.16 --ants 81 --elitistants 627 --nnls 5 --dlb 0
+# 2022-05-29 17:54:58 UTC: DONE (25) Elapsed wall-clock seconds: 10.23
+2.09262075837835
+# 2022-05-29 17:54:58 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 26 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 1 --alpha 3.6 --beta 7.96 --rho  0.31 --ants 34 --elitistants 550 --nnls 45 --dlb 0
+# 2022-05-29 17:55:33 UTC: DONE (26) Elapsed wall-clock seconds: 35.54
+0.08391461687732732
+# 2022-05-29 17:55:33 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 27 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 1 --alpha 7.65 --beta 5.66 --rho  0.45 --ants 45 --elitistants 560 --nnls 23 --dlb 1
+# 2022-05-29 17:55:43 UTC: DONE (27) Elapsed wall-clock seconds: 10.25
+0.4527892869005787
+# 2022-05-29 17:55:43 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 28 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 3 --alpha 2.37 --beta 9.85 --rho  0.29 --ants 91 --elitistants 343 --nnls 40 --dlb 0
+# 2022-05-29 17:56:43 UTC: DONE (28) Elapsed wall-clock seconds: 59.41
+0.9615216517193755
+|=|          3|         10|         18|   0.3382443821|         50|00:02:06|+0.05|0.15|0.6571|
+# 2022-05-29 17:56:43 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 24 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 1 --alpha 1.64 --beta 5.2 --rho  0.74 --ants 73 --elitistants 523 --nnls 33 --dlb 1
+# 2022-05-29 17:56:53 UTC: DONE (24) Elapsed wall-clock seconds: 10.07
+1.2037247331364977
+# 2022-05-29 17:56:53 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 25 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 1 --alpha 2.2 --beta 1.17 --rho  0.16 --ants 81 --elitistants 627 --nnls 5 --dlb 0
+# 2022-05-29 17:57:03 UTC: DONE (25) Elapsed wall-clock seconds: 10.07
+0.26118555530320237
+# 2022-05-29 17:57:03 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 26 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 1 --alpha 3.6 --beta 7.96 --rho  0.31 --ants 34 --elitistants 550 --nnls 45 --dlb 0
+# 2022-05-29 17:57:13 UTC: DONE (26) Elapsed wall-clock seconds: 10.07
+0.6359300476947536
+# 2022-05-29 17:57:13 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 27 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 1 --alpha 7.65 --beta 5.66 --rho  0.45 --ants 45 --elitistants 560 --nnls 23 --dlb 1
+# 2022-05-29 17:57:23 UTC: DONE (27) Elapsed wall-clock seconds: 10.07
+1.101521689756984
+# 2022-05-29 17:57:23 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 28 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 3 --alpha 2.37 --beta 9.85 --rho  0.29 --ants 91 --elitistants 343 --nnls 40 --dlb 0
+# 2022-05-29 17:57:34 UTC: DONE (28) Elapsed wall-clock seconds: 10.84
+0.06813536225300931
+|=|          5|         10|          6|   0.4414894736|         55|00:00:51|-0.03|0.07|0.7247|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# Stopped because experiments for next test (65) > max experiments (63)
+Best-so-far configuration:           6    mean value:    0.4414894736
+Description of the best-so-far configuration:
+  .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT.
+6    6       eas           3  1.91 5.17 0.49   31         316   26   0       NA
+
+# 2022-05-29 17:57:34 UTC: Memory used in race():
+          .irace$target.runner :             249.7 Kb
+                         Total :               0.2 Mb
+                            gc :              52.9 Mb
+# 2022-05-29 17:57:34 UTC: Results for the race of iteration 4 (from best to worst, according to the sum of ranks):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT. .ALIVE. .RANK.
+6     6       eas           3  1.91 5.17 0.49   31         316   26   0       NA    TRUE   46.5
+18   18       eas           1  3.34 1.58 0.48   75         505   23   0        5    TRUE   49.5
+7     7       eas           2  8.81 8.84 0.46   92         672   19   1       NA    TRUE   49.5
+26   26       eas           1  3.60 7.96 0.31   34         550   45   0       20    TRUE   51.0
+24   24       eas           1  1.64 5.20 0.74   73         523   33   1       18    TRUE   52.0
+20   20       eas           1  2.31 2.70 0.52   42         668   41   0        6    TRUE   53.5
+15   15       eas           1  4.33 6.14 0.40   16         412   20   1        6    TRUE   55.0
+28   28       eas           3  2.37 9.85 0.29   91         343   40   0        6    TRUE   60.0
+27   27       eas           1  7.65 5.66 0.45   45         560   23   1       18    TRUE   63.5
+25   25       eas           1  2.20 1.17 0.16   81         627    5   0       18    TRUE   69.5
+# 2022-05-29 17:57:34 UTC: Extracting elites
+# 2022-05-29 17:57:34 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT. .ALIVE. .RANK.           .WEIGHT.
+6     6       eas           3  1.91 5.17 0.49   31         316   26   0       NA    TRUE   46.5 0.3333333333333333
+18   18       eas           1  3.34 1.58 0.48   75         505   23   0        5    TRUE   49.5 0.2666666666666667
+7     7       eas           2  8.81 8.84 0.46   92         672   19   1       NA    TRUE   49.5 0.2000000000000000
+26   26       eas           1  3.60 7.96 0.31   34         550   45   0       20    TRUE   51.0 0.1333333333333333
+24   24       eas           1  1.64 5.20 0.74   73         523   33   1       18    TRUE   52.0 0.0666666666666667
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 10
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 8
+# 2022-05-29 17:57:34 UTC: End of iteration 4
+# 2022-05-29 17:57:34 UTC: All configurations (sampling order):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls  dlb .PARENT.
+1     1       eas           3  4.89 3.87 0.96    5          29   49    1       NA
+2     2       eas           1  9.29 9.95 0.75   34         674   33    1       NA
+3     3       eas           3  1.65 6.40 0.70   55         185   21    1       NA
+4     4       eas           0  9.50 5.63 0.91   64         457   NA <NA>       NA
+5     5       eas           1  3.70 2.77 0.49   77         295   10    0       NA
+6     6       eas           3  1.91 5.17 0.49   31         316   26    0       NA
+7     7       eas           2  8.81 8.84 0.46   92         672   19    1       NA
+8     8       eas           1  7.21 9.55 0.67   24         100   29    0       NA
+9     9       eas           2  7.88 5.61 0.59   82         623   10    0       NA
+10   10       eas           0  2.54 6.88 0.83   74          20   NA <NA>       NA
+11   11       eas           0  5.58 6.11 0.74   54         250   NA <NA>       10
+12   12       eas           3  7.55 2.52 0.56   10         174   12    0        6
+13   13       eas           0  6.88 1.04 0.71   18         253   NA <NA>        5
+14   14       eas           2  9.39 9.24 0.49   66         297   15    1        7
+15   15       eas           1  4.33 6.14 0.40   16         412   20    1        6
+16   16       eas           2  1.84 9.61 0.65   95         725   18    0        7
+17   17       eas           1  7.18 7.19 0.86   13         470    7    0        6
+18   18       eas           1  3.34 1.58 0.48   75         505   23    0        5
+19   19       eas           2  6.11 8.47 0.68   33         657   22    1        7
+20   20       eas           1  2.31 2.70 0.52   42         668   41    0        6
+21   21       eas           2  6.51 9.07 0.84   35         400   33    1        7
+22   22       eas           1  6.37 3.04 0.55   28         463   12    0       15
+23   23       eas           2  5.68 7.79 0.81   61         745   24    0        7
+24   24       eas           1  1.64 5.20 0.74   73         523   33    1       18
+25   25       eas           1  2.20 1.17 0.16   81         627    5    0       18
+26   26       eas           1  3.60 7.96 0.31   34         550   45    0       20
+27   27       eas           1  7.65 5.66 0.45   45         560   23    1       18
+28   28       eas           3  2.37 9.85 0.29   91         343   40    0        6
+# 2022-05-29 17:57:34 UTC: Memory used in irace():
+                  iraceResults :              72.2 Kb
+          .irace$target.runner :             249.7 Kb
+                         Total :               0.3 Mb
+                            gc :              52.8 Mb
+# 2022-05-29 17:57:34 UTC: Iteration 5 of 5
+# experimentsUsedSoFar: 228
+# remainingBudget: 72
+# currentBudget: 72
+# nbConfigurations: 11
+# 2022-05-29 17:57:34 UTC: Update model
+# Model:
+$localsearch
+$localsearch$`6`
+[1] 0.01177483 0.01177483 0.01177483 0.96467552
+
+$localsearch$`18`
+[1] 0.01177483 0.96467552 0.01177483 0.01177483
+
+$localsearch$`7`
+[1] 0.01177483 0.01177483 0.96467552 0.01177483
+
+$localsearch$`26`
+[1] 0.01080880 0.92073549 0.01080880 0.05764692
+
+$localsearch$`24`
+[1] 0.01177483 0.96467552 0.01177483 0.01177483
+
+
+$alpha
+$alpha$`6`
+[1] 1.843598 1.910000
+
+$alpha$`18`
+[1] 1.843598 3.340000
+
+$alpha$`7`
+[1] 1.843598 8.810000
+
+$alpha$`26`
+[1] 1.843598 3.600000
+
+$alpha$`24`
+[1] 1.843598 1.640000
+
+
+$beta
+$beta$`6`
+[1] 1.843598 5.170000
+
+$beta$`18`
+[1] 1.843598 1.580000
+
+$beta$`7`
+[1] 1.843598 8.840000
+
+$beta$`26`
+[1] 1.843598 7.960000
+
+$beta$`24`
+[1] 1.843598 5.200000
+
+
+$rho
+$rho$`6`
+[1] 0.1843598 0.4900000
+
+$rho$`18`
+[1] 0.1843598 0.4800000
+
+$rho$`7`
+[1] 0.1843598 0.4600000
+
+$rho$`26`
+[1] 0.1843598 0.3100000
+
+$rho$`24`
+[1] 0.1843598 0.7400000
+
+
+$ants
+$ants$`6`
+[1] 19.4602 31.0000
+
+$ants$`18`
+[1] 19.4602 75.0000
+
+$ants$`7`
+[1] 19.4602 92.0000
+
+$ants$`26`
+[1] 19.4602 34.0000
+
+$ants$`24`
+[1] 19.4602 73.0000
+
+
+$elitistants
+$elitistants$`6`
+[1] 153.4283 316.0000
+
+$elitistants$`18`
+[1] 153.4283 505.0000
+
+$elitistants$`7`
+[1] 153.4283 672.0000
+
+$elitistants$`26`
+[1] 153.4283 550.0000
+
+$elitistants$`24`
+[1] 153.4283 523.0000
+
+
+$nnls
+$nnls$`6`
+[1]  9.217989 26.000000
+
+$nnls$`18`
+[1]  9.217989 23.000000
+
+$nnls$`7`
+[1]  9.217989 19.000000
+
+$nnls$`26`
+[1]  9.217989 45.000000
+
+$nnls$`24`
+[1]  9.217989 33.000000
+
+
+$dlb
+$dlb$`6`
+[1] 0.9749493 0.0250507
+
+$dlb$`18`
+[1] 0.9749493 0.0250507
+
+$dlb$`7`
+[1] 0.0250507 0.9749493
+
+$dlb$`26`
+[1] 0.9749493 0.0250507
+
+$dlb$`24`
+[1] 0.179571 0.820429
+
+
+# 2022-05-29 17:57:34 UTC: Sample 6 configurations from model
+# 2022-05-29 17:57:34 UTC: Computing similarity of configurations ........ DONE
+# 2022-05-29 17:57:34 UTC: Configurations for the race n 5 (elite configurations listed first, then new configurations):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT.
+6     6       eas           3  1.91 5.17 0.49   31         316   26   0       NA
+18   18       eas           1  3.34 1.58 0.48   75         505   23   0        5
+7     7       eas           2  8.81 8.84 0.46   92         672   19   1       NA
+26   26       eas           1  3.60 7.96 0.31   34         550   45   0       20
+24   24       eas           1  1.64 5.20 0.74   73         523   33   1       18
+29   29       eas           3  4.92 5.49 0.83   10         508   14   0        6
+30   30       eas           1  1.86 2.54 0.48   85         379   17   0       18
+31   31       eas           3  2.79 6.31 0.52   35         407   36   0        6
+32   32       eas           2  6.54 5.19 0.70   99         731    7   1        7
+33   33       eas           3  1.73 6.62 0.22   45         352   43   0        6
+34   34       eas           2  6.73 8.46 0.16   80         686    7   1        7
+# 2022-05-29 17:57:34 UTC: Launch race
+# Markers:
+     x No test is performed.
+     c Configurations are discarded only due to capping.
+     - The test is performed and some configurations are discarded.
+     = The test is performed but no configuration is discarded.
+     ! The test is performed and configurations could be discarded but elite configurations are preserved.
+     . All alive configurations are elite and nothing is discarded
+
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+| |   Instance|      Alive|       Best|      Mean best| Exp so far|  W time|  rho|KenW|  Qvar|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# 2022-05-29 17:57:34 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 6 32 868615521 /root/irace-smac-opposite/irace/tunning/acotsp/instances/ts225.tsp   --algorithm eas --localsearch 3 --alpha 1.91 --beta 5.17 --rho  0.49 --ants 31 --elitistants 316 --nnls 26 --dlb 0
+# 2022-05-29 17:57:34 UTC: DONE (6) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:57:34 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 18 32 868615521 /root/irace-smac-opposite/irace/tunning/acotsp/instances/ts225.tsp   --algorithm eas --localsearch 1 --alpha 3.34 --beta 1.58 --rho  0.48 --ants 75 --elitistants 505 --nnls 23 --dlb 0
+# 2022-05-29 17:57:34 UTC: DONE (18) Elapsed wall-clock seconds: 0.06
+0.0
+# 2022-05-29 17:57:34 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 7 32 868615521 /root/irace-smac-opposite/irace/tunning/acotsp/instances/ts225.tsp   --algorithm eas --localsearch 2 --alpha 8.81 --beta 8.84 --rho  0.46 --ants 92 --elitistants 672 --nnls 19 --dlb 1
+# 2022-05-29 17:57:34 UTC: DONE (7) Elapsed wall-clock seconds: 0.05
+0.0
+# 2022-05-29 17:57:34 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 26 32 868615521 /root/irace-smac-opposite/irace/tunning/acotsp/instances/ts225.tsp   --algorithm eas --localsearch 1 --alpha 3.6 --beta 7.96 --rho  0.31 --ants 34 --elitistants 550 --nnls 45 --dlb 0
+# 2022-05-29 17:57:34 UTC: DONE (26) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:57:34 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 24 32 868615521 /root/irace-smac-opposite/irace/tunning/acotsp/instances/ts225.tsp   --algorithm eas --localsearch 1 --alpha 1.64 --beta 5.2 --rho  0.74 --ants 73 --elitistants 523 --nnls 33 --dlb 1
+# 2022-05-29 17:57:34 UTC: DONE (24) Elapsed wall-clock seconds: 0.07
+0.0
+# 2022-05-29 17:57:34 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 29 32 868615521 /root/irace-smac-opposite/irace/tunning/acotsp/instances/ts225.tsp   --algorithm eas --localsearch 3 --alpha 4.92 --beta 5.49 --rho  0.83 --ants 10 --elitistants 508 --nnls 14 --dlb 0
+# 2022-05-29 17:57:34 UTC: DONE (29) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:57:34 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 30 32 868615521 /root/irace-smac-opposite/irace/tunning/acotsp/instances/ts225.tsp   --algorithm eas --localsearch 1 --alpha 1.86 --beta 2.54 --rho  0.48 --ants 85 --elitistants 379 --nnls 17 --dlb 0
+# 2022-05-29 17:57:34 UTC: DONE (30) Elapsed wall-clock seconds: 0.06
+0.0
+# 2022-05-29 17:57:34 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 31 32 868615521 /root/irace-smac-opposite/irace/tunning/acotsp/instances/ts225.tsp   --algorithm eas --localsearch 3 --alpha 2.79 --beta 6.31 --rho  0.52 --ants 35 --elitistants 407 --nnls 36 --dlb 0
+# 2022-05-29 17:57:34 UTC: DONE (31) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:57:34 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 32 32 868615521 /root/irace-smac-opposite/irace/tunning/acotsp/instances/ts225.tsp   --algorithm eas --localsearch 2 --alpha 6.54 --beta 5.19 --rho  0.7 --ants 99 --elitistants 731 --nnls 7 --dlb 1
+# 2022-05-29 17:57:34 UTC: DONE (32) Elapsed wall-clock seconds: 0.05
+0.0
+# 2022-05-29 17:57:35 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 33 32 868615521 /root/irace-smac-opposite/irace/tunning/acotsp/instances/ts225.tsp   --algorithm eas --localsearch 3 --alpha 1.73 --beta 6.62 --rho  0.22 --ants 45 --elitistants 352 --nnls 43 --dlb 0
+# 2022-05-29 17:57:35 UTC: DONE (33) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 17:57:35 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 34 32 868615521 /root/irace-smac-opposite/irace/tunning/acotsp/instances/ts225.tsp   --algorithm eas --localsearch 2 --alpha 6.73 --beta 8.46 --rho  0.16 --ants 80 --elitistants 686 --nnls 7 --dlb 1
+# 2022-05-29 17:57:35 UTC: DONE (34) Elapsed wall-clock seconds: 0.06
+0.0
+|x|         11|         11|          6|    0.000000000|         11|00:00:00|   NA|  NA|    NA|
+# 2022-05-29 17:57:35 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 29 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 3 --alpha 4.92 --beta 5.49 --rho  0.83 --ants 10 --elitistants 508 --nnls 14 --dlb 0
+# 2022-05-29 17:58:16 UTC: DONE (29) Elapsed wall-clock seconds: 41.64
+2.936472289473396
+# 2022-05-29 17:58:16 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 30 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 1 --alpha 1.86 --beta 2.54 --rho  0.48 --ants 85 --elitistants 379 --nnls 17 --dlb 0
+# 2022-05-29 18:00:28 UTC: DONE (30) Elapsed wall-clock seconds: 131.68
+0.9218583964155429
+# 2022-05-29 18:00:28 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 31 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 3 --alpha 2.79 --beta 6.31 --rho  0.52 --ants 35 --elitistants 407 --nnls 36 --dlb 0
+# 2022-05-29 18:01:59 UTC: DONE (31) Elapsed wall-clock seconds: 90.96
+1.6038035559742778
+# 2022-05-29 18:01:59 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 32 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 2 --alpha 6.54 --beta 5.19 --rho  0.7 --ants 99 --elitistants 731 --nnls 7 --dlb 1
+# 2022-05-29 18:02:25 UTC: DONE (32) Elapsed wall-clock seconds: 26.19
+2.259456853959664
+# 2022-05-29 18:02:25 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 33 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 3 --alpha 1.73 --beta 6.62 --rho  0.22 --ants 45 --elitistants 352 --nnls 43 --dlb 0
+# 2022-05-29 18:07:11 UTC: DONE (33) Elapsed wall-clock seconds: 285.93
+1.3973028932002673
+# 2022-05-29 18:07:11 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 34 13 649675638 /root/irace-smac-opposite/irace/tunning/acotsp/instances/fnl4461.tsp   --algorithm eas --localsearch 2 --alpha 6.73 --beta 8.46 --rho  0.16 --ants 80 --elitistants 686 --nnls 7 --dlb 1
+# 2022-05-29 18:07:41 UTC: DONE (34) Elapsed wall-clock seconds: 29.59
+1.5391693962731285
+|x|          4|         11|         30|   0.4609291982|         17|00:10:05|+0.00|0.50|0.4545|
+# 2022-05-29 18:07:41 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 29 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 3 --alpha 4.92 --beta 5.49 --rho  0.83 --ants 10 --elitistants 508 --nnls 14 --dlb 0
+# 2022-05-29 18:07:51 UTC: DONE (29) Elapsed wall-clock seconds: 10.07
+3.236429707017942
+# 2022-05-29 18:07:51 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 30 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 1 --alpha 1.86 --beta 2.54 --rho  0.48 --ants 85 --elitistants 379 --nnls 17 --dlb 0
+# 2022-05-29 18:08:01 UTC: DONE (30) Elapsed wall-clock seconds: 10.07
+0.8176243470361118
+# 2022-05-29 18:08:01 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 31 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 3 --alpha 2.79 --beta 6.31 --rho  0.52 --ants 35 --elitistants 407 --nnls 36 --dlb 0
+# 2022-05-29 18:08:11 UTC: DONE (31) Elapsed wall-clock seconds: 10.07
+1.2037247331364977
+# 2022-05-29 18:08:11 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 32 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 2 --alpha 6.54 --beta 5.19 --rho  0.7 --ants 99 --elitistants 731 --nnls 7 --dlb 1
+# 2022-05-29 18:08:21 UTC: DONE (32) Elapsed wall-clock seconds: 10.07
+3.043379513967749
+# 2022-05-29 18:08:21 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 33 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 3 --alpha 1.73 --beta 6.62 --rho  0.22 --ants 45 --elitistants 352 --nnls 43 --dlb 0
+# 2022-05-29 18:08:31 UTC: DONE (33) Elapsed wall-clock seconds: 10.07
+0.34067681126504656
+# 2022-05-29 18:08:31 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 34 12 1848142846 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rat783.tsp   --algorithm eas --localsearch 2 --alpha 6.73 --beta 8.46 --rho  0.16 --ants 80 --elitistants 686 --nnls 7 --dlb 1
+# 2022-05-29 18:08:41 UTC: DONE (34) Elapsed wall-clock seconds: 10.07
+1.2718600953895072
+|x|          5|         11|         30|   0.5798275812|         23|00:01:00|+0.20|0.47|0.4239|
+# 2022-05-29 18:08:41 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 29 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 3 --alpha 4.92 --beta 5.49 --rho  0.83 --ants 10 --elitistants 508 --nnls 14 --dlb 0
+# 2022-05-29 18:08:41 UTC: DONE (29) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 18:08:41 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 30 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 1 --alpha 1.86 --beta 2.54 --rho  0.48 --ants 85 --elitistants 379 --nnls 17 --dlb 0
+# 2022-05-29 18:08:41 UTC: DONE (30) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 18:08:41 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 31 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 3 --alpha 2.79 --beta 6.31 --rho  0.52 --ants 35 --elitistants 407 --nnls 36 --dlb 0
+# 2022-05-29 18:08:41 UTC: DONE (31) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 18:08:41 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 32 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 2 --alpha 6.54 --beta 5.19 --rho  0.7 --ants 99 --elitistants 731 --nnls 7 --dlb 1
+# 2022-05-29 18:08:41 UTC: DONE (32) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 18:08:41 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 33 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 3 --alpha 1.73 --beta 6.62 --rho  0.22 --ants 45 --elitistants 352 --nnls 43 --dlb 0
+# 2022-05-29 18:08:41 UTC: DONE (33) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 18:08:41 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 34 47 1950566688 /root/irace-smac-opposite/irace/tunning/acotsp/instances/lin105.tsp   --algorithm eas --localsearch 2 --alpha 6.73 --beta 8.46 --rho  0.16 --ants 80 --elitistants 686 --nnls 7 --dlb 1
+# 2022-05-29 18:08:41 UTC: DONE (34) Elapsed wall-clock seconds: 0.03
+0.0
+|x|          7|         11|         30|   0.4348706859|         29|00:00:00|+0.14|0.35|0.3634|
+# 2022-05-29 18:08:41 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 29 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 3 --alpha 4.92 --beta 5.49 --rho  0.83 --ants 10 --elitistants 508 --nnls 14 --dlb 0
+# 2022-05-29 18:08:58 UTC: DONE (29) Elapsed wall-clock seconds: 16.89
+0.3085421363958497
+# 2022-05-29 18:08:58 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 30 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 1 --alpha 1.86 --beta 2.54 --rho  0.48 --ants 85 --elitistants 379 --nnls 17 --dlb 0
+# 2022-05-29 18:09:18 UTC: DONE (30) Elapsed wall-clock seconds: 20.23
+0.4588126017969861
+# 2022-05-29 18:09:18 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 31 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 3 --alpha 2.79 --beta 6.31 --rho  0.52 --ants 35 --elitistants 407 --nnls 36 --dlb 0
+# 2022-05-29 18:09:55 UTC: DONE (31) Elapsed wall-clock seconds: 36.54
+0.6150477971550221
+# 2022-05-29 18:09:55 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 32 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 2 --alpha 6.54 --beta 5.19 --rho  0.7 --ants 99 --elitistants 731 --nnls 7 --dlb 1
+# 2022-05-29 18:10:05 UTC: DONE (32) Elapsed wall-clock seconds: 10.11
+0.2569925070558522
+# 2022-05-29 18:10:05 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 33 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 3 --alpha 1.73 --beta 6.62 --rho  0.22 --ants 45 --elitistants 352 --nnls 43 --dlb 0
+# 2022-05-29 18:10:51 UTC: DONE (33) Elapsed wall-clock seconds: 46.37
+0.3877342429305356
+# 2022-05-29 18:10:51 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 34 50 1242905587 /root/irace-smac-opposite/irace/tunning/acotsp/instances/dsj1000.tsp   --algorithm eas --localsearch 2 --alpha 6.73 --beta 8.46 --rho  0.16 --ants 80 --elitistants 686 --nnls 7 --dlb 1
+# 2022-05-29 18:11:02 UTC: DONE (34) Elapsed wall-clock seconds: 10.11
+1.5441362149249227
+|=|          2|         11|         26|   0.4578023922|         35|00:02:20|+0.00|0.20|0.5171|
+# 2022-05-29 18:11:02 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 29 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 3 --alpha 4.92 --beta 5.49 --rho  0.83 --ants 10 --elitistants 508 --nnls 14 --dlb 0
+# 2022-05-29 18:11:12 UTC: DONE (29) Elapsed wall-clock seconds: 10.23
+1.1835457422073041
+# 2022-05-29 18:11:12 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 30 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 1 --alpha 1.86 --beta 2.54 --rho  0.48 --ants 85 --elitistants 379 --nnls 17 --dlb 0
+# 2022-05-29 18:11:29 UTC: DONE (30) Elapsed wall-clock seconds: 17.33
+0.41432842083180366
+# 2022-05-29 18:11:29 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 31 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 3 --alpha 2.79 --beta 6.31 --rho  0.52 --ants 35 --elitistants 407 --nnls 36 --dlb 0
+# 2022-05-29 18:11:52 UTC: DONE (31) Elapsed wall-clock seconds: 23.19
+0.3583853429135854
+# 2022-05-29 18:11:52 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 32 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 2 --alpha 6.54 --beta 5.19 --rho  0.7 --ants 99 --elitistants 731 --nnls 7 --dlb 1
+# 2022-05-29 18:12:03 UTC: DONE (32) Elapsed wall-clock seconds: 10.24
+1.7552140696840963
+# 2022-05-29 18:12:03 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 33 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 3 --alpha 1.73 --beta 6.62 --rho  0.22 --ants 45 --elitistants 352 --nnls 43 --dlb 0
+# 2022-05-29 18:12:51 UTC: DONE (33) Elapsed wall-clock seconds: 48.28
+0.5332074614080173
+# 2022-05-29 18:12:51 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 34 46 219667858 /root/irace-smac-opposite/irace/tunning/acotsp/instances/u1817.tsp   --algorithm eas --localsearch 2 --alpha 6.73 --beta 8.46 --rho  0.16 --ants 80 --elitistants 686 --nnls 7 --dlb 1
+# 2022-05-29 18:13:01 UTC: DONE (34) Elapsed wall-clock seconds: 10.25
+1.0611702592612018
+|=|          3|         11|         26|   0.3954877630|         41|00:01:59|+0.09|0.24|0.5032|
+# 2022-05-29 18:13:01 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 29 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 3 --alpha 4.92 --beta 5.49 --rho  0.83 --ants 10 --elitistants 508 --nnls 14 --dlb 0
+# 2022-05-29 18:13:11 UTC: DONE (29) Elapsed wall-clock seconds: 10.03
+0.16906170752324598
+# 2022-05-29 18:13:11 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 30 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 1 --alpha 1.86 --beta 2.54 --rho  0.48 --ants 85 --elitistants 379 --nnls 17 --dlb 0
+# 2022-05-29 18:13:21 UTC: DONE (30) Elapsed wall-clock seconds: 10.03
+0.07044237813468583
+# 2022-05-29 18:13:21 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 31 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 3 --alpha 2.79 --beta 6.31 --rho  0.52 --ants 35 --elitistants 407 --nnls 36 --dlb 0
+# 2022-05-29 18:13:31 UTC: DONE (31) Elapsed wall-clock seconds: 10.03
+0.07044237813468583
+# 2022-05-29 18:13:31 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 32 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 2 --alpha 6.54 --beta 5.19 --rho  0.7 --ants 99 --elitistants 731 --nnls 7 --dlb 1
+# 2022-05-29 18:13:41 UTC: DONE (32) Elapsed wall-clock seconds: 10.03
+0.07044237813468583
+# 2022-05-29 18:13:41 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 33 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 3 --alpha 1.73 --beta 6.62 --rho  0.22 --ants 45 --elitistants 352 --nnls 43 --dlb 0
+# 2022-05-29 18:13:41 UTC: DONE (33) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 18:13:41 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 34 4 747328897 /root/irace-smac-opposite/irace/tunning/acotsp/instances/kroD100.tsp   --algorithm eas --localsearch 2 --alpha 6.73 --beta 8.46 --rho  0.16 --ants 80 --elitistants 686 --nnls 7 --dlb 1
+# 2022-05-29 18:13:51 UTC: DONE (34) Elapsed wall-clock seconds: 10.03
+0.5447543909082371
+|=|          9|         11|          6|   0.4356509475|         47|00:00:50|+0.11|0.23|0.5465|
+# 2022-05-29 18:13:51 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 29 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 3 --alpha 4.92 --beta 5.49 --rho  0.83 --ants 10 --elitistants 508 --nnls 14 --dlb 0
+# 2022-05-29 18:13:51 UTC: DONE (29) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 18:13:51 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 30 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 1 --alpha 1.86 --beta 2.54 --rho  0.48 --ants 85 --elitistants 379 --nnls 17 --dlb 0
+# 2022-05-29 18:13:51 UTC: DONE (30) Elapsed wall-clock seconds: 0.06
+0.0
+# 2022-05-29 18:13:51 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 31 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 3 --alpha 2.79 --beta 6.31 --rho  0.52 --ants 35 --elitistants 407 --nnls 36 --dlb 0
+# 2022-05-29 18:13:51 UTC: DONE (31) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 18:13:51 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 32 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 2 --alpha 6.54 --beta 5.19 --rho  0.7 --ants 99 --elitistants 731 --nnls 7 --dlb 1
+# 2022-05-29 18:13:51 UTC: DONE (32) Elapsed wall-clock seconds: 0.03
+0.0
+# 2022-05-29 18:13:51 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 33 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 3 --alpha 1.73 --beta 6.62 --rho  0.22 --ants 45 --elitistants 352 --nnls 43 --dlb 0
+# 2022-05-29 18:13:52 UTC: DONE (33) Elapsed wall-clock seconds: 0.04
+0.0
+# 2022-05-29 18:13:52 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 34 3 1966275740 /root/irace-smac-opposite/irace/tunning/acotsp/instances/pr107.tsp   --algorithm eas --localsearch 2 --alpha 6.73 --beta 8.46 --rho  0.16 --ants 80 --elitistants 686 --nnls 7 --dlb 1
+# 2022-05-29 18:13:52 UTC: DONE (34) Elapsed wall-clock seconds: 0.03
+0.0
+|=|         10|         11|          6|   0.3811945790|         53|00:00:00|+0.09|0.21|0.4910|
+# 2022-05-29 18:13:52 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 29 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 3 --alpha 4.92 --beta 5.49 --rho  0.83 --ants 10 --elitistants 508 --nnls 14 --dlb 0
+# 2022-05-29 18:14:02 UTC: DONE (29) Elapsed wall-clock seconds: 10.06
+0.15538109257441937
+# 2022-05-29 18:14:02 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 30 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 1 --alpha 1.86 --beta 2.54 --rho  0.48 --ants 85 --elitistants 379 --nnls 17 --dlb 0
+# 2022-05-29 18:14:12 UTC: DONE (30) Elapsed wall-clock seconds: 10.06
+0.13698070003271182
+# 2022-05-29 18:14:12 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 31 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 3 --alpha 2.79 --beta 6.31 --rho  0.52 --ants 35 --elitistants 407 --nnls 36 --dlb 0
+# 2022-05-29 18:14:28 UTC: DONE (31) Elapsed wall-clock seconds: 15.83
+0.0654236179260713
+# 2022-05-29 18:14:28 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 32 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 2 --alpha 6.54 --beta 5.19 --rho  0.7 --ants 99 --elitistants 731 --nnls 7 --dlb 1
+# 2022-05-29 18:14:38 UTC: DONE (32) Elapsed wall-clock seconds: 10.06
+0.263738959764475
+# 2022-05-29 18:14:38 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 33 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 3 --alpha 1.73 --beta 6.62 --rho  0.22 --ants 45 --elitistants 352 --nnls 43 --dlb 0
+# 2022-05-29 18:14:57 UTC: DONE (33) Elapsed wall-clock seconds: 19.54
+0.12266928361138371
+# 2022-05-29 18:14:57 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 34 52 17223042 /root/irace-smac-opposite/irace/tunning/acotsp/instances/d657.tsp   --algorithm eas --localsearch 2 --alpha 6.73 --beta 8.46 --rho  0.16 --ants 80 --elitistants 686 --nnls 7 --dlb 1
+# 2022-05-29 18:15:07 UTC: DONE (34) Elapsed wall-clock seconds: 10.06
+0.308717697088649
+|-|          6|          8|          6|   0.3547411996|         59|00:01:15|-0.08|0.04|0.6328|
+# 2022-05-29 18:15:07 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 30 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 1 --alpha 1.86 --beta 2.54 --rho  0.48 --ants 85 --elitistants 379 --nnls 17 --dlb 0
+# 2022-05-29 18:15:56 UTC: DONE (30) Elapsed wall-clock seconds: 48.73
+0.2445219501099401
+# 2022-05-29 18:15:56 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 31 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 3 --alpha 2.79 --beta 6.31 --rho  0.52 --ants 35 --elitistants 407 --nnls 36 --dlb 0
+# 2022-05-29 18:17:24 UTC: DONE (31) Elapsed wall-clock seconds: 87.79
+0.4132231404958678
+# 2022-05-29 18:17:24 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 33 29 2017030276 /root/irace-smac-opposite/irace/tunning/acotsp/instances/rl1889.tsp   --algorithm eas --localsearch 3 --alpha 1.73 --beta 6.62 --rho  0.22 --ants 45 --elitistants 352 --nnls 43 --dlb 0
+# 2022-05-29 18:18:58 UTC: DONE (33) Elapsed wall-clock seconds: 94.04
+0.7196653777137514
+|=|          8|          8|          7|   0.4587239687|         62|00:03:50|-0.06|0.04|0.6483|
+# 2022-05-29 18:18:58 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 30 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 1 --alpha 1.86 --beta 2.54 --rho  0.48 --ants 85 --elitistants 379 --nnls 17 --dlb 0
+# 2022-05-29 18:18:58 UTC: DONE (30) Elapsed wall-clock seconds: 0.16
+0.0
+# 2022-05-29 18:18:58 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 31 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 2.79 --beta 6.31 --rho  0.52 --ants 35 --elitistants 407 --nnls 36 --dlb 0
+# 2022-05-29 18:18:58 UTC: DONE (31) Elapsed wall-clock seconds: 0.07
+0.07655014034192396
+# 2022-05-29 18:18:58 UTC: /root/irace-smac-opposite/irace/tunning/acotsp/target-runner.py 33 10 362000681 /root/irace-smac-opposite/irace/tunning/acotsp/instances/tsp225.tsp   --algorithm eas --localsearch 3 --alpha 1.73 --beta 6.62 --rho  0.22 --ants 45 --elitistants 352 --nnls 43 --dlb 0
+# 2022-05-29 18:18:58 UTC: DONE (33) Elapsed wall-clock seconds: 0.14
+0.0
+|=|          1|          8|         30|   0.2785971631|         65|00:00:00|-0.07|0.03|0.6744|
++-+-----------+-----------+-----------+---------------+-----------+--------+-----+----+------+
+# Stopped because experiments for next test (73) > max experiments (72)
+Best-so-far configuration:          30    mean value:    0.2785971631
+Description of the best-so-far configuration:
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT.
+30   30       eas           1  1.86 2.54 0.48   85         379   17   0       18
+
+# 2022-05-29 18:18:58 UTC: Memory used in race():
+          .irace$target.runner :             249.7 Kb
+                         Total :               0.2 Mb
+                            gc :              53.0 Mb
+# 2022-05-29 18:18:58 UTC: Results for the race of iteration 5 (from best to worst, according to the sum of ranks):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT. .ALIVE. .RANK.
+30   30       eas           1  1.86 2.54 0.48   85         379   17   0       18    TRUE   43.5
+6     6       eas           3  1.91 5.17 0.49   31         316   26   0       NA    TRUE   48.0
+7     7       eas           2  8.81 8.84 0.46   92         672   19   1       NA    TRUE   48.0
+33   33       eas           3  1.73 6.62 0.22   45         352   43   0        6    TRUE   48.0
+18   18       eas           1  3.34 1.58 0.48   75         505   23   0        5    TRUE   49.5
+26   26       eas           1  3.60 7.96 0.31   34         550   45   0       20    TRUE   50.5
+24   24       eas           1  1.64 5.20 0.74   73         523   33   1       18    TRUE   53.0
+31   31       eas           3  2.79 6.31 0.52   35         407   36   0        6    TRUE   55.5
+29   29       eas           3  4.92 5.49 0.83   10         508   14   0        6   FALSE    Inf
+32   32       eas           2  6.54 5.19 0.70   99         731    7   1        7   FALSE    Inf
+34   34       eas           2  6.73 8.46 0.16   80         686    7   1        7   FALSE    Inf
+# 2022-05-29 18:18:58 UTC: Extracting elites
+# 2022-05-29 18:18:58 UTC: Elite configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls dlb .PARENT. .ALIVE. .RANK.           .WEIGHT.
+30   30       eas           1  1.86 2.54 0.48   85         379   17   0       18    TRUE   43.5 0.3333333333333333
+6     6       eas           3  1.91 5.17 0.49   31         316   26   0       NA    TRUE   48.0 0.2666666666666667
+7     7       eas           2  8.81 8.84 0.46   92         672   19   1       NA    TRUE   48.0 0.2000000000000000
+33   33       eas           3  1.73 6.62 0.22   45         352   43   0        6    TRUE   48.0 0.1333333333333333
+18   18       eas           1  3.34 1.58 0.48   75         505   23   0        5    TRUE   49.5 0.0666666666666667
+[1] "La cantidad de dropeadas antes del filtrado es "
+[1] 8
+[1] "La cantidad de dropeadas despues del filtrado es "
+[1] 8
+# 2022-05-29 18:18:58 UTC: End of iteration 5
+# 2022-05-29 18:18:58 UTC: All configurations (sampling order):
+   .ID. algorithm localsearch alpha beta  rho ants elitistants nnls  dlb .PARENT.
+1     1       eas           3  4.89 3.87 0.96    5          29   49    1       NA
+2     2       eas           1  9.29 9.95 0.75   34         674   33    1       NA
+3     3       eas           3  1.65 6.40 0.70   55         185   21    1       NA
+4     4       eas           0  9.50 5.63 0.91   64         457   NA <NA>       NA
+5     5       eas           1  3.70 2.77 0.49   77         295   10    0       NA
+6     6       eas           3  1.91 5.17 0.49   31         316   26    0       NA
+7     7       eas           2  8.81 8.84 0.46   92         672   19    1       NA
+8     8       eas           1  7.21 9.55 0.67   24         100   29    0       NA
+9     9       eas           2  7.88 5.61 0.59   82         623   10    0       NA
+10   10       eas           0  2.54 6.88 0.83   74          20   NA <NA>       NA
+11   11       eas           0  5.58 6.11 0.74   54         250   NA <NA>       10
+12   12       eas           3  7.55 2.52 0.56   10         174   12    0        6
+13   13       eas           0  6.88 1.04 0.71   18         253   NA <NA>        5
+14   14       eas           2  9.39 9.24 0.49   66         297   15    1        7
+15   15       eas           1  4.33 6.14 0.40   16         412   20    1        6
+16   16       eas           2  1.84 9.61 0.65   95         725   18    0        7
+17   17       eas           1  7.18 7.19 0.86   13         470    7    0        6
+18   18       eas           1  3.34 1.58 0.48   75         505   23    0        5
+19   19       eas           2  6.11 8.47 0.68   33         657   22    1        7
+20   20       eas           1  2.31 2.70 0.52   42         668   41    0        6
+21   21       eas           2  6.51 9.07 0.84   35         400   33    1        7
+22   22       eas           1  6.37 3.04 0.55   28         463   12    0       15
+23   23       eas           2  5.68 7.79 0.81   61         745   24    0        7
+24   24       eas           1  1.64 5.20 0.74   73         523   33    1       18
+25   25       eas           1  2.20 1.17 0.16   81         627    5    0       18
+26   26       eas           1  3.60 7.96 0.31   34         550   45    0       20
+27   27       eas           1  7.65 5.66 0.45   45         560   23    1       18
+28   28       eas           3  2.37 9.85 0.29   91         343   40    0        6
+29   29       eas           3  4.92 5.49 0.83   10         508   14    0        6
+30   30       eas           1  1.86 2.54 0.48   85         379   17    0       18
+31   31       eas           3  2.79 6.31 0.52   35         407   36    0        6
+32   32       eas           2  6.54 5.19 0.70   99         731    7    1        7
+33   33       eas           3  1.73 6.62 0.22   45         352   43    0        6
+34   34       eas           2  6.73 8.46 0.16   80         686    7    1        7
+# 2022-05-29 18:18:58 UTC: Memory used in irace():
+                  iraceResults :              76.8 Kb
+          .irace$target.runner :             249.7 Kb
+                         Total :               0.3 Mb
+                            gc :              52.8 Mb
+# 2022-05-29 18:18:58 UTC: Stopped because there is not enough budget left to race more than the minimum (5)
+# You may either increase the budget or set 'minNbSurvival' to a lower value
+# Iteration: 6
+# nbIterations: 6
+# experimentsUsedSoFar: 293
+# timeUsed: 0
+# remainingBudget: 7
+# currentBudget: 7
+# number of elites: 5
+# nbConfigurations: 5
+# Best configurations (first number is the configuration ID; listed from best to worst according to the sum of ranks):
+   algorithm localsearch alpha beta  rho ants elitistants nnls dlb
+30       eas           1  1.86 2.54 0.48   85         379   17   0
+6        eas           3  1.91 5.17 0.49   31         316   26   0
+7        eas           2  8.81 8.84 0.46   92         672   19   1
+33       eas           3  1.73 6.62 0.22   45         352   43   0
+18       eas           1  3.34 1.58 0.48   75         505   23   0
+# Best configurations as commandlines (first number is the configuration ID; same order as above):
+30  --algorithm eas --localsearch 1 --alpha 1.86 --beta 2.54 --rho  0.48 --ants 85 --elitistants 379 --nnls 17 --dlb 0
+6   --algorithm eas --localsearch 3 --alpha 1.91 --beta 5.17 --rho  0.49 --ants 31 --elitistants 316 --nnls 26 --dlb 0
+7   --algorithm eas --localsearch 2 --alpha 8.81 --beta 8.84 --rho  0.46 --ants 92 --elitistants 672 --nnls 19 --dlb 1
+33  --algorithm eas --localsearch 3 --alpha 1.73 --beta 6.62 --rho  0.22 --ants 45 --elitistants 352 --nnls 43 --dlb 0
+18  --algorithm eas --localsearch 1 --alpha 3.34 --beta 1.58 --rho  0.48 --ants 75 --elitistants 505 --nnls 23 --dlb 0
+> 

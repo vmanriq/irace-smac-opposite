@@ -3,6 +3,7 @@ import logging
 from os import stat
 
 import numpy as np
+import math
 
 __author__ = "Aaron Kimmig"
 __copyright__ = "Copyright 2015, ML4AAD"
@@ -134,8 +135,8 @@ class ChooserProb(RandomConfigurationChooser):
         #    print("Reheat")
         #    self.prob_sa = 1
         #else:
-        if not stats.challenger_ask % 10: 
-            self.prob_sa = self.prob_sa * self.decay
+
+        self.prob_sa = 1 * self.decay ** (math.floor(stats.challenger_ask/100)) 
         print(f"La probabilidad de sa es {self.prob_sa}")
         return self.rng.rand() < self.prob_sa
          

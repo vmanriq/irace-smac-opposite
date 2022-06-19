@@ -581,6 +581,7 @@ irace <- function(scenario, parameters)
       irace.version = irace.version,
       parameters = parameters,
       allElites = list(),
+      opposite = list(),
       experiments = matrix(nrow = 0, ncol = 0),
       experimentLog = matrix(nrow = 0, ncol = 5,
                               dimnames = list(NULL,
@@ -1134,7 +1135,7 @@ irace <- function(scenario, parameters)
     iraceResults$allElites[[indexIteration]] <- eliteConfigurations$.ID.
     
     oppositeConfig <- selectOpposite(eliteConfigurations, raceResults$configurations, scenario$filterThresh)
-
+    iraceResults$opposite <- c(iraceResults$opposite, oppositeConfig)
     if (firstRace) {
       if (debugLevel >= 1)  { irace.note("Initialise model\n") }
       model <- initialiseModel(parameters, eliteConfigurations, scenario$digits, oppositeConfig)
