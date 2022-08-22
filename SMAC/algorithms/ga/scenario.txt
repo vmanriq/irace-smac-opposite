@@ -1,5 +1,5 @@
 runcount_limit = 5000
-algo = python ./target_algorithm/GAWrapper.py
+algo = python3 ./target_algorithm/GAWrapper.py
 execdir = ./../algorithms/ga
 deterministic = 0
 run_obj = quality

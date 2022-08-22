@@ -1,3 +1,4 @@
+#!/bin/sh
 import argparse
 import os
 __copyright__ = "Copyright 2021, AutoML.org Freiburg-Hannover"
@@ -20,7 +21,8 @@ if __name__ == '__main__':
     co = '1'
     me='100000'
     temp_name = f"{args.cr}_{args.mr}_{args.ps}_{seed}.dat"
-    cmd = ['./target_algorithm/ga-nk', instance, temp_name, args.cr, args.mr, args.ps, me, seed, co ]
+    cmd = [os.path.join(os.getcwd(),'target_algorithm/ga-nk'), instance, temp_name, args.cr, args.mr, args.ps, me, seed, co ]
+    print('calling with', cmd)
     io = Popen(cmd, stdout=PIPE)
     out_, err_ = io.communicate()
     with open(temp_name, "r") as file:
