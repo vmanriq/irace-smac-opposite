@@ -1,0 +1,4 @@
+"CPU Time Used","Estimated Training Performance","Wallclock Time","Incumbent ID","Automatic Configurator (CPU) Time","Configuration..."
+0.000000, 2147483648.000000, 0.000228, 1, 0.000228, algorithm=''eas'', alpha=''1.0'', ants='50', beta=''2.0'', localsearch='2', rho=''0.1'', dlb=''0'', elitistants='375', nnls='25'
+-1.000000, 0.037401, 49.975782, 1, 50.975782, algorithm=''eas'', alpha=''1.0'', ants='50', beta=''2.0'', localsearch='2', rho=''0.1'', dlb=''0'', elitistants='375', nnls='25'
+-79.000000, 0.255841, 1224.220318, 2, 1303.220318, algorithm=''eas'', alpha=''1.9'', ants='52', beta=''4.6'', localsearch='3', rho=''0.1'', dlb=''0'', elitistants='375', nnls='25'
